@@ -1,2 +1,4 @@
-# lyra
-Lyra
+# LYRASOFT site
+
+歡迎蒞臨 LYRASOFT
+
