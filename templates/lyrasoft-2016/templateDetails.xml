@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>lyrasoft-2016</name>
+	<version>1.0</version>
+	<positions>
+		<position>title</position>
+		<position>top1</position>
+		<position>top2</position>
+		<position>top3</position>
+		<position>logo</position>
+		<position>menu</position>
+		<position>search</position>
+		<position>slide</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>left</position>
+		<position>right</position>
+		<position>feature</position>
+		<position>slider</position>
+		<position>position1</position>
+		<position>position2</position>
+		<position>position3</position>
+		<position>position4</position>
+		<position>position5</position>
+		<position>position6</position>
+		<position>position7</position>
+		<position>position8</position>
+		<position>bottom1</position>
+		<position>bottom2</position>
+		<position>bottom3</position>
+		<position>bottom4</position>
+		<position>breadcrumb</position>
+		<position>footer</position>
+		<position>comingsoon</position>
+		<position>offcanvas</position>
+		<position>pagebuilder</position>
+		<position>404</position>
+		<position>debug</position>
+	</positions>
+</extension>
