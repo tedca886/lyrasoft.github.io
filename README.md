@@ -41,4 +41,8 @@ $ php cli/console sql import default -y
 
 ## 後台
 
-使用預設帳戶登入
+建立 User 來登入
+
+```
+$ cli/console user create
+```
