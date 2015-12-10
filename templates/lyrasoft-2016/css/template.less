@@ -19,30 +19,40 @@
 @purple1: #C1A5CD;
 @purple2: #697FBA;
 
+// Global
+body {
+	font-size: 16px;
+}
+
 
 // Test color
 #banner {
 	background-color: @blue1;
+	color: white;
 }
 
-#service {
-	background-color: @green1;
+#who-we-are {
+	// background-color: @green1;
 }
 
-#works {
+#what-we-made {
 	background-color: @red1;
+	color: white;
 }
 
-#member {
-	background-color: @orange;
+#our-works {
+	background-color: #333;
+	color: white;
 }
 
 #footer {
-	background-color: @blue3;
+	background-color: @blue2;
+	color: white;
 }
 
 #copyright {
-	background-color: @purple2;
+	background-color: @blue1;
+	color: white;
 }
 
 // Header
@@ -52,8 +62,51 @@ header > .navbar {
 
 // Banner
 #banner {
-	height: 100vh;
-}
 
+	background: url(https://drscdn.500px.org/photo/71865039/m%3D2048/77e55a2fea2cc725b7ae0da89d1831f7) no-repeat center center;
+	background-size: cover;
+
+	.banner-top-menu {
+		.navbar {
+			background: none;
+			border: none;
+			color: white;
+		}
+
+		a {
+			color: rgba(255,255,255,.6);
+
+		}
+
+		.navbar, .navbar-nav, .nav, ul.nav>li {
+			float: none;
+		}
+
+		.nav {
+			margin: 0 auto;
+
+			> li {
+				display: inline-block;
+			}
+		}
+	}
+
+	.banner-inner {
+		display: table;
+		width: 100%;
+	}
+
+	.banner-text {
+		height: 95vh;
+
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+
+		> div {
+			margin-top: -10em;
+		}
+	}
+}
 
 

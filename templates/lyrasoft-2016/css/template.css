@@ -1,21 +1,60 @@
+body {
+  font-size: 16px;
+}
 #banner {
   background-color: #384761;
+  color: white;
 }
-#service {
-  background-color: #a7cd39;
-}
-#works {
+#what-we-made {
   background-color: #eb4d46;
+  color: white;
 }
-#member {
-  background-color: #eea939;
+#our-works {
+  background-color: #333;
+  color: white;
 }
 #footer {
-  background-color: #3671b2;
+  background-color: #3f8dca;
+  color: white;
 }
 #copyright {
-  background-color: #697fba;
+  background-color: #384761;
+  color: white;
 }
 #banner {
-  height: 100vh;
+  background: url(https://drscdn.500px.org/photo/71865039/m%3D2048/77e55a2fea2cc725b7ae0da89d1831f7) no-repeat center center;
+  background-size: cover;
+}
+#banner .banner-top-menu .navbar {
+  background: none;
+  border: none;
+  color: white;
+}
+#banner .banner-top-menu a {
+  color: rgba(255, 255, 255, 0.6);
+}
+#banner .banner-top-menu .navbar,
+#banner .banner-top-menu .navbar-nav,
+#banner .banner-top-menu .nav,
+#banner .banner-top-menu ul.nav > li {
+  float: none;
+}
+#banner .banner-top-menu .nav {
+  margin: 0 auto;
+}
+#banner .banner-top-menu .nav > li {
+  display: inline-block;
+}
+#banner .banner-inner {
+  display: table;
+  width: 100%;
+}
+#banner .banner-text {
+  height: 95vh;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+#banner .banner-text > div {
+  margin-top: -10em;
 }

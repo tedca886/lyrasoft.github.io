@@ -28,26 +28,7 @@ $layout = $displayData['layout'];
 		</nav>
 	</header>
 
-	<?php echo (new \Astra\Layout\FileLayout('global.banner'))->render(null); ?>
-
-	<section id="service">
-		Service
-	</section>
-
-	<section id="works">
-		Works
-	</section>
-
-	<section id="member">
-		Member
-	</section>
-
-	<footer id="footer">
-		Footer
-	</footer>
-
-	<aside id="copyright">
-		Copyright
-	</aside>
-
+	<?php
+	echo (new \Astra\Layout\FileLayout($layout, $document))->render(array('template' => $document, 'params' => $this->tpl->params));
+	?>
 </div>

@@ -20,6 +20,6 @@ $tpl = \TplLyrasoft\LyrasoftTemplate::getInstance();
 </a>
 
 <!-- Everything you want hidden at 940px or less, place within here -->
-<div class="nav-collapse-bak collapse-bak pull-right-bak navbar-nav navbar-right">
+<div class="navbar-nav navbar-right">
 	<?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
 </div>
