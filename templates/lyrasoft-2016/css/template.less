@@ -20,15 +20,35 @@
 @purple2: #697FBA;
 
 // Global
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 body {
 	font-size: 16px;
 	margin-top: 50px;
+    line-height: 175%;
 
-	&.layout-landing {
+	&.tmpl-layout-landing {
 		margin-top: 0;
 	}
 }
 
+h1, h2, h3, h4, h5 {
+    // font-family: "source-han-sans-traditional";
+    font-family: Montserrat, 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold, 'PingFang TC', '微軟正黑體', sans-serif;
+}
+
+a {
+    color: @blue3;
+
+    &:hover {
+        color: darken(@blue3, 10%);
+        text-decoration: none;
+    }
+}
+
+p {
+    margin: 1em 0;
+}
 
 // Test color
 #banner {
@@ -129,6 +149,25 @@ header > .navbar {
 	}
 }
 
+// Article
+.page-header {
+    border: none;
+    margin: 70px 0 50px 0;
+
+    h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    a {
+        color: #333;
+
+        &:hover {
+            color: #444;
+        }
+    }
+}
+
 // Page heading
 #page-heading {
 	background-color: @red1;
@@ -143,8 +182,36 @@ header > .navbar {
 	}
 
 	h1 {
-		font-size: 48px;
+		font-size: 60px;
+        font-weight: 700;
+        text-transform: uppercase;
 	}
+
+    .heading-content {
+
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
+// Footer
+#footer {
+    h1, h2, h3, h4 {
+        text-transform: uppercase;
+    }
 
+    a {
+        color: white;
+
+        &:hover {
+            color: rgba(255,255,255,.7);
+            background: none;
+        }
+    }
+
+    .nav a {
+        padding-left: 3px;
+    }
+}

@@ -8,10 +8,17 @@
 
 $ezset = Ezset::getInstance();
 
-// show($ezset, 7);
 ?>
 <section id="page-heading" class="inner-md">
 	<div class="container text-center">
-		<h1><?php echo $ezset->data->get('originTitle') ?></h1>
+		<h1><span class="heading-icon"></span> <?php echo $ezset->data->get('originTitle') ?></h1>
+
+        <?php if ($this->tpl->countModules('heading-content')): ?>
+            <div class="heading-content lead row inner-top-xs">
+                <div class="col-md-6 col-md-offset-3">
+                    <jdoc:include type="modules" name="heading-content" style="raw" />
+                </div>
+            </div>
+        <?php endif; ?>
 	</div>
 </section>

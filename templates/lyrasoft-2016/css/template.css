@@ -1,16 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
   font-size: 16px;
   margin-top: 50px;
+  line-height: 175%;
 }
-body.layout-landing {
+body.tmpl-layout-landing {
   margin-top: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Montserrat, 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold, 'PingFang TC', '微軟正黑體', sans-serif;
+}
+a {
+  color: #3671B2;
+}
+a:hover {
+  color: #2a588b;
+  text-decoration: none;
+}
+p {
+  margin: 1em 0;
 }
 #banner {
   background-color: #384761;
   color: white;
 }
 #what-we-made {
-  background-color: #eb4d46;
+  background-color: #EB4D46;
   color: white;
 }
 #our-works {
@@ -18,7 +37,7 @@ body.layout-landing {
   color: white;
 }
 #footer {
-  background-color: #3f8dca;
+  background-color: #3F8DCA;
   color: white;
 }
 #copyright {
@@ -70,8 +89,22 @@ header > .navbar .navbar-inner {
 #banner .banner-text > div {
   margin-top: -10em;
 }
+.page-header {
+  border: none;
+  margin: 70px 0 50px 0;
+}
+.page-header h2 {
+  font-size: 36px;
+  text-align: center;
+}
+.page-header a {
+  color: #333;
+}
+.page-header a:hover {
+  color: #444;
+}
 #page-heading {
-  background-color: #eb4d46;
+  background-color: #EB4D46;
   color: white;
 }
 #page-heading a {
@@ -84,5 +117,26 @@ header > .navbar .navbar-inner {
   margin: 0;
 }
 #page-heading h1 {
-  font-size: 48px;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#page-heading p:last-child {
+  margin-bottom: 0;
+}
+#footer h1,
+#footer h2,
+#footer h3,
+#footer h4 {
+  text-transform: uppercase;
+}
+#footer a {
+  color: white;
+}
+#footer a:hover {
+  color: rgba(255, 255, 255, 0.7);
+  background: none;
+}
+#footer .nav a {
+  padding-left: 3px;
 }

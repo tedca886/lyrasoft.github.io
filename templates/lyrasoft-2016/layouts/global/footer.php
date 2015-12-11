@@ -6,22 +6,25 @@
  * @license    GNU General Public License version 2 or later.
  */
 
-?>
-<footer id="footer">
-	<div class="container inner-md">
-		<div class="row">
-			<div class="col-md-offset-3 col-md-6 text-center">
+use Astra\Module\Position;
 
-				<p>
-					Footer
-				</p>
-			</div>
-		</div>
-	</div>
-</footer>
+?>
+<?php if (Position::getBlockPositions('footer')): ?>
+    <footer id="footer">
+        <div class="container inner-md">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="row">
+                        <?php echo Position::render('footer'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<?php endif; ?>
 
 <aside id="copyright">
-	<div class="container inner-sm">
-		Copyright
+	<div class="container inner-sm text-center">
+        © <?php echo gmdate('Y'); ?> LYRASOFT - MegaMount, inc.
 	</div>
 </aside>
