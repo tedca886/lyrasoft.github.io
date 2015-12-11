@@ -20,22 +20,6 @@ $layout = $tpl::isHome() ? 'landing' : $tpl->getTemplate()->params->get('layout'
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="<?php echo $this->tpl->baseurl ?>/templates/<?php echo $this->tpl->template; ?>/images/favicon.ico" type="image/x-icon">
 <jdoc:include type="head" />
-  <script>
-    function slider() {
-      if (document.body.scrollTop > 20) //Show the slider after scrolling down 100px
-        jQuery('header > .navbar').stop().animate({"top": '0'});
-      else
-        jQuery('header > .navbar').stop().animate({"top": '-100'}); //200 matches the width of the slider
-    }
-
-    jQuery(window).scroll(function () {
-      slider();
-    });
-
-    jQuery(document).ready(function () {
-      slider();
-    });
-  </script>
 </head>
 <body class="<?php echo $tpl::getOs(); ?> layout-<?php echo str_replace('.', '-', $layout); ?> no-js">
 <?php echo (new \Astra\Layout\FileLayout('tmpl.' . $tmpl))->render(array('layout' => $layout)); ?>

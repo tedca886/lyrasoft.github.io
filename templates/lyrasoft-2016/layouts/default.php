@@ -11,15 +11,15 @@ use Astra\Module\Position;
 $tpl = $displayData['template'];
 ?>
 
-<?php echo (new \Astra\Layout\FileLayout('heading', $this->tpl))->render(null); ?>
+<?php echo (new \Astra\Layout\FileLayout('global.heading', $this->tpl))->render(null); ?>
 <!--MESSAGE-->
 	<div id="message">
 		<jdoc:include type="message" />
 	</div>
 
 <!--MAIN BODY-->
-<section id="body" class="main-block">
-	<div class="container-fluid">
+<section id="body" class="inner-md">
+	<div class="container">
 		<!-- Breadcrumbs -->
 		<?php if ($tpl->countModules('breadcrumbs')): ?>
 			<section id="breadcrumbs">

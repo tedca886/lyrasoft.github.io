@@ -13,7 +13,7 @@ $layout = $displayData['layout'];
 <div id="outer-wrap">
 
 	<header>
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
 
@@ -31,4 +31,6 @@ $layout = $displayData['layout'];
 	<?php
 	echo (new \Astra\Layout\FileLayout($layout, $document))->render(array('template' => $document, 'params' => $this->tpl->params));
 	?>
+
+	<?php echo (new \Astra\Layout\FileLayout('global.footer'))->render(null); ?>
 </div>
