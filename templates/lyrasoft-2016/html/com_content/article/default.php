@@ -19,8 +19,15 @@ $canEdit = $params->get('access-edit');
 $user    = JFactory::getUser();
 $info    = $params->get('info_block_position', 0);
 JHtml::_('behavior.caption');
+
+if (class_exists('Ezset') && $this->pageclass_sfx == 'work')
+{
+    $ezset = Ezset::getInstance();
+    $ezset->data->headingContent = $this->item->introtext;
+}
 ?>
-<div class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="http://schema.org/Article">
+<div class="item-page-outer row">
+<div class="item-page<?php echo $this->pageclass_sfx; ?> col-md-offset-2 col-md-8" itemscope itemtype="http://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
@@ -108,7 +115,7 @@ JHtml::_('behavior.caption');
 	<?php if (isset ($this->item->toc)) :
 		echo $this->item->toc;
 	endif; ?>
-	<div itemprop="articleBody">
+	<div class="article-content" itemprop="articleBody">
 		<?php echo $this->item->text; ?>
 	</div>
 
@@ -165,4 +172,5 @@ JHtml::_('behavior.caption');
 	?>
 	<?php endif; ?>
 	<?php echo $this->item->event->afterDisplayContent; ?>
+</div>
 </div>

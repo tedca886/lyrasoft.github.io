@@ -1,7 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+.jf-loading .chfont {
+  /*載入中不顯示*/
+  opacity: 0;
+  visibility: hidden;
+}
+.jf-active .chfont {
+  /*如果處理成功，直接顯示*/
+  opacity: 1;
+  visibility: visible;
+}
+.jf-inactive .chfont {
+  /*如果處理失敗，直接顯示*/
+  opacity: 1;
+  visibility: visible;
+}
+.jf-active .chfont,
+.jf-inactive .chfont {
+  /*處理成功或失敗，都以漸變顯示*/
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+}
+.chfont {
+  font-weight: 700;
+}
 body {
   font-size: 16px;
-  margin-top: 50px;
+  margin-top: 55px;
   line-height: 175%;
 }
 body.tmpl-layout-landing {
@@ -12,7 +38,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: Montserrat, 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold, 'PingFang TC', '微軟正黑體', sans-serif;
+  font-family: Montserrat, 'adobe-fan-heiti-std', sans-serif;
 }
 a {
   color: #3671B2;
@@ -89,6 +115,9 @@ header > .navbar .navbar-inner {
 #banner .banner-text > div {
   margin-top: -10em;
 }
+.item-pagework img {
+  max-width: 100%;
+}
 .page-header {
   border: none;
   margin: 70px 0 50px 0;
@@ -102,6 +131,71 @@ header > .navbar .navbar-inner {
 }
 .page-header a:hover {
   color: #444;
+}
+body.work.view-article #body > .container {
+  width: 100%;
+}
+body.work.view-article .item-page-outer {
+  margin: 0;
+}
+body.work.view-article .item-pagework {
+  float: none;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+body.work.view-article .item-pagework .article-content > * {
+  width: 780px;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.work-item {
+  overflow: hidden;
+  height: 500px;
+  border: 1px solid #eee;
+  background-color: #eee;
+}
+.work-item .work-item-inner {
+  display: table;
+  width: 100%;
+}
+.work-item .work-item-cover {
+  height: 500px;
+  overflow: hidden;
+  color: white;
+  padding: 0 120px;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgba(56, 71, 97, 0.95);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.work-item .work-item-cover:hover {
+  color: white;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.work-item .work-item-cover h2 {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 60px;
+}
+.work-item .work-item-cover .work-label {
+  background: #EB4D46;
+  text-transform: uppercase;
+  padding: 4px 5px;
+  border-radius: 3px;
+  font-size: .7em;
+}
+.work-item .work-item-cover .work-intro p:last-child {
+  margin-bottom: 0;
 }
 #page-heading {
   background-color: #EB4D46;

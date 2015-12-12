@@ -18,7 +18,7 @@ $tpl = $displayData['template'];
 	</div>
 
 <!--MAIN BODY-->
-<section id="body" class="inner-md">
+<section id="body" class="inner-md outer-bottom-md">
 	<div class="container">
 		<!-- Breadcrumbs -->
 		<?php if ($tpl->countModules('breadcrumbs')): ?>
@@ -35,9 +35,9 @@ $tpl = $displayData['template'];
 			</div>
 		<?php endif; ?>
 
-		<div class="main-content row">
+		<div class="main-content">
 
-            <div class="col-md-offset-2 col-md-8">
+            <div class="">
 
                 <!--LEFT-->
                 <div class="col-left">

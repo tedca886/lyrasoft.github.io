@@ -20,7 +20,14 @@ class AcmeListener extends \JEvent
 	 */
 	public function onAfterInitialise()
 	{
+		$app = \JFactory::getApplication();
 
+		if ($app->isSite())
+		{
+			include_once JPATH_THEMES . '/lyrasoft-2016/src/Astra/Document/ErrorDocument.php';
+
+			class_alias('Astra\Document\ErrorDocument', 'JDocumentError');
+		}
 	}
 
 	/**

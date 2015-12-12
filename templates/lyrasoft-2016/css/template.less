@@ -22,9 +22,34 @@
 // Global
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+.jf-loading .chfont { /*載入中不顯示*/
+    opacity: 0;
+    visibility: hidden;
+}
+.jf-active .chfont { /*如果處理成功，直接顯示*/
+    opacity: 1;
+    visibility: visible;
+}
+.jf-inactive .chfont {/*如果處理失敗，直接顯示*/
+    opacity: 1;
+    visibility: visible;
+}
+
+.jf-active .chfont, .jf-inactive .chfont { /*處理成功或失敗，都以漸變顯示*/
+    -webkit-transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+}
+
+.chfont {
+    font-weight: 700;
+}
+
+
 body {
 	font-size: 16px;
-	margin-top: 50px;
+	margin-top: 55px;
     line-height: 175%;
 
 	&.tmpl-layout-landing {
@@ -34,7 +59,12 @@ body {
 
 h1, h2, h3, h4, h5 {
     // font-family: "source-han-sans-traditional";
-    font-family: Montserrat, 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold, 'PingFang TC', '微軟正黑體', sans-serif;
+    font-family: Montserrat,
+    'adobe-fan-heiti-std',
+    // 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold,
+    // 'PingFang TC',
+    // '微軟正黑體',
+    sans-serif;
 }
 
 a {
@@ -149,6 +179,14 @@ header > .navbar {
 	}
 }
 
+// Main Body
+.item-pagework {
+    img {
+        max-width: 100%;
+    }
+}
+
+
 // Article
 .page-header {
     border: none;
@@ -164,6 +202,92 @@ header > .navbar {
 
         &:hover {
             color: #444;
+        }
+    }
+}
+
+// Work
+body.work.view-article {
+    #body > .container {
+        width: 100%;
+    }
+
+    .item-page-outer {
+        margin: 0;
+    }
+
+    .item-pagework {
+        float: none;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+
+        .article-content > * {
+            width: 780px;
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+.work-item {
+    overflow: hidden;
+    height: 500px;
+    border: 1px solid #eee;
+    background-color: #eee;
+
+    .work-item-inner {
+        display: table;
+        width: 100%;
+        // box-sizing: border-box;
+    }
+
+    .work-item-cover {
+        // display: block;
+        height: 500px;
+        overflow: hidden;
+        color: white;
+        // padding: 60px 60px;
+        padding: 0 120px;
+        display: table-cell;
+        vertical-align: middle;
+        background-color: fade(@blue1, 95%);
+        opacity: 0;
+
+        -webkit-transition: opacity .3s ease-out;
+        -moz-transition: opacity .3s ease-out;
+        -o-transition: opacity .3s ease-out;
+        transition: opacity .3s ease-out;
+
+        &:hover {
+            color: white;
+            opacity: 1;
+            -webkit-transition: opacity .3s ease-out;
+            -moz-transition: opacity .3s ease-out;
+            -o-transition: opacity .3s ease-out;
+            transition: opacity .3s ease-out;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            margin-top: 0;
+            font-size: 60px;
+        }
+
+        .work-label {
+            background: @red1;
+            text-transform: uppercase;
+            padding: 4px 5px;
+            border-radius: 3px;
+            font-size: .7em;
+        }
+
+        .work-intro {
+
+            p:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }

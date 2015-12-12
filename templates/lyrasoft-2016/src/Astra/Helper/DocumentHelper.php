@@ -28,4 +28,18 @@ abstract class DocumentHelper
 
 		return $title[0];
 	}
+
+	/**
+	 * getMenuParams
+	 *
+	 * @return  \JRegistry
+	 *
+	 * @throws \Exception
+	 */
+	public static function getMenuParams()
+	{
+		$menu = \JFactory::getApplication()->getMenu();
+
+		return $menu->getActive()->params;
+	}
 }

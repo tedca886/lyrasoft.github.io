@@ -14,6 +14,8 @@ $layout = $tpl::isHome() ? 'landing' : $tpl->getTemplate()->params->get('layout'
 
 \Windwalker\Helper\ProfilerHelper::mark('Template Layout: ' . $layout, 'Application');
 
+$menuParams = \Astra\Helper\DocumentHelper::getMenuParams();
+
 ?><!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->tpl->language; ?>" lang="<?php echo $this->tpl->language; ?>" dir="<?php echo $this->tpl->direction; ?>">
 <head>
@@ -32,8 +34,10 @@ $layout = $tpl::isHome() ? 'landing' : $tpl->getTemplate()->params->get('layout'
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
     </script>
+    <!-- Justfont -->
+    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-38549.js"></script>
 </head>
-<body class="<?php echo $tpl::getOs(); ?> tmpl-layout-<?php echo str_replace('.', '-', $layout); ?> <?php echo \Astra\Helper\StyleHelper::getBodyClass(); ?> <?php echo \Astra\Helper\StyleHelper::getPathClass(); ?>">
+<body class="<?php echo $tpl::getOs(); ?> tmpl-layout-<?php echo str_replace('.', '-', $layout); ?> <?php echo \Astra\Helper\StyleHelper::getBodyClass(); ?> path-<?php echo \Astra\Helper\StyleHelper::getPathClass(); ?> <?php echo $menuParams->get('pageclass_sfx') ?>">
 <?php echo (new \Astra\Layout\FileLayout('tmpl.' . $tmpl))->render(array('layout' => $layout)); ?>
 </body>
 </html>

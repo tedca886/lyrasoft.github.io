@@ -11,11 +11,17 @@ $ezset = Ezset::getInstance();
 ?>
 <section id="page-heading" class="inner-md">
 	<div class="container text-center">
-		<h1><span class="heading-icon"></span> <?php echo $ezset->data->get('originTitle') ?></h1>
+		<h1 class="chfont"><span class="heading-icon"></span> <?php echo $ezset->data->get('originTitle') ?></h1>
 
-        <?php if ($this->tpl->countModules('heading-content')): ?>
+        <?php if ($ezset->data->headingContent): ?>
             <div class="heading-content lead row inner-top-xs">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-8 col-md-offset-2">
+                    <?php echo $ezset->data->headingContent; ?>
+                </div>
+            </div>
+        <?php elseif ($this->tpl->countModules('heading-content')): ?>
+            <div class="heading-content lead row inner-top-xs">
+                <div class="col-md-8 col-md-offset-2">
                     <jdoc:include type="modules" name="heading-content" style="raw" />
                 </div>
             </div>

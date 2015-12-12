@@ -29,8 +29,9 @@ class StyleHelper
 		$option = str_replace('com_', '', $input->get('option'));
 		$view = $input->get('view');
 		$layout = $input->get('layout', 'default');
+		$itemid = $input->get('Itemid');
 
-		return "option-$option view-$view layout-$layout";
+		return "option-$option view-$view layout-$layout itemid-$itemid";
 	}
 
 	/**
