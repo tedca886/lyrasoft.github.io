@@ -23,8 +23,16 @@ defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 JHtml::_('behavior.caption');
+
+$columnClass = ' col-md-offset-2 col-md-8';
+
+if (strpos($this->pageclass_sfx, 'fullwidth') !== false)
+{
+	$columnClass = '';
+}
 ?>
-<div class="blog<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="http://schema.org/Blog">
+<div class="blog-outer row">
+<div class="blog<?php echo $this->pageclass_sfx; ?> <?php echo $columnClass; ?>" itemscope itemtype="http://schema.org/Blog">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<div class="page-header">
 			<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
@@ -129,3 +137,4 @@ JHtml::_('behavior.caption');
 </div>
 
 <?php endif; ?>
+</div>

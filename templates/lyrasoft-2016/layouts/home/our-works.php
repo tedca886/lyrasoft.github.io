@@ -7,7 +7,7 @@
  */
 
 ?>
-<section id="our-works">
+<section id="our-works" class="landing-block inner-md">
 	<div class="container inner-md">
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6 text-center">

@@ -37,28 +37,51 @@ $tpl = $displayData['template'];
 
 		<div class="main-content">
 
-            <div class="">
+            <div class="row">
 
+                <?php
+                if ($this->tpl->countModules('left') && $this->tpl->countModules('right'))
+                {
+                    $cols = [3, 6, 3];
+                }
+                elseif ($this->tpl->countModules('left'))
+                {
+                    $cols = [3, 9, 0];
+                }
+                elseif ($this->tpl->countModules('right'))
+                {
+                    $cols = [0, 9, 3];
+                }
+                else
+                {
+                    $cols = [0, 12, 0];
+                }
+                ?>
+
+                <?php if ($cols[0]): ?>
                 <!--LEFT-->
-                <div class="col-left">
+                <div class="col-left col-md-<?php echo $cols[0]; ?>">
                     <div class="col-left-inner">
                         <jdoc:include type="modules" name="left" style="xhtml" />
                     </div>
                 </div>
+                <?php endif; ?>
 
                 <!--MAIN CONTENT-->
-                <div id="main-content" class="">
+                <div id="col-main" class="col-md-<?php echo $cols[1]; ?>">
                     <div id="main-content-inner">
                         <jdoc:include type="component" />
                     </div>
                 </div>
 
+                <?php if ($cols[2]): ?>
                 <!--RIGHT-->
-                <div class="col-right">
+                <div class="col-right col-md-<?php echo $cols[2]; ?>">
                     <div class="col-right-inner">
                         <jdoc:include type="modules" name="right" style="xhtml" />
                     </div>
                 </div>
+                <?php endif; ?>
 
             </div>
 

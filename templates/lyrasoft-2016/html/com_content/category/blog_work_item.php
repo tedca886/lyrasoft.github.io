@@ -39,12 +39,13 @@ $images = json_decode($this->item->images);
 <?php endif; ?>
 
 <div class="work-item outer-bottom-sm" style="background-image: url(<?php echo $images->image_intro ?>); background-size: cover;">
+<!--    <img class="work-placeholder" src="--><?php //echo JUri::root() . 'templates/lyrasoft-2016/images/work/placeholder.png' ?><!--" alt="Placeholder">-->
     <div class="work-item-inner">
         <a class="work-item-cover" href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)); ?>">
             <h2 itemprop="name"><?php echo $this->item->title; ?></h2>
-        <span class="work-label">
-            Case study
-        </span>
+                <span class="work-label">
+                Case study
+                </span>
             <div class="work-intro">
                 <?php echo $this->item->introtext; ?>
             </div>

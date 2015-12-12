@@ -9,7 +9,7 @@
 ?>
 <script>
 	function slider() {
-		if (document.body.scrollTop > 20) //Show the slider after scrolling down 100px
+		if (document.body.scrollTop > 100) //Show the slider after scrolling down 100px
 			jQuery('header > .navbar').stop().animate({"top": '0'});
 		else
 			jQuery('header > .navbar').stop().animate({"top": '-70'}); //200 matches the width of the slider

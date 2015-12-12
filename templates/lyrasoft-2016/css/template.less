@@ -21,6 +21,7 @@
 
 // Global
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:400,300);
 
 //.jf-loading .chfont { /*載入中不顯示*/
 //    opacity: 0;
@@ -55,6 +56,8 @@ body {
 	&.tmpl-layout-landing {
 		margin-top: 0;
 	}
+
+    font-family: Roboto, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
@@ -65,6 +68,8 @@ h1, h2, h3, h4, h5 {
     'PingFang TC',
     '微軟正黑體',
     sans-serif;
+
+    font-weight: 700;
 }
 
 a {
@@ -74,29 +79,23 @@ a {
         color: darken(@blue3, 10%);
         text-decoration: none;
     }
+
+    &:active, &:visited, &:focus {
+        text-decoration: none;
+    }
 }
 
 p {
     margin: 1em 0;
 }
 
+.feature-text {
+    line-height: 200%;
+}
+
 // Test color
 #banner {
 	background-color: @blue1;
-	color: white;
-}
-
-#who-we-are {
-	// background-color: @green1;
-}
-
-#what-we-made {
-	background-color: @red1;
-	color: white;
-}
-
-#our-works {
-	background-color: #333;
 	color: white;
 }
 
@@ -117,6 +116,10 @@ header > .navbar {
 	background: url(../images/color-bar-3.svg) repeat-x top left;
 	border: 0;
 
+    text-transform: uppercase;
+    font-size: .85em;
+    font-weight: 700;
+
 	.navbar-inner {
 		background-color: #111;
 	}
@@ -133,10 +136,13 @@ header > .navbar {
 // Banner
 #banner {
 
-	background: url(https://drscdn.500px.org/photo/71865039/m%3D2048/77e55a2fea2cc725b7ae0da89d1831f7) no-repeat center top;
+	background: url(../images/company.svg) no-repeat center top;
 	background-size: cover;
 
 	.banner-top-menu {
+        text-transform: uppercase;
+        font-size: .85em;
+
 		.navbar {
 			background: none;
 			border: none;
@@ -144,8 +150,13 @@ header > .navbar {
 		}
 
 		a {
-			color: rgba(255,255,255,.6);
+			color: white;
+            opacity: .4;
+            padding: 25px 30px;
 
+            &:hover {
+                opacity: 1;
+            }
 		}
 
 		.navbar, .navbar-nav, .nav, ul.nav>li {
@@ -167,16 +178,49 @@ header > .navbar {
 	}
 
 	.banner-text {
-		height: 95vh;
+		height: 92vh;
 
 		display: table-cell;
 		vertical-align: middle;
 		width: 100%;
 
 		> div {
-			margin-top: -10em;
+			margin-top: -7em;
 		}
 	}
+}
+
+// Landing
+.landing-block {
+    h2 {
+        font-size: 36px;
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    p {
+        line-height: 2.5em;
+    }
+}
+
+#who-we-are {
+    h2 {
+        color: @blue1;
+    }
+
+    p {
+        color: @blue1;
+    }
+}
+
+#what-we-made {
+    background-color: @red1;
+    color: white;
+}
+
+#our-works {
+    background-color: #333;
+    color: white;
 }
 
 // Main Body
@@ -186,6 +230,15 @@ header > .navbar {
     }
 }
 
+// About
+body.path-about #page-heading {
+    background-color: @blue1;
+}
+
+// Service
+body.path-service #page-heading {
+    background-color: @orange;
+}
 
 // Article
 .page-header {
@@ -203,6 +256,61 @@ header > .navbar {
         &:hover {
             color: #444;
         }
+    }
+}
+
+.article-content {
+    color: #666;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #111;
+        margin-top: 1.3em;
+        margin-bottom: 1.3em;
+    }
+
+    hr {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    pre {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+}
+
+// Blog
+.article-info {
+    position: relative;
+    top :-55px;
+
+    dd {
+        display: inline-block;
+        margin: 0 8px;
+    }
+}
+
+body.view-article .article-info {
+    top: -35px;
+}
+
+body.itemid-127,
+body.itemid-128,
+body.itemid-130,
+body.itemid-132 {
+    #page-heading {
+        background-color: @green2;
+    }
+}
+
+body.view-category.layout-blog .col-right-inner {
+    margin-top: 70px;
+}
+
+// Opensource
+body.itemid-122 {
+    #page-heading {
+        background-color: @purple1;
     }
 }
 
@@ -236,13 +344,16 @@ body.work.view-article {
     height: 500px;
     border: 1px solid #eee;
     background-color: #eee;
+    background-position: center center;
+    position: relative;
 
     .work-item-inner {
         display: table;
         width: 100%;
         // box-sizing: border-box;
+        position: absolute;
+        top :0;
     }
-
     .work-item-cover {
         // display: block;
         height: 500px;
@@ -252,7 +363,7 @@ body.work.view-article {
         padding: 0 120px;
         display: table-cell;
         vertical-align: middle;
-        background-color: fade(@blue1, 95%);
+        background-color: fade(@blue1, 90%);
         opacity: 0;
 
         -webkit-transition: opacity .3s ease-out;
@@ -278,12 +389,18 @@ body.work.view-article {
         .work-label {
             background: @red1;
             text-transform: uppercase;
-            padding: 4px 5px;
+            padding: 0 11px;
             border-radius: 3px;
             font-size: .7em;
+            margin-bottom: 8px;
+            display: inline-block;
         }
 
         .work-intro {
+
+            p {
+                margin: .5em 0;
+            }
 
             p:last-child {
                 margin-bottom: 0;
@@ -318,6 +435,28 @@ body.work.view-article {
     p:last-child {
         margin-bottom: 0;
     }
+
+    .breadcrumb {
+        margin: 0;
+        color: white;
+        background: none;
+
+        li {
+            opacity: .8;
+
+            &.active {
+                opacity: 1;
+                color: white;
+            }
+        }
+    }
+}
+
+// Contact
+body.itemid-116 {
+    #page-heading {
+        background-color: @blue2;
+    }
 }
 
 // Footer
@@ -336,6 +475,10 @@ body.work.view-article {
     }
 
     .nav a {
-        padding-left: 3px;
+        padding: 5px 3px;
+
+        &:focus {
+            background: none;
+        }
     }
 }

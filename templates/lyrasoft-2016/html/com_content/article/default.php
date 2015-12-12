@@ -20,14 +20,21 @@ $user    = JFactory::getUser();
 $info    = $params->get('info_block_position', 0);
 JHtml::_('behavior.caption');
 
-if (class_exists('Ezset') && $this->pageclass_sfx == 'work')
+$columnClass = ' col-md-offset-2 col-md-8';
+
+if (class_exists('Ezset') && strpos($this->pageclass_sfx, 'work') !== false)
 {
     $ezset = Ezset::getInstance();
     $ezset->data->headingContent = $this->item->introtext;
 }
+
+if (strpos($this->pageclass_sfx, 'fullwidth') !== false)
+{
+    $columnClass = '';
+}
 ?>
 <div class="item-page-outer row">
-<div class="item-page<?php echo $this->pageclass_sfx; ?> col-md-offset-2 col-md-8" itemscope itemtype="http://schema.org/Article">
+<div class="item-page<?php echo $this->pageclass_sfx; ?><?php echo $columnClass; ?>" itemscope itemtype="http://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
