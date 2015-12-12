@@ -11,7 +11,7 @@ $ezset = Ezset::getInstance();
 ?>
 <section id="page-heading" class="inner-md">
 	<div class="container text-center">
-		<h1 class="chfont"><span class="heading-icon"></span> <?php echo $ezset->data->get('originTitle') ?></h1>
+		<h1 class=""><span class="heading-icon"></span> <?php echo $ezset->data->get('originTitle') ?></h1>
 
         <?php if ($ezset->data->headingContent): ?>
             <div class="heading-content lead row inner-top-xs">
