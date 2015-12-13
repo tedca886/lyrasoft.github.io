@@ -22,6 +22,7 @@ $menuParams = \Astra\Helper\DocumentHelper::getMenuParams();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="<?php echo $this->tpl->baseurl ?>/templates/<?php echo $this->tpl->template; ?>/images/favicon.ico" type="image/x-icon">
 <jdoc:include type="head" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="<?php echo $tpl::getOs(); ?> tmpl-layout-<?php echo str_replace('.', '-', $layout); ?> <?php echo \Astra\Helper\StyleHelper::getBodyClass(); ?> path-<?php echo \Astra\Helper\StyleHelper::getPathClass(); ?> <?php echo $menuParams->get('pageclass_sfx') ?>">
 <?php echo (new \Astra\Layout\FileLayout('tmpl.' . $tmpl))->render(array('layout' => $layout)); ?>

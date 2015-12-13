@@ -19,6 +19,18 @@
 @purple1: #C1A5CD;
 @purple2: #697FBA;
 
+.text-font() {
+    font-family: Roboto, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+}
+.title-font() {
+    font-family: Montserrat,
+    'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold,
+    'PingFang TC',
+    '微軟正黑體',
+    sans-serif;
+    font-weight: 700;
+}
+
 // Global
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:400,300);
@@ -56,20 +68,14 @@ body {
 	&.tmpl-layout-landing {
 		margin-top: 0;
 	}
-
-    font-family: Roboto, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-    // font-family: "source-han-sans-traditional";
-    font-family: Montserrat,
-    // 'adobe-fan-heiti-std',
-    'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold,
-    'PingFang TC',
-    '微軟正黑體',
-    sans-serif;
+body, button, .btn, input, select, textarea {
+    .text-font();
+}
 
-    font-weight: 700;
+h1, h2, h3, h4, h5, h6 {
+    .title-font();
 }
 
 a {
@@ -123,6 +129,11 @@ header > .navbar {
 	.navbar-inner {
 		background-color: #111;
 	}
+
+    .navbar-brand {
+        .title-font();
+    }
+
 	//border: none;
 	//
 	//a {
@@ -136,8 +147,12 @@ header > .navbar {
 // Banner
 #banner {
 
-	background: url(../images/company.svg) no-repeat center top;
+	background: url(../images/banner-home.jpg) no-repeat center top;
 	background-size: cover;
+
+    .banner-mask {
+        // background-color: fade(@blue1, 10%);
+    }
 
 	.banner-top-menu {
         text-transform: uppercase;
@@ -151,7 +166,7 @@ header > .navbar {
 
 		a {
 			color: white;
-            opacity: .4;
+            opacity: .6;
             padding: 25px 30px;
 
             &:hover {
@@ -201,6 +216,10 @@ header > .navbar {
     p {
         line-height: 2.5em;
     }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 #who-we-are {
@@ -221,6 +240,36 @@ header > .navbar {
 #our-works {
     background-color: #333;
     color: white;
+
+    .work-item-cover {
+        display: block;
+        opacity: .8;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+#who-we-are{
+    a {
+        color: @blue1;
+
+        &:hover {
+            color: fade(@blue1, 80%);
+        }
+    }
+}
+
+#what-we-made,
+#our-works {
+    a {
+        color: rgba(255,255,255,.7);
+
+        &:hover {
+            color: white;
+        }
+    }
 }
 
 // Main Body
@@ -277,6 +326,10 @@ body.path-service #page-heading {
         margin-top: 35px;
         margin-bottom: 35px;
     }
+
+    img.akmarkdown-img {
+        border: 1px solid #eee;
+    }
 }
 
 // Blog
@@ -330,11 +383,24 @@ body.work.view-article {
         width: 100%;
         max-width: 100%;
 
-        .article-content > * {
+        .article-content .akmarkdown-content > * {
             width: 780px;
             max-width: 100%;
             margin-right: auto;
             margin-left: auto;
+        }
+
+        img {
+            margin: 40px 0;
+        }
+
+        img.img-large, .large-block {
+            max-width: 100%;
+            width: 1200px;
+        }
+
+        img.img-full, .full-block {
+            max-width: 100%;
         }
     }
 }
@@ -344,7 +410,7 @@ body.work.view-article {
     height: 500px;
     border: 1px solid #eee;
     background-color: #eee;
-    background-position: center left;
+    background-position: top left;
     position: relative;
 
     .work-item-inner {
@@ -457,6 +523,48 @@ body.itemid-116 {
     #page-heading {
         background-color: @blue2;
     }
+
+    #body {
+        background-color: @blue2;
+        color: white;
+
+        margin: 0;
+        padding-top: 0;
+
+        .article-content {
+            color: white;
+        }
+
+        a {
+            color: lighten(@blue2, 50%);
+        }
+
+        input, select, textarea {
+            border: none;
+            font-size: 18px;
+            padding: 22px 19px;
+            margin: 0;
+            background-color: @blue1;
+            color: white;
+        }
+
+        select {
+            height: auto;
+            padding: 10px 19px;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        .contact-submit {
+            margin-top: 50px;
+            background-color: @blue1;
+            border: none;
+            margin-left: -15px;
+            padding: 15px 55px;
+        }
+    }
 }
 
 // Footer
@@ -479,6 +587,16 @@ body.itemid-116 {
 
         &:focus {
             background: none;
+        }
+    }
+}
+
+#copyright {
+    a {
+        color: rgba(255,255,255,.7);
+
+        &:hover {
+            color: white;
         }
     }
 }

@@ -14,7 +14,7 @@ use Astra\Module\Position;
         <div class="container inner-md">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
-                    <div class="row">
+                    <div class="row-fluid">
                         <?php echo Position::render('footer'); ?>
                     </div>
                 </div>
@@ -25,6 +25,6 @@ use Astra\Module\Position;
 
 <aside id="copyright">
 	<div class="container inner-sm text-center">
-        © <?php echo gmdate('Y'); ?> LYRASOFT - MegaMount, inc.
+        © <?php echo gmdate('Y'); ?> LYRASOFT - <a target="_blank" href="http://megamount.tw">MegaMount, inc.</a>
 	</div>
 </aside>

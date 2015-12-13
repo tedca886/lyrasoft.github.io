@@ -181,3 +181,15 @@ if (strpos($this->pageclass_sfx, 'fullwidth') !== false)
 	<?php echo $this->item->event->afterDisplayContent; ?>
 </div>
 </div>
+
+<script>
+    jQuery(document).ready(function($)
+    {
+        var imgs = $('.article-content').find('p > img.img-large, p > img.img-full');
+
+        var p = imgs.parent();
+//        p.css('margin-left', 0);
+//        p.css('margin-right', 0);
+        p.css('width', '100%');
+    });
+</script>

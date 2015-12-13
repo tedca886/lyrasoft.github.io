@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Dashboard v.2</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="css/plugins/fullcalendar/fullcalendar.print.css" rel='stylesheet' media='print'>
+
+
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-38549.js"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', 'sourcehansans-tc', "Microsoft JhengHei", sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body class="skin-3">
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/a6.jpg" width="48" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Cristina Pietro</strong>
+                             </span> <span class="text-muted text-xs block">Admin <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        POS
+                    </div>
+                </li>
+                <li class="">
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">總管</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="index.html">控制台</a></li>
+                        <li class="active"><a href="dashboard_2.html">銷售狀況</a></li>
+                        <li><a href="dashboard_3.html">月報表 <span class="label label-primary pull-right">NEW</span></a></li>
+                        <li><a href="dashboard_4_1.html">員工打卡</a></li>
+                        <!--<li><a href="dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>-->
+                    </ul>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">菜單管理</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">座位管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
+                        <li><a href="graph_chartjs.html">Chart.js</a></li>
+                        <li><a href="graph_chartist.html">Chartist</a></li>
+                        <li><a href="graph_peity.html">Peity Charts</a></li>
+                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
+                    </ul>
+                </li>
+                <!--<li>-->
+                    <!--<a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label"> </span><span class="label label-warning pull-right">16/24</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="mailbox.html">Inbox</a></li>-->
+                        <!--<li><a href="mail_detail.html">Email view</a></li>-->
+                        <!--<li><a href="mail_compose.html">Compose email</a></li>-->
+                        <!--<li><a href="email_template.html">Email templates</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <li class="active">
+                    <a href="metrics.html"><i class="fa fa-user"></i> <span class="nav-label">員工管理</span>  </a>
+                </li>
+                <!--<li>-->
+                    <!--<a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="form_basic.html">Basic form</a></li>-->
+                        <!--<li><a href="form_advanced.html">Advanced Plugins</a></li>-->
+                        <!--<li><a href="form_wizard.html">Wizard</a></li>-->
+                        <!--<li><a href="form_file_upload.html">File Upload</a></li>-->
+                        <!--<li><a href="form_editors.html">Text Editor</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="contacts.html">Contacts</a></li>-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="profile_2.html">Profile v.2</a></li>-->
+                        <!--<li><a href="contacts_2.html">Contacts v.2</a></li>-->
+                        <!--<li><a href="projects.html">Projects</a></li>-->
+                        <!--<li><a href="project_detail.html">Project detail</a></li>-->
+                        <!--<li><a href="teams_board.html">Teams board</a></li>-->
+                        <!--<li><a href="social_feed.html">Social feed</a></li>-->
+                        <!--<li><a href="clients.html">Clients</a></li>-->
+                        <!--<li><a href="full_height.html">Outlook view</a></li>-->
+                        <!--<li><a href="vote_list.html">Vote list</a></li>-->
+                        <!--<li><a href="file_manager.html">File manager</a></li>-->
+                        <!--<li><a href="calendar.html">Calendar</a></li>-->
+                        <!--<li><a href="issue_tracker.html">Issue tracker</a></li>-->
+                        <!--<li><a href="blog.html">Blog</a></li>-->
+                        <!--<li><a href="article.html">Article</a></li>-->
+                        <!--<li><a href="faq.html">FAQ</a></li>-->
+                        <!--<li><a href="timeline.html">Timeline</a></li>-->
+                        <!--<li><a href="pin_board.html">Pin board</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="search_results.html">Search results</a></li>-->
+                        <!--<li><a href="lockscreen.html">Lockscreen</a></li>-->
+                        <!--<li><a href="invoice.html">Invoice</a></li>-->
+                        <!--<li><a href="login.html">Login</a></li>-->
+                        <!--<li><a href="login_two_columns.html">Login v.2</a></li>-->
+                        <!--<li><a href="forgot_password.html">Forget password</a></li>-->
+                        <!--<li><a href="register.html">Register</a></li>-->
+                        <!--<li><a href="404.html">404 Page</a></li>-->
+                        <!--<li><a href="500.html">500 Page</a></li>-->
+                        <!--<li><a href="empty_page.html">Empty page</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="toastr_notifications.html">Notification</a></li>-->
+                        <!--<li><a href="nestable_list.html">Nestable list</a></li>-->
+                        <!--<li><a href="agile_board.html">Agile board</a></li>-->
+                        <!--<li><a href="timeline_2.html">Timeline v.2</a></li>-->
+                        <!--<li><a href="diff.html">Diff</a></li>-->
+                        <!--<li><a href="sweetalert.html">Sweet alert</a></li>-->
+                        <!--<li><a href="idle_timer.html">Idle timer</a></li>-->
+                        <!--<li><a href="spinners.html">Spinners</a></li>-->
+                        <!--<li><a href="tinycon.html">Live favicon</a></li>-->
+                        <!--<li><a href="google_maps.html">Google maps</a></li>-->
+                        <!--<li><a href="code_editor.html">Code editor</a></li>-->
+                        <!--<li><a href="modal_window.html">Modal window</a></li>-->
+                        <!--<li><a href="forum_main.html">Forum view</a></li>-->
+                        <!--<li><a href="validation.html">Validation</a></li>-->
+                        <!--<li><a href="tree_view.html">Tree view</a></li>-->
+                        <!--<li><a href="chat_view.html">Chat view</a></li>-->
+                        <!--<li><a href="masonry.html">Masonry</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="typography.html">Typography</a></li>-->
+                        <!--<li><a href="icons.html">Icons</a></li>-->
+                        <!--<li><a href="draggable_panels.html">Draggable Panels</a></li>-->
+                        <!--<li><a href="buttons.html">Buttons</a></li>-->
+                        <!--<li><a href="video.html">Video</a></li>-->
+                        <!--<li><a href="tabs_panels.html">Panels</a></li>-->
+                        <!--<li><a href="tabs.html">Tabs</a></li>-->
+                        <!--<li><a href="notifications.html">Notifications & Tooltips</a></li>-->
+                        <!--<li><a href="badges_labels.html">Badges, Labels, Progress</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+
+                <!--<li>-->
+                    <!--<a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="table_basic.html">Static Tables</a></li>-->
+                        <!--<li><a href="table_data_tables.html">Data Tables</a></li>-->
+                        <!--<li><a href="table_foo_table.html">Foo Tables</a></li>-->
+                        <!--<li><a href="jq_grid.html">jqGrid</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="ecommerce_products_grid.html">Products grid</a></li>-->
+                        <!--<li><a href="ecommerce_product_list.html">Products list</a></li>-->
+                        <!--<li><a href="ecommerce_product.html">Product edit</a></li>-->
+                        <!--<li><a href="ecommerce_product_detail.html">Product detail</a></li>-->
+                        <!--<li><a href="ecommerce-orders.html">Orders</a></li>-->
+                        <!--<li><a href="ecommerce_payments.html">Credit Card form</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="basic_gallery.html">Lightbox Gallery</a></li>-->
+                        <!--<li><a href="slick_carousel.html">Slick Carousel</a></li>-->
+                        <!--<li><a href="carousel.html">Bootstrap Carousel</a></li>-->
+
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li>-->
+                            <!--<a href="#">Third Level <span class="fa arrow"></span></a>-->
+                            <!--<ul class="nav nav-third-level">-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">Second Level Item</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Second Level Item</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Second Level Item</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>-->
+                <!--</li>-->
+                <!--<li class="landing_link">-->
+                    <!--<a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>-->
+                <!--</li>-->
+                <!--<li class="special_link">-->
+                    <!--<a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>-->
+                <!--</li>-->
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to LYRASOFT Admin Theme.</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                </a>
+                                <div>
+                                    <small class="pull-right">46h ago</small>
+                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                </a>
+                                <div>
+                                    <small class="pull-right text-navy">5h ago</small>
+                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                </a>
+                                <div>
+                                    <small class="pull-right">23h ago</small>
+                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
+                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+                <li>
+                    <a class="right-sidebar-toggle">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>排班管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a>員工管理</a>
+                        </li>
+                        <li class="active">
+                            <strong>排班管理</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+            <div class="wrapper wrapper-content">
+
+                <div class="row animated fadeInDown">
+                    <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>可排班員工列表</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div id="external-events">
+                                    <p>直接托移至行事曆上面</p>
+                                    <div class="external-event navy-bg ui-draggable ui-draggable-handle" style="position: relative;">李大仁</div>
+                                    <div class="external-event navy-bg ui-draggable ui-draggable-handle" style="position: relative;">王小民</div>
+                                    <div class="external-event navy-bg ui-draggable ui-draggable-handle" style="position: relative;">許家儀</div>
+                                    <div class="external-event navy-bg ui-draggable ui-draggable-handle" style="position: relative;">藍可欣</div>
+                                    <div class="external-event navy-bg ui-draggable ui-draggable-handle" style="position: relative;">黃佑傑</div>
+                                    <p class="m-t">
+                                    <!--<div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" id="drop-remove" class="i-checks" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <label for="drop-remove">remove after drop</label>-->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="ibox float-e-margins">-->
+                            <!--<div class="ibox-content">-->
+                                <!--<h2>FullCalendar</h2> is a jQuery plugin that provides a full-sized, drag &amp; drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is-->
+                                <!--easily configured to use your own feed format (an extension is provided for Google Calendar).-->
+                                <!--<p>-->
+                                    <!--<a href="http://arshaw.com/fullcalendar/" target="_blank">FullCalendar documentation</a>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>行事曆</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div id="calendar"></div>
+
+                                <!--<div id="calendar" class="fc fc-ltr fc-unthemed">-->
+                                    <!--<div class="fc-toolbar">-->
+                                        <!--<div class="fc-left">-->
+                                            <!--<div class="fc-button-group">-->
+                                                <!--<button type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left"><span class="fc-icon fc-icon-left-single-arrow"></span>-->
+                                                <!--</button>-->
+                                                <!--<button type="button" class="fc-next-button fc-button fc-state-default fc-corner-right"><span class="fc-icon fc-icon-right-single-arrow"></span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                            <!--<button type="button" class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled" disabled="disabled">today</button>-->
+                                        <!--</div>-->
+                                        <!--<div class="fc-right">-->
+                                            <!--<div class="fc-button-group">-->
+                                                <!--<button type="button" class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">month</button>-->
+                                                <!--<button type="button" class="fc-agendaWeek-button fc-button fc-state-default">week</button>-->
+                                                <!--<button type="button" class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">day</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="fc-center">-->
+                                            <!--<h2>December 2015</h2>-->
+                                        <!--</div>-->
+                                        <!--<div class="fc-clear"></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="fc-view-container" style="">-->
+                                        <!--<div class="fc-view fc-month-view fc-basic-view">-->
+                                            <!--<table>-->
+                                                <!--<thead>-->
+                                                <!--<tr>-->
+                                                    <!--<td class="fc-widget-header">-->
+                                                        <!--<div class="fc-row fc-widget-header">-->
+                                                            <!--<table>-->
+                                                                <!--<thead>-->
+                                                                <!--<tr>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-sun">Sun</th>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-mon">Mon</th>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-tue">Tue</th>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-wed">Wed</th>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-thu">Thu</th>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-fri">Fri</th>-->
+                                                                    <!--<th class="fc-day-header fc-widget-header fc-sat">Sat</th>-->
+                                                                <!--</tr>-->
+                                                                <!--</thead>-->
+                                                            <!--</table>-->
+                                                        <!--</div>-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--</thead>-->
+                                                <!--<tbody>-->
+                                                <!--<tr>-->
+                                                    <!--<td class="fc-widget-content">-->
+                                                        <!--<div class="fc-day-grid-container">-->
+                                                            <!--<div class="fc-day-grid">-->
+                                                                <!--<div class="fc-row fc-week fc-widget-content" style="height: 117px;">-->
+                                                                    <!--<div class="fc-bg">-->
+                                                                        <!--<table>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sun fc-other-month fc-past" data-date="2015-11-29"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-mon fc-other-month fc-past" data-date="2015-11-30"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2015-12-01"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2015-12-02"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2015-12-03"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2015-12-04"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2015-12-05"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                    <!--<div class="fc-content-skeleton">-->
+                                                                        <!--<table>-->
+                                                                            <!--<thead>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day-number fc-sun fc-other-month fc-past" data-date="2015-11-29">29</td>-->
+                                                                                <!--<td class="fc-day-number fc-mon fc-other-month fc-past" data-date="2015-11-30">30</td>-->
+                                                                                <!--<td class="fc-day-number fc-tue fc-past" data-date="2015-12-01">1</td>-->
+                                                                                <!--<td class="fc-day-number fc-wed fc-past" data-date="2015-12-02">2</td>-->
+                                                                                <!--<td class="fc-day-number fc-thu fc-past" data-date="2015-12-03">3</td>-->
+                                                                                <!--<td class="fc-day-number fc-fri fc-past" data-date="2015-12-04">4</td>-->
+                                                                                <!--<td class="fc-day-number fc-sat fc-past" data-date="2015-12-05">5</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</thead>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td class="fc-event-container">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">12a</span> <span class="fc-title">All Day Event</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="fc-row fc-week fc-widget-content" style="height: 117px;">-->
+                                                                    <!--<div class="fc-bg">-->
+                                                                        <!--<table>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2015-12-06"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2015-12-07"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2015-12-08"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2015-12-09"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2015-12-10"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2015-12-11"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2015-12-12"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                    <!--<div class="fc-content-skeleton">-->
+                                                                        <!--<table>-->
+                                                                            <!--<thead>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day-number fc-sun fc-past" data-date="2015-12-06">6</td>-->
+                                                                                <!--<td class="fc-day-number fc-mon fc-past" data-date="2015-12-07">7</td>-->
+                                                                                <!--<td class="fc-day-number fc-tue fc-past" data-date="2015-12-08">8</td>-->
+                                                                                <!--<td class="fc-day-number fc-wed fc-past" data-date="2015-12-09">9</td>-->
+                                                                                <!--<td class="fc-day-number fc-thu fc-past" data-date="2015-12-10">10</td>-->
+                                                                                <!--<td class="fc-day-number fc-fri fc-past" data-date="2015-12-11">11</td>-->
+                                                                                <!--<td class="fc-day-number fc-sat fc-past" data-date="2015-12-12">12</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</thead>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                                <!--<td class="fc-event-container" colspan="3">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">12a</span> <span class="fc-title">Long Event</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td class="fc-event-container">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">4p</span> <span class="fc-title">Repeating Event</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="fc-row fc-week fc-widget-content" style="height: 117px;">-->
+                                                                    <!--<div class="fc-bg">-->
+                                                                        <!--<table>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sun fc-today fc-state-highlight" data-date="2015-12-13"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-mon fc-future" data-date="2015-12-14"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-tue fc-future" data-date="2015-12-15"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-wed fc-future" data-date="2015-12-16"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-thu fc-future" data-date="2015-12-17"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-fri fc-future" data-date="2015-12-18"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sat fc-future" data-date="2015-12-19"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                    <!--<div class="fc-content-skeleton">-->
+                                                                        <!--<table>-->
+                                                                            <!--<thead>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day-number fc-sun fc-today fc-state-highlight" data-date="2015-12-13">13</td>-->
+                                                                                <!--<td class="fc-day-number fc-mon fc-future" data-date="2015-12-14">14</td>-->
+                                                                                <!--<td class="fc-day-number fc-tue fc-future" data-date="2015-12-15">15</td>-->
+                                                                                <!--<td class="fc-day-number fc-wed fc-future" data-date="2015-12-16">16</td>-->
+                                                                                <!--<td class="fc-day-number fc-thu fc-future" data-date="2015-12-17">17</td>-->
+                                                                                <!--<td class="fc-day-number fc-fri fc-future" data-date="2015-12-18">18</td>-->
+                                                                                <!--<td class="fc-day-number fc-sat fc-future" data-date="2015-12-19">19</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</thead>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-event-container">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">10:30a</span> <span class="fc-title">Meeting</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                                <!--<td class="fc-event-container" rowspan="2">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">7p</span> <span class="fc-title">Birthday Party</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                                <!--<td class="fc-event-container" rowspan="2">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">4p</span> <span class="fc-title">Repeating Event</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                                <!--<td rowspan="2"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-event-container">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">12p</span> <span class="fc-title">Lunch</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="fc-row fc-week fc-widget-content" style="height: 117px;">-->
+                                                                    <!--<div class="fc-bg">-->
+                                                                        <!--<table>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sun fc-future" data-date="2015-12-20"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-mon fc-future" data-date="2015-12-21"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-tue fc-future" data-date="2015-12-22"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-wed fc-future" data-date="2015-12-23"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-thu fc-future" data-date="2015-12-24"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-fri fc-future" data-date="2015-12-25"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sat fc-future" data-date="2015-12-26"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                    <!--<div class="fc-content-skeleton">-->
+                                                                        <!--<table>-->
+                                                                            <!--<thead>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day-number fc-sun fc-future" data-date="2015-12-20">20</td>-->
+                                                                                <!--<td class="fc-day-number fc-mon fc-future" data-date="2015-12-21">21</td>-->
+                                                                                <!--<td class="fc-day-number fc-tue fc-future" data-date="2015-12-22">22</td>-->
+                                                                                <!--<td class="fc-day-number fc-wed fc-future" data-date="2015-12-23">23</td>-->
+                                                                                <!--<td class="fc-day-number fc-thu fc-future" data-date="2015-12-24">24</td>-->
+                                                                                <!--<td class="fc-day-number fc-fri fc-future" data-date="2015-12-25">25</td>-->
+                                                                                <!--<td class="fc-day-number fc-sat fc-future" data-date="2015-12-26">26</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</thead>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="fc-row fc-week fc-widget-content" style="height: 117px;">-->
+                                                                    <!--<div class="fc-bg">-->
+                                                                        <!--<table>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sun fc-future" data-date="2015-12-27"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-mon fc-future" data-date="2015-12-28"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-tue fc-future" data-date="2015-12-29"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-wed fc-future" data-date="2015-12-30"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-thu fc-future" data-date="2015-12-31"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2016-01-01"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2016-01-02"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                    <!--<div class="fc-content-skeleton">-->
+                                                                        <!--<table>-->
+                                                                            <!--<thead>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day-number fc-sun fc-future" data-date="2015-12-27">27</td>-->
+                                                                                <!--<td class="fc-day-number fc-mon fc-future" data-date="2015-12-28">28</td>-->
+                                                                                <!--<td class="fc-day-number fc-tue fc-future" data-date="2015-12-29">29</td>-->
+                                                                                <!--<td class="fc-day-number fc-wed fc-future" data-date="2015-12-30">30</td>-->
+                                                                                <!--<td class="fc-day-number fc-thu fc-future" data-date="2015-12-31">31</td>-->
+                                                                                <!--<td class="fc-day-number fc-fri fc-other-month fc-future" data-date="2016-01-01">1</td>-->
+                                                                                <!--<td class="fc-day-number fc-sat fc-other-month fc-future" data-date="2016-01-02">2</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</thead>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td class="fc-event-container">-->
+                                                                                    <!--<a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable" href="http://google.com/">-->
+                                                                                        <!--<div class="fc-content"><span class="fc-time">12a</span> <span class="fc-title">Click for Google</span>-->
+                                                                                        <!--</div>-->
+                                                                                    <!--</a>-->
+                                                                                <!--</td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="fc-row fc-week fc-widget-content" style="height: 117px;">-->
+                                                                    <!--<div class="fc-bg">-->
+                                                                        <!--<table>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2016-01-03"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2016-01-04"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2016-01-05"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2016-01-06"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2016-01-07"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2016-01-08"></td>-->
+                                                                                <!--<td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2016-01-09"></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                    <!--<div class="fc-content-skeleton">-->
+                                                                        <!--<table>-->
+                                                                            <!--<thead>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td class="fc-day-number fc-sun fc-other-month fc-future" data-date="2016-01-03">3</td>-->
+                                                                                <!--<td class="fc-day-number fc-mon fc-other-month fc-future" data-date="2016-01-04">4</td>-->
+                                                                                <!--<td class="fc-day-number fc-tue fc-other-month fc-future" data-date="2016-01-05">5</td>-->
+                                                                                <!--<td class="fc-day-number fc-wed fc-other-month fc-future" data-date="2016-01-06">6</td>-->
+                                                                                <!--<td class="fc-day-number fc-thu fc-other-month fc-future" data-date="2016-01-07">7</td>-->
+                                                                                <!--<td class="fc-day-number fc-fri fc-other-month fc-future" data-date="2016-01-08">8</td>-->
+                                                                                <!--<td class="fc-day-number fc-sat fc-other-month fc-future" data-date="2016-01-09">9</td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</thead>-->
+                                                                            <!--<tbody>-->
+                                                                            <!--<tr>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                                <!--<td></td>-->
+                                                                            <!--</tr>-->
+                                                                            <!--</tbody>-->
+                                                                        <!--</table>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</td>-->
+                                                <!--</tr>-->
+                                                <!--</tbody>-->
+                                            <!--</table>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+        </div>
+        <div id="right-sidebar">
+            <div class="sidebar-container">
+
+                <ul class="nav nav-tabs navs-3">
+
+                    <li class="active"><a data-toggle="tab" href="#tab-1">
+                        Notes
+                    </a></li>
+                    <li><a data-toggle="tab" href="#tab-2">
+                        Projects
+                    </a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-3">
+                        <i class="fa fa-gear"></i>
+                    </a></li>
+                </ul>
+
+                <div class="tab-content">
+
+
+                    <div id="tab-1" class="tab-pane active">
+
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
+                            <small><i class="fa fa-tim"></i> You have 10 new message.</small>
+                        </div>
+
+                        <div>
+
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a1.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+
+                                        There are many variations of passages of Lorem Ipsum available.
+                                        <br>
+                                        <small class="text-muted">Today 4:21 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        The point of using Lorem Ipsum is that it has a more-or-less normal.
+                                        <br>
+                                        <small class="text-muted">Yesterday 2:45 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        Mevolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                        <br>
+                                        <small class="text-muted">Yesterday 1:10 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                    </div>
+
+                                    <div class="media-body">
+                                        Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                        <br>
+                                        <small class="text-muted">Monday 8:37 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a8.jpg">
+                                    </div>
+                                    <div class="media-body">
+
+                                        All the Lorem Ipsum generators on the Internet tend to repeat.
+                                        <br>
+                                        <small class="text-muted">Today 4:21 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a7.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                        <br>
+                                        <small class="text-muted">Yesterday 2:45 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
+                                        <br>
+                                        <small class="text-muted">Yesterday 1:10 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        Uncover many web sites still in their infancy. Various versions have.
+                                        <br>
+                                        <small class="text-muted">Monday 8:37 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tab-2" class="tab-pane">
+
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-cube"></i> Latest projects</h3>
+                            <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                        </div>
+
+                        <ul class="sidebar-list">
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Business valuation</h4>
+                                    It is a long established fact that a reader will be distracted.
+
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Contract with Company </h4>
+                                    Many desktop publishing packages and web page editors.
+
+                                    <div class="small">Completion with: 48%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Meeting</h4>
+                                    By the readable content of a page when looking at its layout.
+
+                                    <div class="small">Completion with: 14%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary pull-right">NEW</span>
+                                    <h4>The generated</h4>
+                                    <!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
+                                    There are many variations of passages of Lorem Ipsum available.
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Business valuation</h4>
+                                    It is a long established fact that a reader will be distracted.
+
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Contract with Company </h4>
+                                    Many desktop publishing packages and web page editors.
+
+                                    <div class="small">Completion with: 48%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Meeting</h4>
+                                    By the readable content of a page when looking at its layout.
+
+                                    <div class="small">Completion with: 14%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary pull-right">NEW</span>
+                                    <h4>The generated</h4>
+                                    <!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
+                                    There are many variations of passages of Lorem Ipsum available.
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div id="tab-3" class="tab-pane">
+
+                        <div class="sidebar-title">
+                            <h3><i class="fa fa-gears"></i> Settings</h3>
+                            <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                        </div>
+
+                        <div class="setings-item">
+                    <span>
+                        Show notifications
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                    <label class="onoffswitch-label" for="example">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Disable Chat
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
+                                    <label class="onoffswitch-label" for="example2">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Enable history
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                    <label class="onoffswitch-label" for="example3">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Show charts
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                    <label class="onoffswitch-label" for="example4">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Offline users
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example5">
+                                    <label class="onoffswitch-label" for="example5">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Global search
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example6">
+                                    <label class="onoffswitch-label" for="example6">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Update everyday
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                    <label class="onoffswitch-label" for="example7">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-content">
+                            <h4>Settings</h4>
+                            <div class="small">
+                                I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+    <!-- jQuery UI custom -->
+    <script src="js/jquery-ui.custom.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+
+    <script src="js/plugins/fullcalendar/moment.min.js"></script>
+    <script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            /* initialize the external events
+             -----------------------------------------------------------------*/
+
+
+            $('#external-events div.external-event').each(function() {
+
+                // store data so the calendar knows to render an event upon drop
+                $(this).data('event', {
+                    title: $.trim($(this).text()), // use the element's text as the event title
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+
+                // make the event draggable using jQuery UI
+                $(this).draggable({
+                    zIndex: 1111999,
+                    revert: true,      // will cause the event to go back to its
+                    revertDuration: 0  //  original position after the drag
+                });
+
+            });
+
+
+            /* initialize the calendar
+             -----------------------------------------------------------------*/
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function() {
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+                },
+                events: [
+//                    {
+//                        title: 'All Day Event',
+//                        start: new Date(y, m, 1)
+//                    },
+//                    {
+//                        title: 'Long Event',
+//                        start: new Date(y, m, d-5),
+//                        end: new Date(y, m, d-2)
+//                    },
+//                    {
+//                        id: 999,
+//                        title: 'Repeating Event',
+//                        start: new Date(y, m, d-3, 16, 0),
+//                        allDay: false
+//                    },
+//                    {
+//                        id: 999,
+//                        title: 'Repeating Event',
+//                        start: new Date(y, m, d+4, 16, 0),
+//                        allDay: false
+//                    },
+//                    {
+//                        title: 'Meeting',
+//                        start: new Date(y, m, d, 10, 30),
+//                        allDay: false
+//                    },
+//                    {
+//                        title: 'Lunch',
+//                        start: new Date(y, m, d, 12, 0),
+//                        end: new Date(y, m, d, 14, 0),
+//                        allDay: false
+//                    },
+//                    {
+//                        title: 'Birthday Party',
+//                        start: new Date(y, m, d+1, 19, 0),
+//                        end: new Date(y, m, d+1, 22, 30),
+//                        allDay: false
+//                    },
+//                    {
+//                        title: 'Click for Google',
+//                        start: new Date(y, m, 28),
+//                        end: new Date(y, m, 29),
+//                        url: 'http://google.com/'
+//                    }
+                ]
+            });
+
+
+        });
+
+    </script>
+
+</body>
+</html>

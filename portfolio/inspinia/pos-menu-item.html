@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Dashboard v.2</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+
+    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-38549.js"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', 'sourcehansans-tc', "Microsoft JhengHei", sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body class="skin-3">
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/a6.jpg" width="48" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Cristina Pietro</strong>
+                             </span> <span class="text-muted text-xs block">Admin <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        POS
+                    </div>
+                </li>
+                <li class="">
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">總管</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="index.html">控制台</a></li>
+                        <li class="active"><a href="dashboard_2.html">銷售狀況</a></li>
+                        <li><a href="dashboard_3.html">月報表 <span class="label label-primary pull-right">NEW</span></a></li>
+                        <li><a href="dashboard_4_1.html">員工打卡</a></li>
+                        <!--<li><a href="dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>-->
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">菜單管理</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">座位管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                        <li><a href="graph_morris.html">Morris.js Charts</a></li>
+                        <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
+                        <li><a href="graph_chartjs.html">Chart.js</a></li>
+                        <li><a href="graph_chartist.html">Chartist</a></li>
+                        <li><a href="graph_peity.html">Peity Charts</a></li>
+                        <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
+                    </ul>
+                </li>
+                <!--<li>-->
+                    <!--<a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label"> </span><span class="label label-warning pull-right">16/24</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="mailbox.html">Inbox</a></li>-->
+                        <!--<li><a href="mail_detail.html">Email view</a></li>-->
+                        <!--<li><a href="mail_compose.html">Compose email</a></li>-->
+                        <!--<li><a href="email_template.html">Email templates</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <li>
+                    <a href="metrics.html"><i class="fa fa-user"></i> <span class="nav-label">員工管理</span>  </a>
+                </li>
+                <!--<li>-->
+                    <!--<a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="form_basic.html">Basic form</a></li>-->
+                        <!--<li><a href="form_advanced.html">Advanced Plugins</a></li>-->
+                        <!--<li><a href="form_wizard.html">Wizard</a></li>-->
+                        <!--<li><a href="form_file_upload.html">File Upload</a></li>-->
+                        <!--<li><a href="form_editors.html">Text Editor</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="contacts.html">Contacts</a></li>-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="profile_2.html">Profile v.2</a></li>-->
+                        <!--<li><a href="contacts_2.html">Contacts v.2</a></li>-->
+                        <!--<li><a href="projects.html">Projects</a></li>-->
+                        <!--<li><a href="project_detail.html">Project detail</a></li>-->
+                        <!--<li><a href="teams_board.html">Teams board</a></li>-->
+                        <!--<li><a href="social_feed.html">Social feed</a></li>-->
+                        <!--<li><a href="clients.html">Clients</a></li>-->
+                        <!--<li><a href="full_height.html">Outlook view</a></li>-->
+                        <!--<li><a href="vote_list.html">Vote list</a></li>-->
+                        <!--<li><a href="file_manager.html">File manager</a></li>-->
+                        <!--<li><a href="calendar.html">Calendar</a></li>-->
+                        <!--<li><a href="issue_tracker.html">Issue tracker</a></li>-->
+                        <!--<li><a href="blog.html">Blog</a></li>-->
+                        <!--<li><a href="article.html">Article</a></li>-->
+                        <!--<li><a href="faq.html">FAQ</a></li>-->
+                        <!--<li><a href="timeline.html">Timeline</a></li>-->
+                        <!--<li><a href="pin_board.html">Pin board</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="search_results.html">Search results</a></li>-->
+                        <!--<li><a href="lockscreen.html">Lockscreen</a></li>-->
+                        <!--<li><a href="invoice.html">Invoice</a></li>-->
+                        <!--<li><a href="login.html">Login</a></li>-->
+                        <!--<li><a href="login_two_columns.html">Login v.2</a></li>-->
+                        <!--<li><a href="forgot_password.html">Forget password</a></li>-->
+                        <!--<li><a href="register.html">Register</a></li>-->
+                        <!--<li><a href="404.html">404 Page</a></li>-->
+                        <!--<li><a href="500.html">500 Page</a></li>-->
+                        <!--<li><a href="empty_page.html">Empty page</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="toastr_notifications.html">Notification</a></li>-->
+                        <!--<li><a href="nestable_list.html">Nestable list</a></li>-->
+                        <!--<li><a href="agile_board.html">Agile board</a></li>-->
+                        <!--<li><a href="timeline_2.html">Timeline v.2</a></li>-->
+                        <!--<li><a href="diff.html">Diff</a></li>-->
+                        <!--<li><a href="sweetalert.html">Sweet alert</a></li>-->
+                        <!--<li><a href="idle_timer.html">Idle timer</a></li>-->
+                        <!--<li><a href="spinners.html">Spinners</a></li>-->
+                        <!--<li><a href="tinycon.html">Live favicon</a></li>-->
+                        <!--<li><a href="google_maps.html">Google maps</a></li>-->
+                        <!--<li><a href="code_editor.html">Code editor</a></li>-->
+                        <!--<li><a href="modal_window.html">Modal window</a></li>-->
+                        <!--<li><a href="forum_main.html">Forum view</a></li>-->
+                        <!--<li><a href="validation.html">Validation</a></li>-->
+                        <!--<li><a href="tree_view.html">Tree view</a></li>-->
+                        <!--<li><a href="chat_view.html">Chat view</a></li>-->
+                        <!--<li><a href="masonry.html">Masonry</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="typography.html">Typography</a></li>-->
+                        <!--<li><a href="icons.html">Icons</a></li>-->
+                        <!--<li><a href="draggable_panels.html">Draggable Panels</a></li>-->
+                        <!--<li><a href="buttons.html">Buttons</a></li>-->
+                        <!--<li><a href="video.html">Video</a></li>-->
+                        <!--<li><a href="tabs_panels.html">Panels</a></li>-->
+                        <!--<li><a href="tabs.html">Tabs</a></li>-->
+                        <!--<li><a href="notifications.html">Notifications & Tooltips</a></li>-->
+                        <!--<li><a href="badges_labels.html">Badges, Labels, Progress</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+
+                <!--<li>-->
+                    <!--<a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="table_basic.html">Static Tables</a></li>-->
+                        <!--<li><a href="table_data_tables.html">Data Tables</a></li>-->
+                        <!--<li><a href="table_foo_table.html">Foo Tables</a></li>-->
+                        <!--<li><a href="jq_grid.html">jqGrid</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="ecommerce_products_grid.html">Products grid</a></li>-->
+                        <!--<li><a href="ecommerce_product_list.html">Products list</a></li>-->
+                        <!--<li><a href="ecommerce_product.html">Product edit</a></li>-->
+                        <!--<li><a href="ecommerce_product_detail.html">Product detail</a></li>-->
+                        <!--<li><a href="ecommerce-orders.html">Orders</a></li>-->
+                        <!--<li><a href="ecommerce_payments.html">Credit Card form</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="basic_gallery.html">Lightbox Gallery</a></li>-->
+                        <!--<li><a href="slick_carousel.html">Slick Carousel</a></li>-->
+                        <!--<li><a href="carousel.html">Bootstrap Carousel</a></li>-->
+
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li>-->
+                            <!--<a href="#">Third Level <span class="fa arrow"></span></a>-->
+                            <!--<ul class="nav nav-third-level">-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">Second Level Item</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Second Level Item</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Second Level Item</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>-->
+                <!--</li>-->
+                <!--<li class="landing_link">-->
+                    <!--<a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>-->
+                <!--</li>-->
+                <!--<li class="special_link">-->
+                    <!--<a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>-->
+                <!--</li>-->
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to LYRASOFT Admin Theme.</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                </a>
+                                <div>
+                                    <small class="pull-right">46h ago</small>
+                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                </a>
+                                <div>
+                                    <small class="pull-right text-navy">5h ago</small>
+                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                </a>
+                                <div>
+                                    <small class="pull-right">23h ago</small>
+                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
+                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+                <li>
+                    <a class="right-sidebar-toggle">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>菜單編輯</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a>菜單管理</a>
+                        </li>
+                        <li class="active">
+                            <strong>菜單編輯</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+            <div class="wrapper wrapper-content">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs-container">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"> 菜單資訊</a></li>
+                                <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false"> 詳細資料</a></li>
+                                <li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false"> 優惠管理</a></li>
+                                <!--<li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false"> 圖片</a></li>-->
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane active">
+                                    <div class="panel-body">
+
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <fieldset class="form-horizontal">
+                                                    <div class="form-group"><label class="col-sm-2 control-label">Name:</label>
+                                                        <div class="col-sm-10"><input type="text" class="form-control" placeholder="菜單名稱"></div>
+                                                    </div>
+                                                    <div class="form-group"><label class="col-sm-2 control-label">Price:</label>
+                                                        <div class="col-sm-10"><input type="text" class="form-control" placeholder="$160.00"></div>
+                                                    </div>
+                                                    <div class="form-group"><label class="col-sm-2 control-label">Description:</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="summernote" style="display: none;">
+                                                                <h3>Lorem Ipsum is simply</h3>
+                                                                dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                                                <br>
+
+                                                            </div><div class="note-editor"><div class="note-dropzone"><div class="note-dropzone-message"></div></div><div class="note-dialog"><div class="note-image-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button><h4>Insert Image</h4></div><div class="modal-body"><div class="row-fluid"><h5>Select from files</h5><input class="note-image-input" type="file" name="files" accept="image/*"><h5>Image URL</h5><input class="note-image-url form-control span12" type="text"></div></div><div class="modal-footer"><button href="#" class="btn btn-primary note-image-btn disabled" disabled="disabled">Insert Image</button></div></div></div></div><div class="note-link-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button><h4>Insert Link</h4></div><div class="modal-body"><div class="row-fluid"><div class="form-group"><label>Text to display</label><input class="note-link-text form-control span12" disabled="" type="text"></div><div class="form-group"><label>To what URL should this link go?</label><input class="note-link-url form-control span12" type="text"></div><div class="checkbox"><label><input type="checkbox" checked=""> Open in new window</label></div></div></div><div class="modal-footer"><button href="#" class="btn btn-primary note-link-btn disabled" disabled="disabled">Insert Link</button></div></div></div></div><div class="note-video-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button><h4>Insert Video</h4></div><div class="modal-body"><div class="row-fluid"><div class="form-group"><label>Video URL?</label>&nbsp;<small class="text-muted">(YouTube, Vimeo, Vine, Instagram, or DailyMotion)</small><input class="note-video-url form-control span12" type="text"></div></div></div><div class="modal-footer"><button href="#" class="btn btn-primary note-video-btn disabled" disabled="disabled">Insert Video</button></div></div></div></div><div class="note-help-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><a class="modal-close pull-right" aria-hidden="true" tabindex="-1">Close</a><div class="title">Keyboard shortcuts</div><p class="text-center"><a href="//hackerwins.github.io/summernote/" target="_blank">Summernote 0.5.2</a> · <a href="//github.com/HackerWins/summernote" target="_blank">Project</a> · <a href="//github.com/HackerWins/summernote/issues" target="_blank">Issues</a></p><table class="note-shortcut-layout"><tbody><tr><td><table class="note-shortcut"><thead><tr><th></th><th>Action</th></tr></thead><tbody><tr><td>⌘ + Z</td><td>Undo</td></tr><tr><td>⌘ + ⇧ + Z</td><td>Redo</td></tr><tr><td>⌘ + ]</td><td>Indent</td></tr><tr><td>⌘ + [</td><td>Outdent</td></tr><tr><td>⌘ + ENTER</td><td>Insert Horizontal Rule</td></tr></tbody></table></td><td><table class="note-shortcut"><thead><tr><th></th><th>Text formatting</th></tr></thead><tbody><tr><td>⌘ + B</td><td>Bold</td></tr><tr><td>⌘ + I</td><td>Italic</td></tr><tr><td>⌘ + U</td><td>Underline</td></tr><tr><td>⌘ + ⇧ + S</td><td>Strike</td></tr><tr><td>⌘ + \</td><td>Remove Font Style</td></tr></tbody></table></td></tr><tr><td><table class="note-shortcut"><thead><tr><th></th><th>Document Style</th></tr></thead><tbody><tr><td>⌘ + NUM0</td><td>Normal</td></tr><tr><td>⌘ + NUM1</td><td>Header 1</td></tr><tr><td>⌘ + NUM2</td><td>Header 2</td></tr><tr><td>⌘ + NUM3</td><td>Header 3</td></tr><tr><td>⌘ + NUM4</td><td>Header 4</td></tr><tr><td>⌘ + NUM5</td><td>Header 5</td></tr><tr><td>⌘ + NUM6</td><td>Header 6</td></tr></tbody></table></td><td><table class="note-shortcut"><thead><tr><th></th><th>Paragraph formatting</th></tr></thead><tbody><tr><td>⌘ + ⇧ + L</td><td>Align left</td></tr><tr><td>⌘ + ⇧ + E</td><td>Align center</td></tr><tr><td>⌘ + ⇧ + R</td><td>Align right</td></tr><tr><td>⌘ + ⇧ + J</td><td>Justify full</td></tr><tr><td>⌘ + ⇧ + NUM7</td><td>Ordered list</td></tr><tr><td>⌘ + ⇧ + NUM8</td><td>Unordered list</td></tr></tbody></table></td></tr></tbody></table></div></div></div></div></div><div class="note-handle"><div class="note-control-selection" style="display: none;"><div class="note-control-selection-bg"></div><div class="note-control-holder note-control-nw"></div><div class="note-control-holder note-control-ne"></div><div class="note-control-holder note-control-sw"></div><div class="note-control-sizing note-control-se"></div><div class="note-control-selection-info"></div></div></div><div class="note-popover"><div class="note-link-popover popover bottom in" style="display: none;"><div class="arrow"></div><div class="popover-content note-link-content"><a href="http://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;<div class="note-insert btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showLinkDialog" tabindex="-1" data-original-title="Edit"><i class="fa fa-edit icon-edit"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="unlink" tabindex="-1" data-original-title="Unlink"><i class="fa fa-unlink icon-unlink"></i></button></div></div></div><div class="note-image-popover popover bottom in" style="display: none;"><div class="arrow"></div><div class="popover-content note-image-content"><div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="1" tabindex="-1" data-original-title="Resize Full"><span class="note-fontsize-10">100%</span> </button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="0.5" tabindex="-1" data-original-title="Resize Half"><span class="note-fontsize-10">50%</span> </button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="0.25" tabindex="-1" data-original-title="Resize Quarter"><span class="note-fontsize-10">25%</span> </button></div><div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="left" tabindex="-1" data-original-title="Float Left"><i class="fa fa-align-left icon-align-left"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="right" tabindex="-1" data-original-title="Float Right"><i class="fa fa-align-right icon-align-right"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="none" tabindex="-1" data-original-title="Float None"><i class="fa fa-align-justify icon-align-justify"></i></button></div><div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="removeMedia" data-value="none" tabindex="-1" data-original-title="Remove Image"><i class="fa fa-trash-o icon-trash"></i></button></div></div></div></div><div class="note-toolbar btn-toolbar"><div class="note-style btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" title="" data-toggle="dropdown" tabindex="-1" data-original-title="Style"><i class="fa fa-magic icon-magic"></i> <span class="caret"></span></button><ul class="dropdown-menu"><li><a data-event="formatBlock" data-value="p">Normal</a></li><li><a data-event="formatBlock" data-value="blockquote"><blockquote>Quote</blockquote></a></li><li><a data-event="formatBlock" data-value="pre">Code</a></li><li><a data-event="formatBlock" data-value="h1"><h1>Header 1</h1></a></li><li><a data-event="formatBlock" data-value="h2"><h2>Header 2</h2></a></li><li><a data-event="formatBlock" data-value="h3"><h3>Header 3</h3></a></li><li><a data-event="formatBlock" data-value="h4"><h4>Header 4</h4></a></li><li><a data-event="formatBlock" data-value="h5"><h5>Header 5</h5></a></li><li><a data-event="formatBlock" data-value="h6"><h6>Header 6</h6></a></li></ul></div><div class="note-font btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+B" data-mac-shortcut="⌘+B" data-event="bold" tabindex="-1" data-original-title="Bold (⌘+B)"><i class="fa fa-bold icon-bold"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+I" data-mac-shortcut="⌘+I" data-event="italic" tabindex="-1" data-original-title="Italic (⌘+I)"><i class="fa fa-italic icon-italic"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+U" data-mac-shortcut="⌘+U" data-event="underline" tabindex="-1" data-original-title="Underline (⌘+U)"><i class="fa fa-underline icon-underline"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+\" data-mac-shortcut="⌘+\" data-event="removeFormat" tabindex="-1" data-original-title="Remove Font Style (⌘+\)"><i class="fa fa-eraser icon-eraser"></i></button></div><div class="note-fontname btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Font Family"><span class="note-current-fontname">Helvetica Neue</span> <b class="caret"></b></button><ul class="dropdown-menu"><li><a data-event="fontName" data-value="Serif" class=""><i class="fa fa-check icon-ok"></i> Serif</a></li><li><a data-event="fontName" data-value="Sans" class=""><i class="fa fa-check icon-ok"></i> Sans</a></li><li><a data-event="fontName" data-value="Arial" class=""><i class="fa fa-check icon-ok"></i> Arial</a></li><li><a data-event="fontName" data-value="Arial Black" class=""><i class="fa fa-check icon-ok"></i> Arial Black</a></li><li><a data-event="fontName" data-value="Courier" class=""><i class="fa fa-check icon-ok"></i> Courier</a></li><li><a data-event="fontName" data-value="Courier New" class=""><i class="fa fa-check icon-ok"></i> Courier New</a></li><li><a data-event="fontName" data-value="Comic Sans MS" class=""><i class="fa fa-check icon-ok"></i> Comic Sans MS</a></li><li><a data-event="fontName" data-value="Helvetica" class=""><i class="fa fa-check icon-ok"></i> Helvetica</a></li><li><a data-event="fontName" data-value="Impact" class=""><i class="fa fa-check icon-ok"></i> Impact</a></li><li><a data-event="fontName" data-value="Lucida Grande" class=""><i class="fa fa-check icon-ok"></i> Lucida Grande</a></li><li><a data-event="fontName" data-value="Lucida Sans" class=""><i class="fa fa-check icon-ok"></i> Lucida Sans</a></li><li><a data-event="fontName" data-value="Tahoma" class=""><i class="fa fa-check icon-ok"></i> Tahoma</a></li><li><a data-event="fontName" data-value="Times" class=""><i class="fa fa-check icon-ok"></i> Times</a></li><li><a data-event="fontName" data-value="Times New Roman" class=""><i class="fa fa-check icon-ok"></i> Times New Roman</a></li><li><a data-event="fontName" data-value="Verdana" class=""><i class="fa fa-check icon-ok"></i> Verdana</a></li></ul></div><div class="note-color btn-group"><button type="button" class="btn btn-default btn-sm btn-small note-recent-color" title="" data-event="color" data-value="{&quot;backColor&quot;:&quot;yellow&quot;}" tabindex="-1" data-original-title="Recent Color"><i class="fa fa-font icon-font" style="color:black;background-color:yellow;"></i></button><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" title="" data-toggle="dropdown" tabindex="-1" data-original-title="More Color"><span class="caret"></span></button><ul class="dropdown-menu"><li><div class="btn-group"><div class="note-palette-title">BackColor</div><div class="note-color-reset" data-event="backColor" data-value="inherit" title="Transparent">Set transparent</div><div class="note-color-palette" data-target-event="backColor"><div><button type="button" class="note-color-btn" style="background-color:#000000;" data-event="backColor" data-value="#000000" title="" data-toggle="button" tabindex="-1" data-original-title="#000000"></button><button type="button" class="note-color-btn" style="background-color:#424242;" data-event="backColor" data-value="#424242" title="" data-toggle="button" tabindex="-1" data-original-title="#424242"></button><button type="button" class="note-color-btn" style="background-color:#636363;" data-event="backColor" data-value="#636363" title="" data-toggle="button" tabindex="-1" data-original-title="#636363"></button><button type="button" class="note-color-btn" style="background-color:#9C9C94;" data-event="backColor" data-value="#9C9C94" title="" data-toggle="button" tabindex="-1" data-original-title="#9C9C94"></button><button type="button" class="note-color-btn" style="background-color:#CEC6CE;" data-event="backColor" data-value="#CEC6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#CEC6CE"></button><button type="button" class="note-color-btn" style="background-color:#EFEFEF;" data-event="backColor" data-value="#EFEFEF" title="" data-toggle="button" tabindex="-1" data-original-title="#EFEFEF"></button><button type="button" class="note-color-btn" style="background-color:#F7F7F7;" data-event="backColor" data-value="#F7F7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#F7F7F7"></button><button type="button" class="note-color-btn" style="background-color:#FFFFFF;" data-event="backColor" data-value="#FFFFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFFFF"></button></div><div><button type="button" class="note-color-btn" style="background-color:#FF0000;" data-event="backColor" data-value="#FF0000" title="" data-toggle="button" tabindex="-1" data-original-title="#FF0000"></button><button type="button" class="note-color-btn" style="background-color:#FF9C00;" data-event="backColor" data-value="#FF9C00" title="" data-toggle="button" tabindex="-1" data-original-title="#FF9C00"></button><button type="button" class="note-color-btn" style="background-color:#FFFF00;" data-event="backColor" data-value="#FFFF00" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFF00"></button><button type="button" class="note-color-btn" style="background-color:#00FF00;" data-event="backColor" data-value="#00FF00" title="" data-toggle="button" tabindex="-1" data-original-title="#00FF00"></button><button type="button" class="note-color-btn" style="background-color:#00FFFF;" data-event="backColor" data-value="#00FFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#00FFFF"></button><button type="button" class="note-color-btn" style="background-color:#0000FF;" data-event="backColor" data-value="#0000FF" title="" data-toggle="button" tabindex="-1" data-original-title="#0000FF"></button><button type="button" class="note-color-btn" style="background-color:#9C00FF;" data-event="backColor" data-value="#9C00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#9C00FF"></button><button type="button" class="note-color-btn" style="background-color:#FF00FF;" data-event="backColor" data-value="#FF00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#FF00FF"></button></div><div><button type="button" class="note-color-btn" style="background-color:#F7C6CE;" data-event="backColor" data-value="#F7C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#F7C6CE"></button><button type="button" class="note-color-btn" style="background-color:#FFE7CE;" data-event="backColor" data-value="#FFE7CE" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE7CE"></button><button type="button" class="note-color-btn" style="background-color:#FFEFC6;" data-event="backColor" data-value="#FFEFC6" title="" data-toggle="button" tabindex="-1" data-original-title="#FFEFC6"></button><button type="button" class="note-color-btn" style="background-color:#D6EFD6;" data-event="backColor" data-value="#D6EFD6" title="" data-toggle="button" tabindex="-1" data-original-title="#D6EFD6"></button><button type="button" class="note-color-btn" style="background-color:#CEDEE7;" data-event="backColor" data-value="#CEDEE7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEDEE7"></button><button type="button" class="note-color-btn" style="background-color:#CEE7F7;" data-event="backColor" data-value="#CEE7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEE7F7"></button><button type="button" class="note-color-btn" style="background-color:#D6D6E7;" data-event="backColor" data-value="#D6D6E7" title="" data-toggle="button" tabindex="-1" data-original-title="#D6D6E7"></button><button type="button" class="note-color-btn" style="background-color:#E7D6DE;" data-event="backColor" data-value="#E7D6DE" title="" data-toggle="button" tabindex="-1" data-original-title="#E7D6DE"></button></div><div><button type="button" class="note-color-btn" style="background-color:#E79C9C;" data-event="backColor" data-value="#E79C9C" title="" data-toggle="button" tabindex="-1" data-original-title="#E79C9C"></button><button type="button" class="note-color-btn" style="background-color:#FFC69C;" data-event="backColor" data-value="#FFC69C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFC69C"></button><button type="button" class="note-color-btn" style="background-color:#FFE79C;" data-event="backColor" data-value="#FFE79C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE79C"></button><button type="button" class="note-color-btn" style="background-color:#B5D6A5;" data-event="backColor" data-value="#B5D6A5" title="" data-toggle="button" tabindex="-1" data-original-title="#B5D6A5"></button><button type="button" class="note-color-btn" style="background-color:#A5C6CE;" data-event="backColor" data-value="#A5C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#A5C6CE"></button><button type="button" class="note-color-btn" style="background-color:#9CC6EF;" data-event="backColor" data-value="#9CC6EF" title="" data-toggle="button" tabindex="-1" data-original-title="#9CC6EF"></button><button type="button" class="note-color-btn" style="background-color:#B5A5D6;" data-event="backColor" data-value="#B5A5D6" title="" data-toggle="button" tabindex="-1" data-original-title="#B5A5D6"></button><button type="button" class="note-color-btn" style="background-color:#D6A5BD;" data-event="backColor" data-value="#D6A5BD" title="" data-toggle="button" tabindex="-1" data-original-title="#D6A5BD"></button></div><div><button type="button" class="note-color-btn" style="background-color:#E76363;" data-event="backColor" data-value="#E76363" title="" data-toggle="button" tabindex="-1" data-original-title="#E76363"></button><button type="button" class="note-color-btn" style="background-color:#F7AD6B;" data-event="backColor" data-value="#F7AD6B" title="" data-toggle="button" tabindex="-1" data-original-title="#F7AD6B"></button><button type="button" class="note-color-btn" style="background-color:#FFD663;" data-event="backColor" data-value="#FFD663" title="" data-toggle="button" tabindex="-1" data-original-title="#FFD663"></button><button type="button" class="note-color-btn" style="background-color:#94BD7B;" data-event="backColor" data-value="#94BD7B" title="" data-toggle="button" tabindex="-1" data-original-title="#94BD7B"></button><button type="button" class="note-color-btn" style="background-color:#73A5AD;" data-event="backColor" data-value="#73A5AD" title="" data-toggle="button" tabindex="-1" data-original-title="#73A5AD"></button><button type="button" class="note-color-btn" style="background-color:#6BADDE;" data-event="backColor" data-value="#6BADDE" title="" data-toggle="button" tabindex="-1" data-original-title="#6BADDE"></button><button type="button" class="note-color-btn" style="background-color:#8C7BC6;" data-event="backColor" data-value="#8C7BC6" title="" data-toggle="button" tabindex="-1" data-original-title="#8C7BC6"></button><button type="button" class="note-color-btn" style="background-color:#C67BA5;" data-event="backColor" data-value="#C67BA5" title="" data-toggle="button" tabindex="-1" data-original-title="#C67BA5"></button></div><div><button type="button" class="note-color-btn" style="background-color:#CE0000;" data-event="backColor" data-value="#CE0000" title="" data-toggle="button" tabindex="-1" data-original-title="#CE0000"></button><button type="button" class="note-color-btn" style="background-color:#E79439;" data-event="backColor" data-value="#E79439" title="" data-toggle="button" tabindex="-1" data-original-title="#E79439"></button><button type="button" class="note-color-btn" style="background-color:#EFC631;" data-event="backColor" data-value="#EFC631" title="" data-toggle="button" tabindex="-1" data-original-title="#EFC631"></button><button type="button" class="note-color-btn" style="background-color:#6BA54A;" data-event="backColor" data-value="#6BA54A" title="" data-toggle="button" tabindex="-1" data-original-title="#6BA54A"></button><button type="button" class="note-color-btn" style="background-color:#4A7B8C;" data-event="backColor" data-value="#4A7B8C" title="" data-toggle="button" tabindex="-1" data-original-title="#4A7B8C"></button><button type="button" class="note-color-btn" style="background-color:#3984C6;" data-event="backColor" data-value="#3984C6" title="" data-toggle="button" tabindex="-1" data-original-title="#3984C6"></button><button type="button" class="note-color-btn" style="background-color:#634AA5;" data-event="backColor" data-value="#634AA5" title="" data-toggle="button" tabindex="-1" data-original-title="#634AA5"></button><button type="button" class="note-color-btn" style="background-color:#A54A7B;" data-event="backColor" data-value="#A54A7B" title="" data-toggle="button" tabindex="-1" data-original-title="#A54A7B"></button></div><div><button type="button" class="note-color-btn" style="background-color:#9C0000;" data-event="backColor" data-value="#9C0000" title="" data-toggle="button" tabindex="-1" data-original-title="#9C0000"></button><button type="button" class="note-color-btn" style="background-color:#B56308;" data-event="backColor" data-value="#B56308" title="" data-toggle="button" tabindex="-1" data-original-title="#B56308"></button><button type="button" class="note-color-btn" style="background-color:#BD9400;" data-event="backColor" data-value="#BD9400" title="" data-toggle="button" tabindex="-1" data-original-title="#BD9400"></button><button type="button" class="note-color-btn" style="background-color:#397B21;" data-event="backColor" data-value="#397B21" title="" data-toggle="button" tabindex="-1" data-original-title="#397B21"></button><button type="button" class="note-color-btn" style="background-color:#104A5A;" data-event="backColor" data-value="#104A5A" title="" data-toggle="button" tabindex="-1" data-original-title="#104A5A"></button><button type="button" class="note-color-btn" style="background-color:#085294;" data-event="backColor" data-value="#085294" title="" data-toggle="button" tabindex="-1" data-original-title="#085294"></button><button type="button" class="note-color-btn" style="background-color:#311873;" data-event="backColor" data-value="#311873" title="" data-toggle="button" tabindex="-1" data-original-title="#311873"></button><button type="button" class="note-color-btn" style="background-color:#731842;" data-event="backColor" data-value="#731842" title="" data-toggle="button" tabindex="-1" data-original-title="#731842"></button></div><div><button type="button" class="note-color-btn" style="background-color:#630000;" data-event="backColor" data-value="#630000" title="" data-toggle="button" tabindex="-1" data-original-title="#630000"></button><button type="button" class="note-color-btn" style="background-color:#7B3900;" data-event="backColor" data-value="#7B3900" title="" data-toggle="button" tabindex="-1" data-original-title="#7B3900"></button><button type="button" class="note-color-btn" style="background-color:#846300;" data-event="backColor" data-value="#846300" title="" data-toggle="button" tabindex="-1" data-original-title="#846300"></button><button type="button" class="note-color-btn" style="background-color:#295218;" data-event="backColor" data-value="#295218" title="" data-toggle="button" tabindex="-1" data-original-title="#295218"></button><button type="button" class="note-color-btn" style="background-color:#083139;" data-event="backColor" data-value="#083139" title="" data-toggle="button" tabindex="-1" data-original-title="#083139"></button><button type="button" class="note-color-btn" style="background-color:#003163;" data-event="backColor" data-value="#003163" title="" data-toggle="button" tabindex="-1" data-original-title="#003163"></button><button type="button" class="note-color-btn" style="background-color:#21104A;" data-event="backColor" data-value="#21104A" title="" data-toggle="button" tabindex="-1" data-original-title="#21104A"></button><button type="button" class="note-color-btn" style="background-color:#4A1031;" data-event="backColor" data-value="#4A1031" title="" data-toggle="button" tabindex="-1" data-original-title="#4A1031"></button></div></div></div><div class="btn-group"><div class="note-palette-title">FontColor</div><div class="note-color-reset" data-event="foreColor" data-value="inherit" title="Reset">Reset to default</div><div class="note-color-palette" data-target-event="foreColor"><div><button type="button" class="note-color-btn" style="background-color:#000000;" data-event="foreColor" data-value="#000000" title="" data-toggle="button" tabindex="-1" data-original-title="#000000"></button><button type="button" class="note-color-btn" style="background-color:#424242;" data-event="foreColor" data-value="#424242" title="" data-toggle="button" tabindex="-1" data-original-title="#424242"></button><button type="button" class="note-color-btn" style="background-color:#636363;" data-event="foreColor" data-value="#636363" title="" data-toggle="button" tabindex="-1" data-original-title="#636363"></button><button type="button" class="note-color-btn" style="background-color:#9C9C94;" data-event="foreColor" data-value="#9C9C94" title="" data-toggle="button" tabindex="-1" data-original-title="#9C9C94"></button><button type="button" class="note-color-btn" style="background-color:#CEC6CE;" data-event="foreColor" data-value="#CEC6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#CEC6CE"></button><button type="button" class="note-color-btn" style="background-color:#EFEFEF;" data-event="foreColor" data-value="#EFEFEF" title="" data-toggle="button" tabindex="-1" data-original-title="#EFEFEF"></button><button type="button" class="note-color-btn" style="background-color:#F7F7F7;" data-event="foreColor" data-value="#F7F7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#F7F7F7"></button><button type="button" class="note-color-btn" style="background-color:#FFFFFF;" data-event="foreColor" data-value="#FFFFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFFFF"></button></div><div><button type="button" class="note-color-btn" style="background-color:#FF0000;" data-event="foreColor" data-value="#FF0000" title="" data-toggle="button" tabindex="-1" data-original-title="#FF0000"></button><button type="button" class="note-color-btn" style="background-color:#FF9C00;" data-event="foreColor" data-value="#FF9C00" title="" data-toggle="button" tabindex="-1" data-original-title="#FF9C00"></button><button type="button" class="note-color-btn" style="background-color:#FFFF00;" data-event="foreColor" data-value="#FFFF00" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFF00"></button><button type="button" class="note-color-btn" style="background-color:#00FF00;" data-event="foreColor" data-value="#00FF00" title="" data-toggle="button" tabindex="-1" data-original-title="#00FF00"></button><button type="button" class="note-color-btn" style="background-color:#00FFFF;" data-event="foreColor" data-value="#00FFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#00FFFF"></button><button type="button" class="note-color-btn" style="background-color:#0000FF;" data-event="foreColor" data-value="#0000FF" title="" data-toggle="button" tabindex="-1" data-original-title="#0000FF"></button><button type="button" class="note-color-btn" style="background-color:#9C00FF;" data-event="foreColor" data-value="#9C00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#9C00FF"></button><button type="button" class="note-color-btn" style="background-color:#FF00FF;" data-event="foreColor" data-value="#FF00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#FF00FF"></button></div><div><button type="button" class="note-color-btn" style="background-color:#F7C6CE;" data-event="foreColor" data-value="#F7C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#F7C6CE"></button><button type="button" class="note-color-btn" style="background-color:#FFE7CE;" data-event="foreColor" data-value="#FFE7CE" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE7CE"></button><button type="button" class="note-color-btn" style="background-color:#FFEFC6;" data-event="foreColor" data-value="#FFEFC6" title="" data-toggle="button" tabindex="-1" data-original-title="#FFEFC6"></button><button type="button" class="note-color-btn" style="background-color:#D6EFD6;" data-event="foreColor" data-value="#D6EFD6" title="" data-toggle="button" tabindex="-1" data-original-title="#D6EFD6"></button><button type="button" class="note-color-btn" style="background-color:#CEDEE7;" data-event="foreColor" data-value="#CEDEE7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEDEE7"></button><button type="button" class="note-color-btn" style="background-color:#CEE7F7;" data-event="foreColor" data-value="#CEE7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEE7F7"></button><button type="button" class="note-color-btn" style="background-color:#D6D6E7;" data-event="foreColor" data-value="#D6D6E7" title="" data-toggle="button" tabindex="-1" data-original-title="#D6D6E7"></button><button type="button" class="note-color-btn" style="background-color:#E7D6DE;" data-event="foreColor" data-value="#E7D6DE" title="" data-toggle="button" tabindex="-1" data-original-title="#E7D6DE"></button></div><div><button type="button" class="note-color-btn" style="background-color:#E79C9C;" data-event="foreColor" data-value="#E79C9C" title="" data-toggle="button" tabindex="-1" data-original-title="#E79C9C"></button><button type="button" class="note-color-btn" style="background-color:#FFC69C;" data-event="foreColor" data-value="#FFC69C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFC69C"></button><button type="button" class="note-color-btn" style="background-color:#FFE79C;" data-event="foreColor" data-value="#FFE79C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE79C"></button><button type="button" class="note-color-btn" style="background-color:#B5D6A5;" data-event="foreColor" data-value="#B5D6A5" title="" data-toggle="button" tabindex="-1" data-original-title="#B5D6A5"></button><button type="button" class="note-color-btn" style="background-color:#A5C6CE;" data-event="foreColor" data-value="#A5C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#A5C6CE"></button><button type="button" class="note-color-btn" style="background-color:#9CC6EF;" data-event="foreColor" data-value="#9CC6EF" title="" data-toggle="button" tabindex="-1" data-original-title="#9CC6EF"></button><button type="button" class="note-color-btn" style="background-color:#B5A5D6;" data-event="foreColor" data-value="#B5A5D6" title="" data-toggle="button" tabindex="-1" data-original-title="#B5A5D6"></button><button type="button" class="note-color-btn" style="background-color:#D6A5BD;" data-event="foreColor" data-value="#D6A5BD" title="" data-toggle="button" tabindex="-1" data-original-title="#D6A5BD"></button></div><div><button type="button" class="note-color-btn" style="background-color:#E76363;" data-event="foreColor" data-value="#E76363" title="" data-toggle="button" tabindex="-1" data-original-title="#E76363"></button><button type="button" class="note-color-btn" style="background-color:#F7AD6B;" data-event="foreColor" data-value="#F7AD6B" title="" data-toggle="button" tabindex="-1" data-original-title="#F7AD6B"></button><button type="button" class="note-color-btn" style="background-color:#FFD663;" data-event="foreColor" data-value="#FFD663" title="" data-toggle="button" tabindex="-1" data-original-title="#FFD663"></button><button type="button" class="note-color-btn" style="background-color:#94BD7B;" data-event="foreColor" data-value="#94BD7B" title="" data-toggle="button" tabindex="-1" data-original-title="#94BD7B"></button><button type="button" class="note-color-btn" style="background-color:#73A5AD;" data-event="foreColor" data-value="#73A5AD" title="" data-toggle="button" tabindex="-1" data-original-title="#73A5AD"></button><button type="button" class="note-color-btn" style="background-color:#6BADDE;" data-event="foreColor" data-value="#6BADDE" title="" data-toggle="button" tabindex="-1" data-original-title="#6BADDE"></button><button type="button" class="note-color-btn" style="background-color:#8C7BC6;" data-event="foreColor" data-value="#8C7BC6" title="" data-toggle="button" tabindex="-1" data-original-title="#8C7BC6"></button><button type="button" class="note-color-btn" style="background-color:#C67BA5;" data-event="foreColor" data-value="#C67BA5" title="" data-toggle="button" tabindex="-1" data-original-title="#C67BA5"></button></div><div><button type="button" class="note-color-btn" style="background-color:#CE0000;" data-event="foreColor" data-value="#CE0000" title="" data-toggle="button" tabindex="-1" data-original-title="#CE0000"></button><button type="button" class="note-color-btn" style="background-color:#E79439;" data-event="foreColor" data-value="#E79439" title="" data-toggle="button" tabindex="-1" data-original-title="#E79439"></button><button type="button" class="note-color-btn" style="background-color:#EFC631;" data-event="foreColor" data-value="#EFC631" title="" data-toggle="button" tabindex="-1" data-original-title="#EFC631"></button><button type="button" class="note-color-btn" style="background-color:#6BA54A;" data-event="foreColor" data-value="#6BA54A" title="" data-toggle="button" tabindex="-1" data-original-title="#6BA54A"></button><button type="button" class="note-color-btn" style="background-color:#4A7B8C;" data-event="foreColor" data-value="#4A7B8C" title="" data-toggle="button" tabindex="-1" data-original-title="#4A7B8C"></button><button type="button" class="note-color-btn" style="background-color:#3984C6;" data-event="foreColor" data-value="#3984C6" title="" data-toggle="button" tabindex="-1" data-original-title="#3984C6"></button><button type="button" class="note-color-btn" style="background-color:#634AA5;" data-event="foreColor" data-value="#634AA5" title="" data-toggle="button" tabindex="-1" data-original-title="#634AA5"></button><button type="button" class="note-color-btn" style="background-color:#A54A7B;" data-event="foreColor" data-value="#A54A7B" title="" data-toggle="button" tabindex="-1" data-original-title="#A54A7B"></button></div><div><button type="button" class="note-color-btn" style="background-color:#9C0000;" data-event="foreColor" data-value="#9C0000" title="" data-toggle="button" tabindex="-1" data-original-title="#9C0000"></button><button type="button" class="note-color-btn" style="background-color:#B56308;" data-event="foreColor" data-value="#B56308" title="" data-toggle="button" tabindex="-1" data-original-title="#B56308"></button><button type="button" class="note-color-btn" style="background-color:#BD9400;" data-event="foreColor" data-value="#BD9400" title="" data-toggle="button" tabindex="-1" data-original-title="#BD9400"></button><button type="button" class="note-color-btn" style="background-color:#397B21;" data-event="foreColor" data-value="#397B21" title="" data-toggle="button" tabindex="-1" data-original-title="#397B21"></button><button type="button" class="note-color-btn" style="background-color:#104A5A;" data-event="foreColor" data-value="#104A5A" title="" data-toggle="button" tabindex="-1" data-original-title="#104A5A"></button><button type="button" class="note-color-btn" style="background-color:#085294;" data-event="foreColor" data-value="#085294" title="" data-toggle="button" tabindex="-1" data-original-title="#085294"></button><button type="button" class="note-color-btn" style="background-color:#311873;" data-event="foreColor" data-value="#311873" title="" data-toggle="button" tabindex="-1" data-original-title="#311873"></button><button type="button" class="note-color-btn" style="background-color:#731842;" data-event="foreColor" data-value="#731842" title="" data-toggle="button" tabindex="-1" data-original-title="#731842"></button></div><div><button type="button" class="note-color-btn" style="background-color:#630000;" data-event="foreColor" data-value="#630000" title="" data-toggle="button" tabindex="-1" data-original-title="#630000"></button><button type="button" class="note-color-btn" style="background-color:#7B3900;" data-event="foreColor" data-value="#7B3900" title="" data-toggle="button" tabindex="-1" data-original-title="#7B3900"></button><button type="button" class="note-color-btn" style="background-color:#846300;" data-event="foreColor" data-value="#846300" title="" data-toggle="button" tabindex="-1" data-original-title="#846300"></button><button type="button" class="note-color-btn" style="background-color:#295218;" data-event="foreColor" data-value="#295218" title="" data-toggle="button" tabindex="-1" data-original-title="#295218"></button><button type="button" class="note-color-btn" style="background-color:#083139;" data-event="foreColor" data-value="#083139" title="" data-toggle="button" tabindex="-1" data-original-title="#083139"></button><button type="button" class="note-color-btn" style="background-color:#003163;" data-event="foreColor" data-value="#003163" title="" data-toggle="button" tabindex="-1" data-original-title="#003163"></button><button type="button" class="note-color-btn" style="background-color:#21104A;" data-event="foreColor" data-value="#21104A" title="" data-toggle="button" tabindex="-1" data-original-title="#21104A"></button><button type="button" class="note-color-btn" style="background-color:#4A1031;" data-event="foreColor" data-value="#4A1031" title="" data-toggle="button" tabindex="-1" data-original-title="#4A1031"></button></div></div></div></li></ul></div><div class="note-para btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+Shift+8" data-mac-shortcut="⌘+⇧+7" data-event="insertUnorderedList" tabindex="-1" data-original-title="Unordered list (⌘+⇧+7)"><i class="fa fa-list-ul icon-list-ul"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+Shift+7" data-mac-shortcut="⌘+⇧+8" data-event="insertOrderedList" tabindex="-1" data-original-title="Ordered list (⌘+⇧+8)"><i class="fa fa-list-ol icon-list-ol"></i></button><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" title="" data-toggle="dropdown" tabindex="-1" data-original-title="Paragraph"><i class="fa fa-align-left icon-align-left"></i>  <span class="caret"></span></button><div class="dropdown-menu"><div class="note-align btn-group"><button type="button" class="btn btn-default btn-sm btn-small active" title="" data-shortcut="Ctrl+Shift+L" data-mac-shortcut="⌘+⇧+L" data-event="justifyLeft" tabindex="-1" data-original-title="Align left (⌘+⇧+L)"><i class="fa fa-align-left icon-align-left"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+Shift+E" data-mac-shortcut="⌘+⇧+E" data-event="justifyCenter" tabindex="-1" data-original-title="Align center (⌘+⇧+E)"><i class="fa fa-align-center icon-align-center"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+Shift+R" data-mac-shortcut="⌘+⇧+R" data-event="justifyRight" tabindex="-1" data-original-title="Align right (⌘+⇧+R)"><i class="fa fa-align-right icon-align-right"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+Shift+J" data-mac-shortcut="⌘+⇧+J" data-event="justifyFull" tabindex="-1" data-original-title="Justify full (⌘+⇧+J)"><i class="fa fa-align-justify icon-align-justify"></i></button></div><div class="note-list btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+[" data-mac-shortcut="⌘+[" data-event="outdent" tabindex="-1" data-original-title="Outdent (⌘+[)"><i class="fa fa-outdent icon-indent-left"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-shortcut="Ctrl+]" data-mac-shortcut="⌘+]" data-event="indent" tabindex="-1" data-original-title="Indent (⌘+])"><i class="fa fa-indent icon-indent-right"></i></button></div></div></div><div class="note-height btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Line Height"><i class="fa fa-text-height icon-text-height"></i>&nbsp; <b class="caret"></b></button><ul class="dropdown-menu"><li><a data-event="lineHeight" data-value="1.0" class=""><i class="fa fa-check icon-ok"></i> 1.0</a></li><li><a data-event="lineHeight" data-value="1.2" class=""><i class="fa fa-check icon-ok"></i> 1.2</a></li><li><a data-event="lineHeight" data-value="1.4" class=""><i class="fa fa-check icon-ok"></i> 1.4</a></li><li><a data-event="lineHeight" data-value="1.5" class=""><i class="fa fa-check icon-ok"></i> 1.5</a></li><li><a data-event="lineHeight" data-value="1.6" class=""><i class="fa fa-check icon-ok"></i> 1.6</a></li><li><a data-event="lineHeight" data-value="1.8" class=""><i class="fa fa-check icon-ok"></i> 1.8</a></li><li><a data-event="lineHeight" data-value="2.0" class=""><i class="fa fa-check icon-ok"></i> 2.0</a></li><li><a data-event="lineHeight" data-value="3.0" class=""><i class="fa fa-check icon-ok"></i> 3.0</a></li></ul></div><div class="note-table btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" title="" data-toggle="dropdown" tabindex="-1" data-original-title="Table"><i class="fa fa-table icon-table"></i> <span class="caret"></span></button><ul class="dropdown-menu"><div class="note-dimension-picker"><div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1"></div><div class="note-dimension-picker-highlighted"></div><div class="note-dimension-picker-unhighlighted"></div></div><div class="note-dimension-display"> 1 x 1 </div></ul></div><div class="note-insert btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showLinkDialog" tabindex="-1" data-original-title="Link"><i class="fa fa-link icon-link"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showImageDialog" tabindex="-1" data-original-title="Picture"><i class="fa fa-picture-o icon-picture"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showVideoDialog" tabindex="-1" data-original-title="Video"><i class="fa fa-youtube-play icon-play"></i></button></div><div class="note-view btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="fullscreen" tabindex="-1" data-original-title="Full Screen"><i class="fa fa-arrows-alt icon-fullscreen"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="codeview" tabindex="-1" data-original-title="Code View"><i class="fa fa-code icon-code"></i></button></div><div class="note-help btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showHelpDialog" tabindex="-1" data-original-title="Help"><i class="fa fa-question icon-question"></i></button></div></div><textarea class="note-codable"></textarea><div class="note-editable" contenteditable="true">
+                                                            <h3>Lorem Ipsum is simply</h3>
+                                                            dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
+                                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                                            <br>
+
+                                                        </div></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group"><label class="col-sm-2 control-label">Meta Tag Title:</label>
+                                                        <div class="col-sm-10"><input type="text" class="form-control" placeholder="..."></div>
+                                                    </div>
+                                                    <div class="form-group"><label class="col-sm-2 control-label">Meta Tag Description:</label>
+                                                        <div class="col-sm-10"><input type="text" class="form-control" placeholder="Sheets containing Lorem"></div>
+                                                    </div>
+                                                    <div class="form-group"><label class="col-sm-2 control-label">Meta Tag Keywords:</label>
+                                                        <div class="col-sm-10"><input type="text" class="form-control" placeholder="Lorem, Ipsum, has, been"></div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <table class="table table-bordered table-stripped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>
+                                                            Image preview
+                                                        </th>
+                                                        <th>
+                                                            Sort order
+                                                        </th>
+                                                        <th>
+                                                            Actions
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <img width="150" src="https://static.pexels.com/photos/5876/food-salad-healthy-vegetables-medium.jpg">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" value="1">
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <img width="150" src="https://static.pexels.com/photos/3323/food-salad-healthy-vegetables-medium.jpg">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" value="2">
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <img width="150" src="https://static.pexels.com/photos/5938/food-salad-healthy-lunch-medium.jpg">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control" value="3">
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                        </td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                                <div style="border: 2px dashed #ccc; margin: 15px; padding: 70px 30px" class="text-center">
+                                                    <button class="btn btn-success btn-xs">Select file</button> or drag upload
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="tab-pane">
+                                    <div class="panel-body">
+
+                                        <fieldset class="form-horizontal">
+                                            <div class="form-group"><label class="col-sm-2 control-label">ID:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="543"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Model:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="..."></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Location:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="location"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Tax Class:</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Quantity:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="Quantity"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Minimum quantity:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="2"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Sort order:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="0"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">Status:</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+
+                                    </div>
+                                </div>
+                                <div id="tab-3" class="tab-pane">
+                                    <div class="panel-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-stripped table-bordered">
+
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        Group
+                                                    </th>
+                                                    <th>
+                                                        Quantity
+                                                    </th>
+                                                    <th>
+                                                        Discount
+                                                    </th>
+                                                    <th style="width: 20%">
+                                                        Date start
+                                                    </th>
+                                                    <th style="width: 20%">
+                                                        Date end
+                                                    </th>
+                                                    <th>
+                                                        Actions
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">Group 1</option>
+                                                            <option>Group 2</option>
+                                                            <option>Group 3</option>
+                                                            <option>Group 4</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="10">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="$10.00">
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="tab-4" class="tab-pane">
+                                    <div class="panel-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-stripped">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        Image preview
+                                                    </th>
+                                                    <th>
+                                                        Image url
+                                                    </th>
+                                                    <th>
+                                                        Sort order
+                                                    </th>
+                                                    <th>
+                                                        Actions
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/2s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image1.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="1">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/1s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image2.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="2">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/3s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image3.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="3">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/4s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image4.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="4">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/5s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image5.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="5">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/6s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image6.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="6">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="img/gallery/7s.jpg">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" disabled="" value="http://mydomain.com/images/image7.png">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" value="7">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-white"><i class="fa fa-trash"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+        </div>
+        <div id="right-sidebar">
+            <div class="sidebar-container">
+
+                <ul class="nav nav-tabs navs-3">
+
+                    <li class="active"><a data-toggle="tab" href="#tab-1">
+                        Notes
+                    </a></li>
+                    <li><a data-toggle="tab" href="#tab-2">
+                        Projects
+                    </a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-3">
+                        <i class="fa fa-gear"></i>
+                    </a></li>
+                </ul>
+
+                <div class="tab-content">
+
+
+                    <div id="tab-1" class="tab-pane active">
+
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
+                            <small><i class="fa fa-tim"></i> You have 10 new message.</small>
+                        </div>
+
+                        <div>
+
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a1.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+
+                                        There are many variations of passages of Lorem Ipsum available.
+                                        <br>
+                                        <small class="text-muted">Today 4:21 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        The point of using Lorem Ipsum is that it has a more-or-less normal.
+                                        <br>
+                                        <small class="text-muted">Yesterday 2:45 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        Mevolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                        <br>
+                                        <small class="text-muted">Yesterday 1:10 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                    </div>
+
+                                    <div class="media-body">
+                                        Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                        <br>
+                                        <small class="text-muted">Monday 8:37 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a8.jpg">
+                                    </div>
+                                    <div class="media-body">
+
+                                        All the Lorem Ipsum generators on the Internet tend to repeat.
+                                        <br>
+                                        <small class="text-muted">Today 4:21 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a7.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                        <br>
+                                        <small class="text-muted">Yesterday 2:45 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
+                                        <br>
+                                        <small class="text-muted">Yesterday 1:10 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                    </div>
+                                    <div class="media-body">
+                                        Uncover many web sites still in their infancy. Various versions have.
+                                        <br>
+                                        <small class="text-muted">Monday 8:37 pm</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tab-2" class="tab-pane">
+
+                        <div class="sidebar-title">
+                            <h3> <i class="fa fa-cube"></i> Latest projects</h3>
+                            <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                        </div>
+
+                        <ul class="sidebar-list">
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Business valuation</h4>
+                                    It is a long established fact that a reader will be distracted.
+
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Contract with Company </h4>
+                                    Many desktop publishing packages and web page editors.
+
+                                    <div class="small">Completion with: 48%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Meeting</h4>
+                                    By the readable content of a page when looking at its layout.
+
+                                    <div class="small">Completion with: 14%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary pull-right">NEW</span>
+                                    <h4>The generated</h4>
+                                    <!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
+                                    There are many variations of passages of Lorem Ipsum available.
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Business valuation</h4>
+                                    It is a long established fact that a reader will be distracted.
+
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
+                                    </div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Contract with Company </h4>
+                                    Many desktop publishing packages and web page editors.
+
+                                    <div class="small">Completion with: 48%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="small pull-right m-t-xs">9 hours ago</div>
+                                    <h4>Meeting</h4>
+                                    By the readable content of a page when looking at its layout.
+
+                                    <div class="small">Completion with: 14%</div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary pull-right">NEW</span>
+                                    <h4>The generated</h4>
+                                    <!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
+                                    There are many variations of passages of Lorem Ipsum available.
+                                    <div class="small">Completion with: 22%</div>
+                                    <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div id="tab-3" class="tab-pane">
+
+                        <div class="sidebar-title">
+                            <h3><i class="fa fa-gears"></i> Settings</h3>
+                            <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
+                        </div>
+
+                        <div class="setings-item">
+                    <span>
+                        Show notifications
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                    <label class="onoffswitch-label" for="example">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Disable Chat
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
+                                    <label class="onoffswitch-label" for="example2">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Enable history
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                    <label class="onoffswitch-label" for="example3">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Show charts
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
+                                    <label class="onoffswitch-label" for="example4">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Offline users
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example5">
+                                    <label class="onoffswitch-label" for="example5">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Global search
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example6">
+                                    <label class="onoffswitch-label" for="example6">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setings-item">
+                    <span>
+                        Update everyday
+                    </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
+                                    <label class="onoffswitch-label" for="example7">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-content">
+                            <h4>Settings</h4>
+                            <div class="small">
+                                I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="js/plugins/flot/jquery.flot.time.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Jvectormap -->
+    <script src="js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+    <!-- EayPIE -->
+    <script src="js/plugins/easypiechart/jquery.easypiechart.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+
+            $('.summernote').summernote();
+
+            $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+        });
+    </script>
+
+</body>
+</html>
