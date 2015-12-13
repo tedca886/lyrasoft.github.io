@@ -15,7 +15,7 @@ h5 {
   font-family: Montserrat, 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold, 'PingFang TC', '微軟正黑體', sans-serif;
 }
 a {
-  color: #3671B2;
+  color: #3671b2;
 }
 a:hover {
   color: #2a588b;
@@ -29,7 +29,7 @@ p {
   color: white;
 }
 #what-we-made {
-  background-color: #EB4D46;
+  background-color: #eb4d46;
   color: white;
 }
 #our-works {
@@ -37,7 +37,7 @@ p {
   color: white;
 }
 #footer {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
   color: white;
 }
 #copyright {
@@ -162,7 +162,7 @@ body.work.view-article .item-pagework .article-content > * {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #EB4D46;
+  background: #eb4d46;
   text-transform: uppercase;
   padding: 4px 5px;
   border-radius: 3px;
@@ -172,7 +172,7 @@ body.work.view-article .item-pagework .article-content > * {
   margin-bottom: 0;
 }
 #page-heading {
-  background-color: #EB4D46;
+  background-color: #eb4d46;
   color: white;
 }
 #page-heading a {
