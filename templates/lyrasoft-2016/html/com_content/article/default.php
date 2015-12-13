@@ -25,7 +25,7 @@ $columnClass = ' col-md-offset-2 col-md-8';
 if (class_exists('Ezset') && strpos($this->pageclass_sfx, 'work') !== false)
 {
     $ezset = Ezset::getInstance();
-    $ezset->data->headingContent = $this->item->introtext;
+    $ezset->data->headingContent = JHtmlContent::prepare($this->item->introtext);
 }
 
 if (strpos($this->pageclass_sfx, 'fullwidth') !== false)

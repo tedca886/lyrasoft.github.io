@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.1" type="plugin" group="system" method="upgrade">
+<extension version="3.1"
+	type="plugin"
+	group="system"
+	method="upgrade">
 	<name>plg_system_sef</name>
 	<author>Joomla! Project</author>
 	<creationDate>December 2007</creationDate>
@@ -19,7 +22,8 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="domain" type="url"
+				<field name="domain"
+					type="url"
 					description="PLG_SEF_DOMAIN_DESCRIPTION"
 					label="PLG_SEF_DOMAIN_LABEL"
 					filter="url"

@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>專利與商標管理</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+
+    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-38549.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, 'sourcehansans-tc', "Microsoft JhengHei", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">控制台</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="index.html">Dashboard v.1</a></li>
+                        <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                        <li><a href="dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">專利管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="active"><a href="graph_flot.html">案件搜尋</a></li>
+                        <li><a href="graph_morris.html">審核案件</a></li>
+                        <li><a href="graph_rickshaw.html">待處理案件</a></li>
+                        <li><a href="graph_chartjs.html">商標管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">訂單管理 </span><span class="label label-warning pull-right">16/24</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="mailbox.html">Inbox</a></li>
+                        <li><a href="mail_detail.html">Email view</a></li>
+                        <li><a href="mail_compose.html">Compose email</a></li>
+                        <li><a href="email_template.html">Email templates</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="metrics.html"><i class="fa fa-globe"></i> <span class="nav-label">國家年費管理</span>  </a>
+                </li>
+                <li>
+                    <a href="widgets.html"><i class="fa fa-user"></i> <span class="nav-label">會員管理</span></a>
+                </li>
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="form_basic.html">Basic form</a></li>-->
+                        <!--<li><a href="form_advanced.html">Advanced Plugins</a></li>-->
+                        <!--<li><a href="form_wizard.html">Wizard</a></li>-->
+                        <!--<li><a href="form_file_upload.html">File Upload</a></li>-->
+                        <!--<li><a href="form_editors.html">Text Editor</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="contacts.html">Contacts</a></li>-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="profile_2.html">Profile v.2</a></li>-->
+                        <!--<li><a href="contacts_2.html">Contacts v.2</a></li>-->
+                        <!--<li><a href="projects.html">Projects</a></li>-->
+                        <!--<li><a href="project_detail.html">Project detail</a></li>-->
+                        <!--<li><a href="teams_board.html">Teams board</a></li>-->
+                        <!--<li><a href="social_feed.html">Social feed</a></li>-->
+                        <!--<li><a href="clients.html">Clients</a></li>-->
+                        <!--<li><a href="full_height.html">Outlook view</a></li>-->
+                        <!--<li><a href="vote_list.html">Vote list</a></li>-->
+                        <!--<li><a href="file_manager.html">File manager</a></li>-->
+                        <!--<li><a href="calendar.html">Calendar</a></li>-->
+                        <!--<li><a href="issue_tracker.html">Issue tracker</a></li>-->
+                        <!--<li><a href="blog.html">Blog</a></li>-->
+                        <!--<li><a href="article.html">Article</a></li>-->
+                        <!--<li><a href="faq.html">FAQ</a></li>-->
+                        <!--<li><a href="timeline.html">Timeline</a></li>-->
+                        <!--<li><a href="pin_board.html">Pin board</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="search_results.html">Search results</a></li>-->
+                        <!--<li><a href="lockscreen.html">Lockscreen</a></li>-->
+                        <!--<li><a href="invoice.html">Invoice</a></li>-->
+                        <!--<li><a href="login.html">Login</a></li>-->
+                        <!--<li><a href="login_two_columns.html">Login v.2</a></li>-->
+                        <!--<li><a href="forgot_password.html">Forget password</a></li>-->
+                        <!--<li><a href="register.html">Register</a></li>-->
+                        <!--<li><a href="404.html">404 Page</a></li>-->
+                        <!--<li><a href="500.html">500 Page</a></li>-->
+                        <!--<li><a href="empty_page.html">Empty page</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="toastr_notifications.html">Notification</a></li>-->
+                        <!--<li><a href="nestable_list.html">Nestable list</a></li>-->
+                        <!--<li><a href="agile_board.html">Agile board</a></li>-->
+                        <!--<li><a href="timeline_2.html">Timeline v.2</a></li>-->
+                        <!--<li><a href="diff.html">Diff</a></li>-->
+                        <!--<li><a href="sweetalert.html">Sweet alert</a></li>-->
+                        <!--<li><a href="idle_timer.html">Idle timer</a></li>-->
+                        <!--<li><a href="spinners.html">Spinners</a></li>-->
+                        <!--<li><a href="tinycon.html">Live favicon</a></li>-->
+                        <!--<li><a href="google_maps.html">Google maps</a></li>-->
+                        <!--<li><a href="code_editor.html">Code editor</a></li>-->
+                        <!--<li><a href="modal_window.html">Modal window</a></li>-->
+                        <!--<li><a href="forum_main.html">Forum view</a></li>-->
+                        <!--<li><a href="validation.html">Validation</a></li>-->
+                        <!--<li><a href="tree_view.html">Tree view</a></li>-->
+                        <!--<li><a href="chat_view.html">Chat view</a></li>-->
+                        <!--<li><a href="masonry.html">Masonry</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="typography.html">Typography</a></li>-->
+                        <!--<li><a href="icons.html">Icons</a></li>-->
+                        <!--<li><a href="draggable_panels.html">Draggable Panels</a></li>-->
+                        <!--<li><a href="buttons.html">Buttons</a></li>-->
+                        <!--<li><a href="video.html">Video</a></li>-->
+                        <!--<li><a href="tabs_panels.html">Panels</a></li>-->
+                        <!--<li><a href="tabs.html">Tabs</a></li>-->
+                        <!--<li><a href="notifications.html">Notifications & Tooltips</a></li>-->
+                        <!--<li><a href="badges_labels.html">Badges, Labels, Progress</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+
+                <!--<li>-->
+                    <!--<a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="table_basic.html">Static Tables</a></li>-->
+                        <!--<li><a href="table_data_tables.html">Data Tables</a></li>-->
+                        <!--<li><a href="table_foo_table.html">Foo Tables</a></li>-->
+                        <!--<li><a href="jq_grid.html">jqGrid</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="active">-->
+                    <!--<a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level">-->
+                        <!--<li><a href="ecommerce_products_grid.html">Products grid</a></li>-->
+                        <!--<li class="active"><a href="ecommerce_product_list.html">Products list</a></li>-->
+                        <!--<li><a href="ecommerce_product.html">Product edit</a></li>-->
+                        <!--<li><a href="ecommerce_product_detail.html">Product detail</a></li>-->
+                        <!--<li><a href="ecommerce-orders.html">Orders</a></li>-->
+                        <!--<li><a href="ecommerce_payments.html">Credit Card form</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li><a href="basic_gallery.html">Lightbox Gallery</a></li>-->
+                        <!--<li><a href="slick_carousel.html">Slick Carousel</a></li>-->
+                        <!--<li><a href="carousel.html">Bootstrap Carousel</a></li>-->
+
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>-->
+                    <!--<ul class="nav nav-second-level collapse">-->
+                        <!--<li>-->
+                            <!--<a href="#">Third Level <span class="fa arrow"></span></a>-->
+                            <!--<ul class="nav nav-third-level">-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Third Level Item</a>-->
+                                <!--</li>-->
+
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">Second Level Item</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Second Level Item</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Second Level Item</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>-->
+                <!--</li>-->
+                <!--<li class="landing_link">-->
+                    <!--<a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>-->
+                <!--</li>-->
+                <!--<li class="special_link">-->
+                    <!--<a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>-->
+                <!--</li>-->
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">Welcome to LYRASOFT Admin Theme.</span>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/a7.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        <small class="pull-right">46h ago</small>
+                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/a4.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="pull-right text-navy">5h ago</small>
+                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/profile.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="pull-right">23h ago</small>
+                                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="mailbox.html">
+                                        <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="mailbox.html">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="profile.html">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="grid_options.html">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="notifications.html">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>專利與商標管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a>專利管理</a>
+                    </li>
+                    <li class="active">
+                        <strong>專利與商標總查詢</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>進階搜尋</h5> <span class="label label-primary">Note</span>
+                </div>
+
+                <div class="ibox-content m-b-sm border-bottom">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="案件編號">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="案件名稱">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="專利/商標權人">
+                            </div>
+                            <h4>起始日</h4>
+                            <div class="form-inline">
+                                <div class="form-group" style="margin-bottom: 10px">
+                                    從 -
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button">
+                                            <span class="fa fa-fw fa-calendar"></span>
+                                        </button>
+                                      </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    到 -
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button">
+                                            <span class="fa fa-fw fa-calendar"></span>
+                                        </button>
+                                      </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>類別數</h4>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="exampleInputName2" placeholder="大於">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="小於">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>請求項數</h4>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="exampleInputName2" placeholder="大於">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="小於">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>到期日</h4>
+                                <div class="form-inline">
+                                    <div class="form-group" style="margin-bottom: 10px">
+                                        從 -
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button">
+                                            <span class="fa fa-fw fa-calendar"></span>
+                                        </button>
+                                      </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        到 -
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button">
+                                            <span class="fa fa-fw fa-calendar"></span>
+                                        </button>
+                                      </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <select id="search_a_status" name="search[a.status][]" size="7" class="form-control" multiple="multiple" style="width: 70%">
+                                    <option value="" selected="selected">==所有==</option>
+                                    <option value="1">審核中</option>
+                                    <option value="2">正常案件</option>
+                                    <option value="3">即將到期(3個月內)</option>
+                                    <option value="4">即將到期(1個月內)</option>
+                                    <option value="5">逾期</option>
+                                    <option value="6">終止</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <select id="search_a_category" name="search[a.category][]" size="5" class="form-control" multiple="multiple" style="width: 70%">
+                                    <!--<option value="" selected="selected">==所有==</option>-->
+                                    <option value="invention" selected="selected">專利</option>
+                                    <option value="large_entity">大實體</option>
+                                    <option value="small_entity">小實體</option>
+                                    <option value="newtype">新型</option>
+                                    <option value="newstyle">新式樣</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-primary active">兩者</button>
+                                    <button type="button" class="btn btn-white">專利</button>
+                                    <button type="button" class="btn btn-white">商標</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <select id="search_a_country" name="search[a.country][]" size="10" class="form-control" multiple="multiple" style="width: 70%">
+                                    <option value="" selected="selected">請選擇國家</option>
+                                    <optgroup label="美洲">
+                                        <option value="3">美國</option>
+                                        <option value="26">加拿大</option>
+                                        <option value="38">巴西</option>
+                                    </optgroup>
+                                    <optgroup label="亞洲">
+                                        <option value="1">韓國</option>
+                                        <option value="2">日本</option>
+                                        <option value="27">台灣</option>
+                                        <option value="30">中國</option>
+                                        <option value="33">越南</option>
+                                        <option value="35">商標服務費Test</option>
+                                        <option value="37">俄羅斯</option>
+                                        <option value="39">測試繳費用</option>
+                                        <option value="47">測試繳費國家</option>
+                                    </optgroup>
+                                    <optgroup label="歐洲">
+                                        <option value="20">德國</option>
+                                        <option value="28">法國</option>
+                                        <option value="31">英國</option>
+                                        <option value="32">歐盟</option>
+                                        <option value="36">義大利</option>
+                                    </optgroup>
+                                    <optgroup label="大洋洲">
+                                        <option value="34">澳洲</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-center">
+                        <button class="btn btn-primary" style="width: 100px">
+                            <span class="fa fa-search"></span>
+                            搜尋
+                        </button>
+
+                        <button class="btn btn-white" style="width: 100px">
+                            <span class="fa fa-remove"></span>
+                            清除
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-content">
+
+                            <style>
+                                table td, table th .checkbox {
+                                    margin: 0;
+                                }
+                            </style>
+
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+
+                                        <th>
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox2" type="checkbox">
+                                                <label for="checkbox2"></label>
+                                            </div>
+                                        </th>
+                                        <th>編號 </th>
+                                        <th>種類 </th>
+                                        <th>案件名稱</th>
+                                        <th>案件狀態</th>
+                                        <th>起始日</th>
+                                        <th>到期日</th>
+                                        <th>完成日</th>
+                                        <th>會員</th>
+                                        <th>專利/商標權人</th>
+                                        <th>國別</th>
+                                        <th>類別</th>
+                                        <th class="text-nowrap">請求項</th>
+                                        <th class="text-nowrap">類別數</th>
+                                        <th>證書號</th>
+                                        <th>申請案號</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb83" name="cid[]" value="1765" onclick="Joomla.isChecked(this.checked);" title="行 84 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1765				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1765&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                Lorem Ispurm Qrst					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-success">
+						剩餘 -1127 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2002-11-11				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-11-11				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=663">
+                                                Natika					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            LKK LKK 				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            美國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            US2356798				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            32/458645				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb84" name="cid[]" value="1764" onclick="Joomla.isChecked(this.checked);" title="行 85 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1764				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1764&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                小春子跟隨你GO					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-primary">
+						正常案件					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2003-01-01				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2013-01-01				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=663">
+                                                Natika					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            小春子				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            巴西				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            12345678				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            125346				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb85" name="cid[]" value="1763" onclick="Joomla.isChecked(this.checked);" title="行 86 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1763				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1763&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                GEO GRAPHY					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-danger">
+						剩餘 -1164 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2002-10-05				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-05				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=663">
+                                                Natika					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            GEO GRAPHY 				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            台灣				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123564				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            3256445				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb86" name="cid[]" value="1762" onclick="Joomla.isChecked(this.checked);" title="行 87 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1762				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1762&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                Café Terrace at Night					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-primary">
+						正常案件					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0000-00-00				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2013-02-02				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=663">
+                                                Natika					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            小帥氣股份有限公司				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            法國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            FR125689				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            352468				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb87" name="cid[]" value="1761" onclick="Joomla.isChecked(this.checked);" title="行 88 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1761				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1761&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                娃娃屋					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-success">
+						剩餘 -1147 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2008-10-22				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-22				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=663">
+                                                Natika					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            蔡蔡				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            日本				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            新型				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            3				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            12345				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb88" name="cid[]" value="1760" onclick="Joomla.isChecked(this.checked);" title="行 89 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1760				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1760&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                筆					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-success">
+						剩餘 -1123 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2005-05-15				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-11-15				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=663">
+                                                Natika					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            帥帥				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            美國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            發明小實體				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            228228				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            8831228				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb89" name="cid[]" value="1759" onclick="Joomla.isChecked(this.checked);" title="行 90 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1759				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1759&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                蓋板					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-danger">
+						剩餘 -1174 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2009-09-25				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-09-25				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            小美美				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            加拿大				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            發明				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            556988				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            52344				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb90" name="cid[]" value="1758" onclick="Joomla.isChecked(this.checked);" title="行 91 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1758				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1758&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                電話機					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-success">
+						剩餘 -1138 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1996-10-31				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-31				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            小帥帥				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            英國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            發明				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            89777444				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            5892221				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb91" name="cid[]" value="1757" onclick="Joomla.isChecked(this.checked);" title="行 92 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1757				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1757&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                噴頭					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-success">
+						剩餘 -1148 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2008-10-21				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-21				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            王老先生				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            德國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            新型				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            8563222				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1578444				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb92" name="cid[]" value="1756" onclick="Joomla.isChecked(this.checked);" title="行 93 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1756				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1756&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                噴槍					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-primary">
+						正常案件					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2009-11-25				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2014-11-25				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-09-05				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            林老師				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            中國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            發明				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            856322				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            159987				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb93" name="cid[]" value="1755" onclick="Joomla.isChecked(this.checked);" title="行 94 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1755				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1755&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                口罩					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-danger">
+						剩餘 -1166 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2009-10-03				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-03				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            Carbon Co.LTD				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            英國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            發明				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            77859779				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            09231459.12				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb94" name="cid[]" value="1754" onclick="Joomla.isChecked(this.checked);" title="行 95 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1754				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1754&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                日光燈					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-danger">
+						剩餘 -1176 日					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2008-09-23				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-09-23				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            雅格數位				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            法國				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            新型				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            456897877				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2009568413.1245				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb95" name="cid[]" value="1753" onclick="Joomla.isChecked(this.checked);" title="行 96 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1753				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_p">
+						專利					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1753&amp;pb=p&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                瓶					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-primary">
+						正常案件					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2007-09-28				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2017-09-28				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-09-09				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=660">
+                                                Eric					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            徐先生				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            歐盟				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            新式樣				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            0				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            20085844				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            200755588				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb96" name="cid[]" value="1752" onclick="Joomla.isChecked(this.checked);" title="行 97 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1752				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1752&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                測試商標 5 | 測試繳費國家 | 商標					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-default">
+						審核中					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2002-10-15				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-12				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=656">
+                                                admin					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            測試專利權人				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            測試繳費國家				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            1				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb97" name="cid[]" value="1746" onclick="Joomla.isChecked(this.checked);" title="行 98 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1746				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1746&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                測試商標 5 | 測試繳費用 | 商標					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-default">
+						審核中					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2002-10-15				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-12				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=656">
+                                                admin					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            測試專利權人				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            測試繳費用				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            7				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                    </tr>
+                                    <tr class="row0">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb98" name="cid[]" value="1743" onclick="Joomla.isChecked(this.checked);" title="行 99 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1743				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1743&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                測試商標 5 | 俄羅斯 | 商標					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-default">
+						審核中					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2002-10-15				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-12				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=656">
+                                                admin					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            測試專利權人				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            俄羅斯				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                    </tr>
+                                    <tr class="row1">
+                                        <td class="center">
+                                            <div class="checkbox checkbox-primary"><input type="checkbox" id="cb99" name="cid[]" value="1739" onclick="Joomla.isChecked(this.checked);" title="行 100 的勾選盒">	<label for="checkbox2"></label>                                             </div>				</td>
+                                        <td class="center">
+                                            1739				</td>
+
+
+                                        <!--  -->
+                                        <td width="5%" class="center">
+					<span class="color_b">
+						商標					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="" style="word-wrap: break-word;">
+                                            <a href="/payany/administrator/index.php?option=com_payany&amp;task=item.edit&amp;id=1739&amp;pb=b&amp;redirect=aHR0cDovL2xvY2FsaG9zdC9wYXlhbnkvYWRtaW5pc3RyYXRvci9pbmRleC5waHA/b3B0aW9uPWNvbV9wYXlhbnk=">
+                                                測試商標 5 | 義大利 | 商標					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+
+										<span class="label label-default">
+						審核中					</span>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2002-10-15				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            2012-10-12				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            <a href="/payany/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=656">
+                                                admin					</a>
+                                        </td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            測試專利權人				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            義大利				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            -				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            12				</td>
+
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                        <!--  -->
+                                        <td class="center">
+                                            123456				</td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- FooTable -->
+<script src="js/plugins/footable/footable.all.min.js"></script>
+
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function() {
+
+        $('.footable').footable();
+
+    });
+
+</script>
+
+</body>
+
+</html>

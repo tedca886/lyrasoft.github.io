@@ -1,49 +1,35 @@
 <?php
-class JConfig
-{
-	// Database settings
-	public $dbtype   = 'pdomysql';
-	public $host     = 'localhost';
-	public $user     = 'root';
+class JConfig {
+	public $dbtype = 'pdomysql';
+	public $host = 'localhost';
+	public $user = 'root';
 	public $password = '1234';
-	public $db       = 'lyrasoft';
+	public $db = 'lyrasoft';
 	public $dbprefix = 'lyra_';
-
-	// Paths
-	public $log_path = '../log';
-	public $tmp_path = '../tmp';
-
-	// Cache settings
-	public $caching       = '0';
+	public $log_path = 'D:\\www\\lyrasoft/log';
+	public $tmp_path = 'D:\\www\\lyrasoft/tmp';
+	public $caching = '0';
 	public $cache_handler = 'file';
-	public $cachetime     = '15';
-
-	// Error reporting settings
+	public $cachetime = '15';
 	public $error_reporting = 'development';
-
-	// Debug settings
-	public $debug      = '0';
+	public $debug = '0';
 	public $debug_lang = '0';
-
-	// Site Information
 	public $sitename = 'LYRASOFT';
 	public $fromname = 'LYRASOFT';
 	public $MetaDesc = 'A site by LYRASOFT Studios / SMS';
 	public $MetaKeys = 'asika, asikart, lyrasoft, seo, joomla';
-
-	// Other config
 	public $offline = '0';
 	public $offline_message = 'This site is down for maintenance.<br /> Please check back again soon.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $editor = 'jce';
+	public $editor = 'akmarkdown';
 	public $captcha = '0';
 	public $list_limit = '100';
 	public $access = '1';
 	public $live_site = '';
 	public $secret = 'CEh8niy2Mg7zwHk4';
 	public $gzip = '0';
-	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
+	public $helpurl = 'https://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '';
 	public $ftp_port = '';
 	public $ftp_user = '';
@@ -82,10 +68,27 @@ class JConfig
 	public $asset_id = '1';
 	public $language = 'zh-TW';
 	public $useStrongEncryption = '1';
-
-	public function __construct()
-	{
-		$this->log_path = JPATH_ROOT . '/log';
-		$this->tmp_path = JPATH_ROOT . '/tmp';
-	}
+	public $memcache_persist = '1';
+	public $memcache_compress = '0';
+	public $memcache_server_host = 'localhost';
+	public $memcache_server_port = '11211';
+	public $memcached_persist = '1';
+	public $memcached_compress = '0';
+	public $memcached_server_host = 'localhost';
+	public $memcached_server_port = '11211';
+	public $redis_persist = '1';
+	public $redis_server_host = 'localhost';
+	public $redis_server_port = '6379';
+	public $redis_server_auth = '';
+	public $redis_server_db = '0';
+	public $proxy_enable = '0';
+	public $proxy_host = '';
+	public $proxy_port = '';
+	public $proxy_user = '';
+	public $proxy_pass = '';
+	public $massmailoff = '0';
+	public $session_memcache_server_host = 'localhost';
+	public $session_memcache_server_port = '11211';
+	public $session_memcached_server_host = 'localhost';
+	public $session_memcached_server_port = '11211';
 }

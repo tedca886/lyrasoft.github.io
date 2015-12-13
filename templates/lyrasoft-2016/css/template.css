@@ -216,7 +216,7 @@ body.work.view-article .item-pagework .article-content > * {
   height: 500px;
   border: 1px solid #eee;
   background-color: #eee;
-  background-position: center center;
+  background-position: center left;
   position: relative;
 }
 .work-item .work-item-inner {
