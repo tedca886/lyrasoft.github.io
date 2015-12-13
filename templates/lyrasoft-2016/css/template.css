@@ -18,7 +18,7 @@ h5 {
   font-weight: 700;
 }
 a {
-  color: #3671B2;
+  color: #3671b2;
 }
 a:hover {
   color: #2a588b;
@@ -39,8 +39,18 @@ p {
   background-color: #384761;
   color: white;
 }
+
+#what-we-made {
+  background-color: #eb4d46;
+  color: white;
+}
+#our-works {
+  background-color: #333;
+  color: white;
+}
+
 #footer {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
   color: white;
 }
 #copyright {
@@ -253,7 +263,7 @@ body.work.view-article .item-pagework .article-content > * {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #EB4D46;
+  background: #eb4d46;
   text-transform: uppercase;
   padding: 0 11px;
   border-radius: 3px;
@@ -268,7 +278,7 @@ body.work.view-article .item-pagework .article-content > * {
   margin-bottom: 0;
 }
 #page-heading {
-  background-color: #EB4D46;
+  background-color: #eb4d46;
   color: white;
 }
 #page-heading a {
