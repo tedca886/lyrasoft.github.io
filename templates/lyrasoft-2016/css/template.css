@@ -26,7 +26,7 @@ h6 {
   font-weight: 700;
 }
 a {
-  color: #3671B2;
+  color: #3671b2;
 }
 a:hover {
   color: #2a588b;
@@ -48,7 +48,7 @@ p {
   color: white;
 }
 #footer {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
   color: white;
 }
 #copyright {
@@ -134,7 +134,7 @@ header > .navbar .navbar-brand {
   color: #384761;
 }
 #what-we-made {
-  background-color: #EB4D46;
+  background-color: #eb4d46;
   color: white;
 }
 #our-works {
@@ -169,7 +169,7 @@ body.path-about #page-heading {
   background-color: #384761;
 }
 body.path-service #page-heading {
-  background-color: #EEA939;
+  background-color: #eea939;
 }
 .page-header {
   border: none;
@@ -224,13 +224,13 @@ body.itemid-127 #page-heading,
 body.itemid-128 #page-heading,
 body.itemid-130 #page-heading,
 body.itemid-132 #page-heading {
-  background-color: #B9DB7A;
+  background-color: #b9db7a;
 }
 body.view-category.layout-blog .col-right-inner {
   margin-top: 70px;
 }
 body.itemid-122 #page-heading {
-  background-color: #C1A5CD;
+  background-color: #c1a5cd;
 }
 body.work.view-article #body > .container {
   width: 100%;
@@ -304,7 +304,7 @@ body.work.view-article .item-pagework .full-block {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #EB4D46;
+  background: #eb4d46;
   text-transform: uppercase;
   padding: 0 11px;
   border-radius: 3px;
@@ -319,7 +319,7 @@ body.work.view-article .item-pagework .full-block {
   margin-bottom: 0;
 }
 #page-heading {
-  background-color: #EB4D46;
+  background-color: #eb4d46;
   color: white;
 }
 #page-heading a {
@@ -352,10 +352,10 @@ body.work.view-article .item-pagework .full-block {
   color: white;
 }
 body.itemid-116 #page-heading {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
 }
 body.itemid-116 #body {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
   color: white;
   margin: 0;
   padding-top: 0;

@@ -14,9 +14,7 @@
 	</p>
 
 	<div class="inner-top">
-		<form accept-charset="UTF-8" action="https://formkeep.com/f/7181a5171f93" method="POST">
-			<input type="hidden" name="utf8" value="✓">
-
+		<form accept-charset="UTF-8" action="https://www.getform.org/f/823b6ef7-2518-4b20-a92d-d56d36645b6b" method="POST">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
@@ -42,17 +40,17 @@
 						<select class="form-control" id="InputBudget" name="Budget" required >
 							<option value="">-- 您的預算 * --</option>
 							<option value="我要諮詢">不確定，我想先諮詢</option>
-							<option value="小於 TWD 300,000 (< USD 9,000)">小於 TWD 300,000 (< USD 9,000)</option>
-							<option value="TWD 300,000 ~ 800,000 (USD 9,000 ~ 24,000)">TWD 300,000 ~ 800,000 (USD 9,000 ~ 24,000)</option>
-							<option value="TWD 800,000 ~ 150,0000 (USD 24,000 ~ 45,000)">TWD 800,000 ~ 1,500,000 (USD 24,000 ~ 45,000)</option>
-							<option value="大於 TWD 150,000 (> USD 45,000)">大於 TWD 1,500,000 (> USD 45,000)</option>
+							<option value="小於 TWD 300,000">小於 TWD 300,000 (< USD 9,000)</option>
+							<option value="TWD 300,000 ~ 800,000">TWD 300,000 ~ 800,000 (USD 9,000 ~ 24,000)</option>
+							<option value="TWD 800,000 ~ 150,0000">TWD 800,000 ~ 1,500,000 (USD 24,000 ~ 45,000)</option>
+							<option value="大於 TWD 150,000">大於 TWD 1,500,000 (> USD 45,000)</option>
 						</select>
 					</div>
 				</div>
 
 				<div class="col-md-12">
 					<div class="form-group">
-						<input type="text" class="form-control" id="InputReference" name="Reference" placeholder="您如何得知織女星科技">
+						<input type="text" class="form-control" id="InputReference" name="Source" placeholder="您如何得知織女星科技">
 					</div>
 				</div>
 
