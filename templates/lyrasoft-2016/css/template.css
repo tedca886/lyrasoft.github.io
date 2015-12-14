@@ -304,7 +304,7 @@ body.work.view-article .item-pagework .full-block {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #ee6c64;
+  background: #eb4d46;
   text-transform: uppercase;
   padding: 0 11px;
   border-radius: 3px;
@@ -319,7 +319,7 @@ body.work.view-article .item-pagework .full-block {
   margin-bottom: 0;
 }
 #page-heading {
-  background-color: #ee6c64;
+  background-color: #eb4d46;
   color: white;
 }
 #page-heading a {
