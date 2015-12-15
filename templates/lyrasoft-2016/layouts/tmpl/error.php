@@ -11,15 +11,24 @@ $document = $tpl->getTemplate();
 
 $layout = $document->params->get('layout');
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <style>
+	body {
+		background-color: #ee6c64;
+	}
+
 	h1.page-header
 	{
 		border-bottom: none;
 		font-size: 300px;
-		color: #88c425;
 		text-align: center;
 		margin-top: 60px;
 		line-height: 100%;
+		font-family: Roboto, sans-serif;
+	}
+
+	#body {
+		color: white;
 	}
 
 	.error-heading h3
@@ -33,28 +42,35 @@ $layout = $document->params->get('layout');
 	}
 </style>
 
-<div id="outer-wrap" class="container">
+<div id="outer-wrap">
 
 	<!--HEADER-->
-	<section id="header">
-
-		<nav class="navbar">
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
-				<div class="container-fluid">
+				<div class="container">
 
-					<a class="brand" href="<?php echo JUri::root(); ?>">
-						<!--<img src="--><?php //echo $tpl::getPath('images/logo.png'); ?><!--" alt="" />-->
-						iHealth
-					</a>
+					<div class="navbar-header">
+						<a class="navbar-brand" href="<?php echo JUri::root(); ?>">
+							LYRASOFT
+							<!--						<img src="--><?php //echo $tpl::getPath('images/logo-white-subtitle.png'); ?><!--" alt="LYRASOFT" />-->
+						</a>
+
+						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+						<a class="btn btn-navbar lyra-navbar-toggle">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+					</div>
 
 					<?php echo (new \Astra\Layout\FileLayout('global.menu'))->render(null); ?>
 				</div>
 			</div>
 		</nav>
+	</header>
 
-	</section>
-
-	<section id="body">
+	<section id="body" class="outer-md">
 		<div class="container-fluid main-block">
 			<div class="row-fluid">
 				<div id="content" class="span12">
