@@ -68,6 +68,17 @@ body {
 	&.tmpl-layout-landing {
 		margin-top: 0;
 	}
+
+    @media (max-width: 767px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .row {
+        margin-right: 0;
+    }
 }
 
 body, button, .btn, input, select, textarea {
@@ -76,6 +87,7 @@ body, button, .btn, input, select, textarea {
 
 h1, h2, h3, h4, h5, h6 {
     .title-font();
+    line-height: 150%;
 }
 
 a {
@@ -134,6 +146,18 @@ header > .navbar {
         .title-font();
     }
 
+    /* Landscape phones and portrait tablets */
+    @media (max-width: 767px) {
+        .navbar-inner {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .navbar-brand {
+            padding-left: 0;
+        }
+    }
+
 	//border: none;
 	//
 	//a {
@@ -147,8 +171,9 @@ header > .navbar {
 // Banner
 #banner {
 
-	background: url(../images/banner-home.jpg) no-repeat center top;
+	background: url(../images/banner/banner-christmas.jpg) no-repeat center top;
 	background-size: cover;
+    // background-attachment: fixed;
 
     .banner-mask {
         // background-color: fade(@blue1, 10%);
@@ -203,6 +228,38 @@ header > .navbar {
 			margin-top: -7em;
 		}
 	}
+
+    @media (max-width: 767px) {
+        .banner-top-menu {
+            .btn-navbar {
+                padding: 10px;
+                border: none;
+
+                &:hover {
+                    background-color: rgba(255,255,255,.15);
+                }
+
+                .icon-bar {
+                    background-color: white;
+                    border: none;
+                    border-radius: 0;
+                }
+            }
+
+            .banner-navbar-collapse {
+                //position: absolute;
+
+                li {
+                    display: block;
+                }
+            }
+
+            .navbar-nav {
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
 }
 
 // Landing
@@ -306,6 +363,10 @@ body.path-service #page-heading {
             color: #444;
         }
     }
+}
+
+.main-content img {
+    max-width: 100%;
 }
 
 .article-content {
@@ -473,6 +534,58 @@ body.work.view-article {
             }
         }
     }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        height: 400px;
+
+        .work-item-cover {
+            height: 400px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: 320px;
+
+        .work-item-cover {
+            height: 320px;
+            padding: 0 80px;
+
+            h2 {
+                font-size: 36px;
+            }
+        }
+    }
+
+    @media (max-width: 767px){
+        height: 270px;
+
+        .work-item-cover {
+            height: 270px;
+            padding: 0 60px;
+
+            h2 {
+                font-size: 36px;
+            }
+        }
+    }
+
+    @media (max-width: 500px){
+        height: 270px;
+
+        .work-item-cover {
+            height: 270px;
+            padding: 20px 20px;
+
+            h2 {
+                font-size: 36px;
+            }
+        }
+    }
+}
+
+// Mobile
+body.mobile .work-item-cover {
+    opacity: 1 !important;
 }
 
 // Page heading
@@ -492,6 +605,10 @@ body.work.view-article {
 		font-size: 60px;
         font-weight: 700;
         text-transform: uppercase;
+
+        @media (max-width: 767px){
+            font-size: 36px;
+        }
 	}
 
     .heading-content {

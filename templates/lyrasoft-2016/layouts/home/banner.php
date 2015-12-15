@@ -9,13 +9,40 @@
 use Astra\Menu\Menu;
 
 ?>
+<script>
+    jQuery(document).ready(function ($) {
+        $("a.banner-navbar-toggle").click(function(event) {
+
+            var nav = $('.banner-navbar-collapse');
+
+            if (nav.hasClass('in'))
+            {
+                // nav.addClass('hide');
+                nav.removeClass('in');
+            }
+            else
+            {
+                // nav.removeClass('hide');
+                // nav.css('height', 'auto');
+                nav.addClass('in');
+            }
+        });
+    });
+</script>
 <section id="banner">
     <div class="banner-mask">
         <div class="banner-top-menu">
             <nav class="navbar navbar-default">
                 <div class="navbar-inner">
+
+                    <a class="btn btn-navbar banner-navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
                     <div class="container">
-                        <div class="navbar-nav navbar-center text-center">
+                        <div class="navbar-nav navbar-center text-center banner-navbar-collapse navbar-collapse collapse">
                             <?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
                         </div>
                     </div>

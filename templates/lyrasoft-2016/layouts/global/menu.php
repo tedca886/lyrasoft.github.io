@@ -12,14 +12,39 @@ $user = JFactory::getUser();
 $tpl = \TplLyrasoft\LyrasoftTemplate::getInstance();
 ?>
 
-<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-</a>
+<script>
+	jQuery(document).ready(function ($) {
+		$("a.lyra-navbar-toggle").click(function(event) {
 
-<!-- Everything you want hidden at 940px or less, place within here -->
-<div class="navbar-nav navbar-right">
-	<?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
+			var nav = $('.navbar-collapse');
+
+			if (nav.hasClass('in'))
+			{
+				// nav.addClass('hide');
+				nav.removeClass('in');
+			}
+			else
+			{
+				// nav.removeClass('hide');
+				// nav.css('height', 'auto');
+				nav.addClass('in');
+			}
+		});
+	});
+</script>
+
+<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+<div class="navbar-header">
+	<a class="btn btn-navbar lyra-navbar-toggle">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</a>
+</div>
+
+<div class="navbar-collapse collapse" role="navigation">
+	<!-- Everything you want hidden at 940px or less, place within here -->
+	<div class="navbar-nav navbar-right">
+		<?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
+	</div>
 </div>

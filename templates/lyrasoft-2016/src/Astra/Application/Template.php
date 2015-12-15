@@ -258,7 +258,7 @@ class Template
 
 		$browser = \JBrowser::getInstance();
 
-		return $browser->getPlatform();
+		return $browser->getPlatform() . ($browser->isMobile() ? ' mobile' : '');
 	}
 
 	/**
