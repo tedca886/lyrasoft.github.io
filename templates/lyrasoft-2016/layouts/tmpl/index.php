@@ -17,10 +17,19 @@ $layout = $displayData['layout'];
 			<div class="navbar-inner">
 				<div class="container">
 
-					<a class="navbar-brand" href="<?php echo JUri::root(); ?>">
-						LYRASOFT
-<!--						<img src="--><?php //echo $tpl::getPath('images/logo-white-subtitle.png'); ?><!--" alt="LYRASOFT" />-->
-					</a>
+					<div class="navbar-header">
+						<a class="navbar-brand" href="<?php echo JUri::root(); ?>">
+							LYRASOFT
+							<!--						<img src="--><?php //echo $tpl::getPath('images/logo-white-subtitle.png'); ?><!--" alt="LYRASOFT" />-->
+						</a>
+
+						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+						<a class="btn btn-navbar lyra-navbar-toggle">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+					</div>
 
 					<?php echo (new \Astra\Layout\FileLayout('global.menu'))->render(null); ?>
 				</div>

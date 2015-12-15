@@ -33,15 +33,6 @@ $tpl = \TplLyrasoft\LyrasoftTemplate::getInstance();
 	});
 </script>
 
-<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-<div class="navbar-header">
-	<a class="btn btn-navbar lyra-navbar-toggle">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</a>
-</div>
-
 <div class="navbar-collapse collapse" role="navigation">
 	<!-- Everything you want hidden at 940px or less, place within here -->
 	<div class="navbar-nav navbar-right">

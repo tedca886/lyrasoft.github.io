@@ -83,6 +83,11 @@ header > .navbar .navbar-brand {
   font-family: Montserrat, 'Adobe 繁黑體 Std', AdobeFanHeitiStd-Bold, 'PingFang TC', '微軟正黑體', sans-serif;
   font-weight: 700;
 }
+@media (min-width: 768px) {
+  header > .navbar .navbar-collapse {
+    margin-left: 150px;
+  }
+}
 @media (max-width: 767px) {
   header > .navbar .navbar-inner {
     padding-left: 50px;
