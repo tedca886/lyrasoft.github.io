@@ -160,12 +160,16 @@ header > .navbar .navbar-brand {
     border: none;
     border-radius: 0;
   }
+  #banner .banner-top-menu .banner-navbar-collapse {
+    margin: 0;
+  }
   #banner .banner-top-menu .banner-navbar-collapse li {
     display: block;
   }
   #banner .banner-top-menu .navbar-nav {
     border: none;
     box-shadow: none;
+    margin: 0;
   }
   #banner .ui-effects-wrapper > * {
     margin: 0;
