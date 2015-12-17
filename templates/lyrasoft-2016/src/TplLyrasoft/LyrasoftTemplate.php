@@ -73,6 +73,20 @@ class LyrasoftTemplate extends Template
 		parent::registerScript($template);
 
 		static::$asset->addJs('template.js');
+		static::$asset->getDoc()->addScriptVersion('https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.0/mobile-detect.min.js');
+
+		static::$asset->internalJS(<<<JS
+var md = new MobileDetect(window.navigator.userAgent);
+console.log(window.navigator.userAgent);
+
+jQuery(document).ready(function($) {
+	if (md.mobile())
+	{
+		$('body').addClass('mobile');
+	}
+});
+JS
+);
 
 		// static::$asset->addJs('libraries/owl.carousel.js');
 	}
