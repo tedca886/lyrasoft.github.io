@@ -74,6 +74,7 @@ class LyrasoftTemplate extends Template
 
 		static::$asset->addJs('template.js');
 		static::$asset->getDoc()->addScriptVersion('https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.0/mobile-detect.min.js');
+		static::$asset->getDoc()->addScriptVersion('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js');
 
 		static::$asset->internalJS(<<<JS
 var md = new MobileDetect(window.navigator.userAgent);

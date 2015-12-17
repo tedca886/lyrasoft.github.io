@@ -11,21 +11,13 @@ use Astra\Menu\Menu;
 ?>
 <script>
     jQuery(document).ready(function ($) {
+
+        var nav = $('.banner-navbar-collapse');
+
+        nav.hide();
+
         $("a.banner-navbar-toggle").click(function(event) {
-
-            var nav = $('.banner-navbar-collapse');
-
-            if (nav.hasClass('in'))
-            {
-                // nav.addClass('hide');
-                nav.removeClass('in');
-            }
-            else
-            {
-                // nav.removeClass('hide');
-                // nav.css('height', 'auto');
-                nav.addClass('in');
-            }
+            nav.toggle('slide', { direction: "up"}, 500);
         });
     });
 </script>
@@ -42,7 +34,7 @@ use Astra\Menu\Menu;
                     </a>
 
                     <div class="container">
-                        <div class="navbar-nav navbar-center text-center banner-navbar-collapse navbar-collapse collapse">
+                        <div class="navbar-nav navbar-center text-center banner-navbar-collapse navbar-collapse collapse in">
                             <?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
                         </div>
                     </div>
