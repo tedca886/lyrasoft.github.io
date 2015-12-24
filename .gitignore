@@ -20,3 +20,8 @@ composer.lock
 /tmp/*
 !/tmp/index.html
 /configuration.php
+
+# Other data #
+/tools
+/works
+/resources
