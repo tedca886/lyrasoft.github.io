@@ -8,6 +8,8 @@
 
 use Astra\Menu\Menu;
 
+JFactory::getDocument()->addScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js');
+
 ?>
 <script>
     jQuery(document).ready(function ($) {
@@ -18,6 +20,11 @@ use Astra\Menu\Menu;
 
         $("a.banner-navbar-toggle").click(function(event) {
             nav.toggle('slide', { direction: "up"}, 500);
+        });
+
+        $('#start-button').smoothScroll({
+            easing: 'easeOutExpo',
+            speed: 1500
         });
     });
 </script>
@@ -53,7 +60,9 @@ use Astra\Menu\Menu;
                     </p>
 
                     <div class="angle-down" style="position:relative; top: 30vh;">
-                        <span style="font-size: 50px" class="fa fa-angle-down"></span>
+                        <a id="start-button" href="#who-we-are" style="color: white">
+                            <span style="font-size: 50px" class="fa fa-angle-down"></span>
+                        </a>
                     </div>
                 </div>
             </div>
