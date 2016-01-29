@@ -28,16 +28,15 @@
 						<input type="email" class="form-control" id="InputEmail" name="Email" placeholder="您的 Email *" required  >
 					</div>
 				</div>
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<div class="form-group">
-						<label for="InputMessage" class="sr-only">Message</label>
-						<textarea name="Message" id="InputMessage" class="form-control" rows="5" required placeholder="詢問內容 (Message) *"></textarea>
+						<label for="InputPhone" class="sr-only">Your Email</label>
+						<input type="text" class="form-control" id="InputPhone" name="Phone" placeholder="聯絡電話" >
 					</div>
 				</div>
-
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<div class="form-group">
-						<select class="form-control" id="InputBudget" name="Budget" required >
+						<select class="form-control" id="InputBudget" name="Budget" required style="height: 44px">
 							<option value="">-- 您的預算 * --</option>
 							<option value="我要諮詢">不確定，我想先諮詢</option>
 							<option value="小於 TWD 300,000">小於 TWD 300,000 (< USD 9,000)</option>
@@ -45,6 +44,12 @@
 							<option value="TWD 800,000 ~ 150,0000">TWD 800,000 ~ 1,500,000 (USD 24,000 ~ 45,000)</option>
 							<option value="大於 TWD 150,000">大於 TWD 1,500,000 (> USD 45,000)</option>
 						</select>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="InputMessage" class="sr-only">Message</label>
+						<textarea name="Message" id="InputMessage" class="form-control" rows="5" required placeholder="詢問內容 (Message) *"></textarea>
 					</div>
 				</div>
 
