@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
 * @author    JoomShaper http://www.joomshaper.com
 * @copyright Copyright (C) 2010 - 2015 JoomShaper

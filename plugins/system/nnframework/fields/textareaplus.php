@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Text Area Plus
  * Displays a text area with extra options

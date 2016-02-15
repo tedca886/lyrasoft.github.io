@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Version
  * Displays the version check

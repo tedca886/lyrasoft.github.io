@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package Helix3 Framework
  * Template Name - Shaper Helix - iii

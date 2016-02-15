@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Components
  * Displays a list of components with check boxes

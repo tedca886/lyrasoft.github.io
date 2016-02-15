@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Key
  * Displays a protected key field with option to update it

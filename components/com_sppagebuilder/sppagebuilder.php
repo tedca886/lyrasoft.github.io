@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com

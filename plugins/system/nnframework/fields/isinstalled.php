@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: IsInstalled
  * Displays a hidden field with a boolean value based on whether the given extension is installed

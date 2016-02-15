@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Module Helper File
  *

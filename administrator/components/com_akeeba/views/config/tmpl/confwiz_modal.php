@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package Akeeba
  * @copyright Copyright (c)2009-2014 Nicholas K. Dionysopoulos

@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: AssignmentSelection
  * Displays Assignment Selection radio options

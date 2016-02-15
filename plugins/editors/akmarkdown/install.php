@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package        Asikart.Plugin
  * @subpackage     editors.plg_akmarkdown

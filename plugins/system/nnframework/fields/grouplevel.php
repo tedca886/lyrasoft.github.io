@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Group Level
  * Displays a select box of backend group levels

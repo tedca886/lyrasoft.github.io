@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Part of the Joomla Framework Compat Package
  *

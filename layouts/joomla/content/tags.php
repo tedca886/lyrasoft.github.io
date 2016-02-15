@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package     Joomla.Cms
  * @subpackage  Layout

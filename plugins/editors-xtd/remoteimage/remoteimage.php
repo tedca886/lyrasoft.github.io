@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package        Asikart.Plugin
  * @subpackage     editors-xtd.plg_remoteimage

@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Custom Field Value
  * Displays a custom key field (use in combination with customfieldkey)

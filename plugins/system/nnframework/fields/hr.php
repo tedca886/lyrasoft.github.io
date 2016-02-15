@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: HR
  * Displays a line

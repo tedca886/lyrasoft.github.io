@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Modules
  * Displays an article id field with a button

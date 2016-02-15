@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Checkbox
  * Displays options as checkboxes

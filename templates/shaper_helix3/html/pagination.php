@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package Helix Framework
  * @author JoomShaper http://www.joomshaper.com

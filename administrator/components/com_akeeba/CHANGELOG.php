@@ -1,4 +1,4 @@
-<?php die();?>
+<?php  die();?>
 Akeeba Backup 4.4.3
 ================================================================================
 + One-click backup icons. Select which profiles to display as one-click icons in Akeeba Backup's control panel

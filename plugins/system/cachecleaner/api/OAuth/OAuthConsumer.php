@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * OAuth Consumer representation.

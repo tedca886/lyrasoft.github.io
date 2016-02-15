@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
 * Template file for Whoops's pretty error output.
 * Check the $v global variable (stdClass) for what's available

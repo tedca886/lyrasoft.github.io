@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * Represents an OAuth Token.

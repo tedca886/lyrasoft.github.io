@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
 * This is the dynamic loader for the library. It checks whether you have
 * the mbstring extension available and includes relevant files

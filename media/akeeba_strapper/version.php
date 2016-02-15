@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  *  @package     AkeebaStrapper
  *  @copyright   Copyright (c) 2010 - 2015 Nicholas K. Dionysopoulos / Akeeba Ltd. All rights reserved.

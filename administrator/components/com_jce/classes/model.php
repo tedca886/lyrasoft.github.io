@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 jimport('joomla.application.component.model');
 

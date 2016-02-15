@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * ZF2 Integration for Whoops
  * @author Balázs Németh <zsilbi@zsilbi.hu>

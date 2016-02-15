@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Part of joomla3303 project.
  *

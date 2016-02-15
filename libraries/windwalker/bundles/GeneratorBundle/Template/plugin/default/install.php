@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package        Asikart.Plugin
  * @subpackage     {{plugin.group.lower}}.plg_{{extension.name.lower}}

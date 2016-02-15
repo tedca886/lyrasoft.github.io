@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Toggler
  * Adds slide in and out functionality to framework based on an framework value

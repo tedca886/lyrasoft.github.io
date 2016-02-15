@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Slide
  * Element to create a new slide pane

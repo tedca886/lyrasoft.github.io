@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: License
  * Displays the License state

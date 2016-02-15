@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Block
  * Displays a block with optionally a title and description

@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package   LiveUpdate
  * @copyright Copyright (c)2010-2013 Nicholas K. Dionysopoulos / AkeebaBackup.com

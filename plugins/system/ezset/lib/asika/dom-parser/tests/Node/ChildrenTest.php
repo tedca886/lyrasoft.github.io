@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 use PHPHtmlParser\Dom\MockNode as Node;
 

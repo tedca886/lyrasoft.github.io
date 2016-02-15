@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package		Asikart.Plugin
  * @subpackage	system.plg_remoteimage

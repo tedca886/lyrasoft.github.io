@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Editor
  * Displays an HTML editor text field

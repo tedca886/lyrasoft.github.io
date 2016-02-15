@@ -10,7 +10,7 @@ namespace MyEzset\Listener\Acme;
 
 /**
  * The AcmeListener class.
- * 
+ *
  * @since  {DEPLOY_VERSION}
  */
 class AcmeListener extends \JEvent
@@ -20,6 +20,9 @@ class AcmeListener extends \JEvent
 	 */
 	public function onAfterInitialise()
 	{
+		// HSTS Redirect
+		\JFactory::getApplication()->setHeader('Strict-Transport-Security', 'max-age=31536000');
+
 		$app = \JFactory::getApplication();
 
 		if ($app->isSite())

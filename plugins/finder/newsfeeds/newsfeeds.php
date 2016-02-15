@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package     Joomla.Plugin
  * @subpackage  Finder.Newsfeeds

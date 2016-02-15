@@ -1,4 +1,4 @@
-<?php
+<?php 
 if (!class_exists('OAuthException'))
 {
 	require_once __DIR__ . '/OAuthException.php';

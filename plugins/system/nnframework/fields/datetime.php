@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: DateTime
  * Element to display the date and time

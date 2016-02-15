@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package         NoNumber Framework
  * @version         15.11.17633

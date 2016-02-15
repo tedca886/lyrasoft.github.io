@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * A class for implementing a Signature Method

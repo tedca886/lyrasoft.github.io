@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Color
  * Displays a textfield with a color picker

@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Dependency
  * Displays an error if given file is not found

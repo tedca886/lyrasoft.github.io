@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Load Language
  * Loads the English language file as fallback

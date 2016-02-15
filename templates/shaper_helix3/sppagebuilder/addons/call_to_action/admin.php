@@ -1,4 +1,4 @@
-<?php
+<?php 
 SpAddonsConfig::addonConfig(
 	array( 
 		'type'=>'content',

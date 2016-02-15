@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**
  * Exception class for OAuth failures.

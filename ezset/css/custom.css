@@ -11,7 +11,15 @@
 
 
 /* LAYOUT */
+#banner {
+    /*background-image: url(//i.imgur.com/kLu4vHy.jpg);*/
+    /*background-image: url(//i.imgur.com/d09xbRK.jpg);*/
+    background-image: url(../../templates/lyrasoft-2016/images/banner/banner-home.jpg);
+}
 
+#what-we-made {
+    background-color: #384761;
+}
 
 /* HEADER */
 
@@ -38,5 +46,3 @@
 
 
 /* FOOTER */
-
-

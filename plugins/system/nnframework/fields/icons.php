@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Radio Images
  * Displays a list of radio items and the images you can chose from

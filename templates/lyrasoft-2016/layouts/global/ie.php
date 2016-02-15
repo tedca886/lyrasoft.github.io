@@ -1,4 +1,4 @@
-<?php
+<?php 
 /** @var JApplicationWebClient $client */
 $client = JFactory::getApplication()->client;
 $invalidIE = (JApplicationWebClient::IE === $client->browser && $client->browserVersion <= 9);

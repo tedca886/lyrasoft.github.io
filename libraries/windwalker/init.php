@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package    Windwalker.Framework
  * @author     Simon Asika <asika32764@gmail.com>

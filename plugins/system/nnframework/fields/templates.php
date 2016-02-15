@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Templates
  * Displays a select box of templates

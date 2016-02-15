@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Languages
  * Displays a select box of languages

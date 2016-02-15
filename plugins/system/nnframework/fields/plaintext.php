@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: PlainText
  * Displays plain text as element

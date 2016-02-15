@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: MenuItems
  * Display a menuitem field with a button

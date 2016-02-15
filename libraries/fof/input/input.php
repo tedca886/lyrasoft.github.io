@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * @package     FrameworkOnFramework
  * @subpackage  input

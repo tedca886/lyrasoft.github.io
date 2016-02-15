@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Header
  * Displays a title with a bunch of extras, like: description, image, versioncheck

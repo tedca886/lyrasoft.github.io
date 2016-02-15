@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Field Content
  * To be used as an extend for fields that have items and categories like Joomla content, CCKs, shops.

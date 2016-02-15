@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * NNHtml
  * extra JHtml functions

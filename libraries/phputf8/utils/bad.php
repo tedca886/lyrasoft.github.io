@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
 * @version $Id$
 * Tools for locating / replacing bad bytes in UTF-8 strings

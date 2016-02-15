@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Element: Form2Content
  *
