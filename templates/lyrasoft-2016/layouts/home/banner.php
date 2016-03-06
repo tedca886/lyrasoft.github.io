@@ -56,7 +56,7 @@ JFactory::getDocument()->addScript('https://cdnjs.cloudflare.com/ajax/libs/jquer
                         LYRASOFT
                     </h1>
                     <p>
-                        Web 雲端應用專家
+                        帶領企業遨遊雲端
                     </p>
 
                     <div class="angle-down" style="position:relative; top: 30vh;">
