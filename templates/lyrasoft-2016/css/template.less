@@ -177,9 +177,23 @@ header > .navbar {
 // Banner
 #banner {
 
-	background: url(../images/banner/banner-christmas.jpg) no-repeat center top;
+	background: transparent no-repeat center top;
+
+    background: url(https://static.pexels.com/photos/9574/pexels-photo.jpeg);
+
 	background-size: cover;
+    height: 100vh;
     // background-attachment: fixed;
+
+    &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #000;
+        opacity: .5;
+    }
 
     .banner-mask {
         // background-color: fade(@blue1, 10%);
@@ -230,10 +244,90 @@ header > .navbar {
 		vertical-align: middle;
 		width: 100%;
 
+        h1 {
+            font-size: 85px;
+            letter-spacing: 53px;
+            font-weight: 100;
+            padding-left: 47px;
+        }
+
+        p {
+            font-size: 25px;
+            letter-spacing: 5px;
+            font-weight: 300;
+        }
+
 		> div {
 			margin-top: -7em;
 		}
 	}
+
+    // Start button
+    #start-button {
+        display: block;
+        width: 24px;
+        height: 38px;
+        border: 2px solid #f1f1f1;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        z-index: 200;
+        margin-left: -13px;
+        border-radius: 12px;
+        text-align: center;
+        line-height: 0;
+        transition: border 0.35s ease;
+        -webkit-transition: border 0.35s ease;
+        opacity: .5;
+    }
+    #start-button > span {
+        display: inline-block;
+        position: relative;
+        margin: 5px 0;
+        width: 2px;
+        height: 6px;
+        background-color: #f1f1f1;
+        border-radius: 8px;
+        -webkit-animation-name: downup;
+        animation-name: downup;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        transition: border 0.35s ease;
+        -webkit-transition: border 0.35s ease;
+        opacity: .5;
+    }
+    #start-button > span::before {
+        display: none;
+    }
+    @-webkit-keyframes downup {
+        0% {
+            transform:translateY(0);
+        }
+
+        50%{
+            transform:translateY(18px);
+        }
+
+        100% {
+            transform:translateY(0);
+        }
+    }
+
+    @keyframes downup {
+        0% {
+            transform:translateY(0);
+        }
+
+        50%{
+            transform:translateY(18px);
+        }
+
+        100% {
+            transform:translateY(0);
+        }
+    }
 
     @media (max-width: 767px) {
         .banner-top-menu {

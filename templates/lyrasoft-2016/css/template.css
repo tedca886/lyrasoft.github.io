@@ -38,7 +38,7 @@ h6 {
   line-height: 150%;
 }
 a {
-  color: #3671b2;
+  color: #3671B2;
 }
 a:hover {
   color: #2a588b;
@@ -60,7 +60,7 @@ p {
   color: white;
 }
 #footer {
-  background-color: #3f8dca;
+  background-color: #3F8DCA;
   color: white;
 }
 #copyright {
@@ -98,8 +98,19 @@ header > .navbar .navbar-brand {
   }
 }
 #banner {
-  background: url(../images/banner/banner-christmas.jpg) no-repeat center top;
+  background: transparent no-repeat center top;
+  background: url(https://static.pexels.com/photos/9574/pexels-photo.jpeg);
   background-size: cover;
+  height: 100vh;
+}
+#banner::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: #000;
+  opacity: .5;
 }
 #banner .banner-top-menu {
   text-transform: uppercase;
@@ -140,8 +151,79 @@ header > .navbar .navbar-brand {
   vertical-align: middle;
   width: 100%;
 }
+#banner .banner-text h1 {
+  font-size: 85px;
+  letter-spacing: 53px;
+  font-weight: 100;
+  padding-left: 47px;
+}
+#banner .banner-text p {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-weight: 300;
+}
 #banner .banner-text > div {
   margin-top: -7em;
+}
+#banner #start-button {
+  display: block;
+  width: 24px;
+  height: 38px;
+  border: 2px solid #f1f1f1;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  z-index: 200;
+  margin-left: -13px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 0;
+  transition: border 0.35s ease;
+  -webkit-transition: border 0.35s ease;
+  opacity: .5;
+}
+#banner #start-button > span {
+  display: inline-block;
+  position: relative;
+  margin: 5px 0;
+  width: 2px;
+  height: 6px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  -webkit-animation-name: downup;
+  animation-name: downup;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  transition: border 0.35s ease;
+  -webkit-transition: border 0.35s ease;
+  opacity: .5;
+}
+#banner #start-button > span::before {
+  display: none;
+}
+@-webkit-keyframes downup {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes downup {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @media (max-width: 767px) {
   #banner .banner-top-menu .btn-navbar {
@@ -198,7 +280,7 @@ header > .navbar .navbar-brand {
   color: #384761;
 }
 #what-we-made {
-  background-color: #ee6c64;
+  background-color: #EE6C64;
   color: white;
 }
 #our-works {
@@ -233,7 +315,7 @@ body.path-about #page-heading {
   background-color: #384761;
 }
 body.path-service #page-heading {
-  background-color: #eea939;
+  background-color: #EEA939;
 }
 .page-header {
   border: none;
@@ -295,13 +377,13 @@ body.itemid-127 #page-heading,
 body.itemid-128 #page-heading,
 body.itemid-130 #page-heading,
 body.itemid-132 #page-heading {
-  background-color: #b9db7a;
+  background-color: #B9DB7A;
 }
 body.view-category.layout-blog .col-right-inner {
   margin-top: 70px;
 }
 body.itemid-122 #page-heading {
-  background-color: #c1a5cd;
+  background-color: #C1A5CD;
 }
 body.work.view-article #body > .container {
   width: 100%;
@@ -375,7 +457,7 @@ body.work.view-article .item-pagework .full-block {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #eb4d46;
+  background: #EB4D46;
   text-transform: uppercase;
   padding: 0 11px;
   border-radius: 3px;
@@ -437,7 +519,7 @@ body.mobile .work-item-cover {
   opacity: 1 !important;
 }
 #page-heading {
-  background-color: #eb4d46;
+  background-color: #EB4D46;
   color: white;
 }
 #page-heading a {
@@ -475,10 +557,10 @@ body.mobile .work-item-cover {
   color: white;
 }
 body.itemid-116 #page-heading {
-  background-color: #3f8dca;
+  background-color: #3F8DCA;
 }
 body.itemid-116 #body {
-  background-color: #3f8dca;
+  background-color: #3F8DCA;
   color: white;
   margin: 0;
   padding-top: 0;
