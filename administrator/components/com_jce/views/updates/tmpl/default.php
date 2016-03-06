@@ -1,4 +1,5 @@
-<?php/**
+<?php
+/**
  * @package   	JCE
  * @copyright 	Copyright (c) 2009-2015 Ryan Demmer. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

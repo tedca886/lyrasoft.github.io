@@ -1,4 +1,5 @@
-<?php/**
+<?php
+/**
  * @package     Joomla.Site
  * @subpackage  Templates.Astra
  *

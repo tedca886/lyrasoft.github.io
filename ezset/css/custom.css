@@ -15,6 +15,9 @@
     /*background-image: url(//i.imgur.com/kLu4vHy.jpg);*/
     /*background-image: url(//i.imgur.com/d09xbRK.jpg);*/
     background-image: url(../../templates/lyrasoft-2016/images/banner/banner-home.jpg);
+    /*background-image: url(../../images/banners/galaxy4.jpg);*/
+  
+    background-position: center center;
 }
 
 #what-we-made {
@@ -25,7 +28,81 @@
 
 
 /* BANNER */
+section#banner::before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: #000;
+    opacity: .5;
+}
 
+#start-button {
+  display: block;
+  width: 24px;
+  height: 38px;
+  border: 2px solid #f1f1f1;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  z-index: 200;
+  margin-left: -13px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 0;
+  transition: border 0.35s ease;
+  -webkit-transition: border 0.35s ease;
+  opacity: .5;
+}
+#start-button > span {
+  display: inline-block;
+  position: relative;
+  margin: 5px 0;
+  width: 2px;
+  height: 6px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  -webkit-animation-name: downup;
+  animation-name: downup;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  transition: border 0.35s ease;
+  -webkit-transition: border 0.35s ease;
+  opacity: .5;
+}
+#start-button > span::before {
+  display: none;
+}
+@-webkit-keyframes downup {
+  0% {
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(18px);
+  }
+
+   100% {
+    transform:translateY(0);
+  }
+}
+
+@keyframes downup {
+  0% {
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(18px);
+  }
+
+  100% {
+    transform:translateY(0);
+  }
+}
 
 /* MENU */
 

@@ -1,4 +1,5 @@
-<?php/**
+<?php
+/**
  * @author Moxiecode
  * @copyright Copyright (c) 2004-2007, Moxiecode Systems AB, All rights reserved.
  */
