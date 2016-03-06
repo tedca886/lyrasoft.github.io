@@ -225,6 +225,17 @@ header > .navbar .navbar-brand {
     transform: translateY(0);
   }
 }
+@media (max-width: 1200px) {
+  #banner .banner-text h1 {
+    font-size: 50px;
+    letter-spacing: 40px;
+    padding-left: 38px;
+  }
+  #banner .banner-text p {
+    font-size: 21px;
+    letter-spacing: 5px;
+  }
+}
 @media (max-width: 767px) {
   #banner .banner-top-menu .btn-navbar {
     padding: 10px;
@@ -253,6 +264,16 @@ header > .navbar .navbar-brand {
     box-shadow: none;
     margin: 0;
     padding: 0;
+  }
+  #banner .banner-text h1 {
+    font-size: 21px;
+    font-weight: 100;
+    letter-spacing: 17px;
+    padding-left: 14px;
+  }
+  #banner .banner-text p {
+    font-size: 18px;
+    letter-spacing: 5px;
   }
   #banner .ui-effects-wrapper {
     padding: 0;
