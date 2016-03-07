@@ -8,7 +8,9 @@
 
 use Astra\Menu\Menu;
 
-JFactory::getDocument()->addScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js');
+$asset = \Windwalker\DI\Container::getInstance()->get('helper.asset');
+
+$asset->addJS('jquery/jquery.smooth-scroll.min.js');
 
 ?>
 <script>

@@ -17,6 +17,8 @@ composer.lock
 !/log/index.html
 /cache/*
 !/cache/index.html
+/administrator/cache/*
+!/administrator/cache/index.html
 /tmp/*
 !/tmp/index.html
 /configuration.php
