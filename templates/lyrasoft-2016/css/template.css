@@ -38,7 +38,7 @@ h6 {
   line-height: 150%;
 }
 a {
-  color: #3671B2;
+  color: #3671b2;
 }
 a:hover {
   color: #2a588b;
@@ -60,7 +60,7 @@ p {
   color: white;
 }
 #footer {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
   color: white;
 }
 #copyright {
@@ -99,7 +99,7 @@ header > .navbar .navbar-brand {
 }
 #banner {
   background: transparent no-repeat center top;
-  background: url(https://static.pexels.com/photos/9574/pexels-photo.jpeg);
+  background: url(../images/banner/banner-2016-1.jpg);
   background-size: cover;
   height: 100vh;
 }
@@ -110,7 +110,7 @@ header > .navbar .navbar-brand {
   height: 100vh;
   position: absolute;
   background-color: #000;
-  opacity: .5;
+  opacity: .3;
 }
 #banner .banner-top-menu {
   text-transform: uppercase;
@@ -301,7 +301,7 @@ header > .navbar .navbar-brand {
   color: #384761;
 }
 #what-we-made {
-  background-color: #EE6C64;
+  background-color: #ee6c64;
   color: white;
 }
 #our-works {
@@ -336,7 +336,7 @@ body.path-about #page-heading {
   background-color: #384761;
 }
 body.path-service #page-heading {
-  background-color: #EEA939;
+  background-color: #eea939;
 }
 .page-header {
   border: none;
@@ -398,13 +398,13 @@ body.itemid-127 #page-heading,
 body.itemid-128 #page-heading,
 body.itemid-130 #page-heading,
 body.itemid-132 #page-heading {
-  background-color: #B9DB7A;
+  background-color: #b9db7a;
 }
 body.view-category.layout-blog .col-right-inner {
   margin-top: 70px;
 }
 body.itemid-122 #page-heading {
-  background-color: #C1A5CD;
+  background-color: #c1a5cd;
 }
 body.work.view-article #body > .container {
   width: 100%;
@@ -478,7 +478,7 @@ body.work.view-article .item-pagework .full-block {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #EB4D46;
+  background: #eb4d46;
   text-transform: uppercase;
   padding: 0 11px;
   border-radius: 3px;
@@ -540,7 +540,7 @@ body.mobile .work-item-cover {
   opacity: 1 !important;
 }
 #page-heading {
-  background-color: #EB4D46;
+  background-color: #eb4d46;
   color: white;
 }
 #page-heading a {
@@ -578,10 +578,10 @@ body.mobile .work-item-cover {
   color: white;
 }
 body.itemid-116 #page-heading {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
 }
 body.itemid-116 #body {
-  background-color: #3F8DCA;
+  background-color: #3f8dca;
   color: white;
   margin: 0;
   padding-top: 0;
