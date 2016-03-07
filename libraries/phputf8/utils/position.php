@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * Locate a byte index given a UTF-8 character index
 * @version $Id$

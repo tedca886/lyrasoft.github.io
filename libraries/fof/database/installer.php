@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @package		fof
  * @copyright	2014 Nicholas K. Dionysopoulos / Akeeba Ltd

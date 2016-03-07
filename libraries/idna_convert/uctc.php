@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * UCTC - The Unicode Transcoder
  *

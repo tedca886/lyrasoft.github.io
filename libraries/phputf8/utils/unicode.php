@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * @version $Id$
 * Tools for conversion between UTF-8 and unicode
