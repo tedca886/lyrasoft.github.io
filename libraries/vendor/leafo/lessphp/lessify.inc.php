@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * lessify
  * Convert a css file into a less file

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * Tools to help with ASCII in UTF-8
 * @version $Id$

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * transcode wrapper functions
  * @package IDNA Convert

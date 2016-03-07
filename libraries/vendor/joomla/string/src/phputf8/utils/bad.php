@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * Tools for locating / replacing bad bytes in UTF-8 strings
 * The Original Code is Mozilla Communicator client code.

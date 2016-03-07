@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @package     Joomla.Plugin
  * @subpackage  System.sef
@@ -35,8 +35,8 @@ class PlgSystemSef extends JPlugin
 
 		$router = $app::getRouter();
 
-		$uri    = JUri::getInstance();
-		$domain = $this->params->get('domain');
+		$uri     = JUri::getInstance();
+		$domain  = $this->params->get('domain');
 
 		if ($domain === null || $domain === '')
 		{
@@ -116,7 +116,7 @@ class PlgSystemSef extends JPlugin
 	/**
 	 * Check the buffer.
 	 *
-	 * @param   string $buffer Buffer to be checked.
+	 * @param   string  $buffer  Buffer to be checked.
 	 *
 	 * @return  void
 	 */
@@ -146,7 +146,7 @@ class PlgSystemSef extends JPlugin
 	/**
 	 * Replace the matched tags.
 	 *
-	 * @param   array &$matches An array of matches (see preg_match_all).
+	 * @param   array  &$matches  An array of matches (see preg_match_all).
 	 *
 	 * @return  string
 	 */

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Bootstrap file for the Joomla Platform [with legacy libraries].  Including this file into your application
  * will make Joomla Platform libraries [including legacy libraries] available for use.

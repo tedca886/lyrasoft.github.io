@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * @version $Id$
 * Tools for validing a UTF-8 string is well formed.
