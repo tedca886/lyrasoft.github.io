@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Part of Ezset project.
  *
@@ -32,6 +32,7 @@ $ob->start();
 
 Backup::prepareFolder($backupZipFile->getPath());
 Backup::writeHtaccess($backupZipFile->getPath() . '/.htaccess');
+Backup::writeWebConfig($backupZipFile->getPath() . '/web.config');
 
 ?>
 <style>
@@ -116,7 +117,7 @@ if ($zip->open($backupZipFile->getPathname(), ZipArchive::CREATE) === true)
 
 		$ob->out($item->getPathname() . '  =>  ' . $dest . "\n");
 
-		$zip->addFile($item->getPathname(), $dest);
+		$zip->addFile($item->getPathname(), str_replace('\\', '/', $dest));
 	}
 
 	$zip->addFile($backupSQLFile->getPathname(), $backupSQLFile->getBasename());

@@ -1,3 +1,10 @@
+/**
+ * @package SP Page Builder
+ * @author JoomShaper http://www.joomshaper.com
+ * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
+*/
+
 jQuery(function($) {
 
 	$(document).ready(function(){
@@ -37,7 +44,7 @@ jQuery(function($) {
 		//Search addon
 		$(document).on('keyup', '#modal-addons #search-addon', function(){
 			var value = $(this).val();
-			var exp = new RegExp('^' + value, 'i');
+			var exp = new RegExp('.*?' + value + '.*?', 'i');
 
 			$('#modal-addons .addon-filter ul li').removeClass('active').first().addClass('active');
 
@@ -125,6 +132,8 @@ jQuery(function($) {
 		//Add addon to elements
 		$(document).on('click', '#modal-addon #save-change', function(){
 			
+			var title;
+
 			if ( $(this).hasClass('addnew') )
 			{
 				var $original = $('#modal-addon').find('.generated');
@@ -136,7 +145,14 @@ jQuery(function($) {
 					$that.removeClass('minicolors');
 				});
 
-				var title = $original.find('.addon-title:first').val();
+				var $admin_label = $original.find('.addon-admin_label:first').not('.repeatable-items .addon-admin_label:first');
+
+				if ($admin_label.length) {
+					title = $admin_label.val();
+				}else{
+					title = $original.find('.addon-title:first').not('.repeatable-items .addon-title:first').val();
+				}
+				
 				$original.find('.addon-input-title').text(title);
 
 				var $clone = $original.clone();
@@ -153,7 +169,14 @@ jQuery(function($) {
 					$that.removeClass('minicolors');
 				});
 
-				var title = $original.find('.addon-title:first').val();
+				var $admin_label = $original.find('.addon-admin_label:first').not('.repeatable-items .addon-admin_label:first');
+
+				if ($admin_label.length) {
+					title = $admin_label.val();
+				}else{
+					title = $original.find('.addon-title:first').not('.repeatable-items .addon-title:first').val();
+				}
+
 				$original.find('.addon-input-title').text(title);
 
 				var $clone = $original.clone();
@@ -166,9 +189,7 @@ jQuery(function($) {
 
 		});
 
-		//GMap remove
 		$(document).on('click', '#save-change, .sp-modal-footer .sppb-btn-danger', function(){
-			$('.addon-gmap-canvas').remove();
 			$('.active-generated').removeClass('active-generated');
 		});
 
@@ -443,11 +464,8 @@ jQuery(function($) {
 					}
 				}else if($that.hasClass('input-media')){
 					if($attr_value){
-						var $that = $(this),
-					 		$imgParent = $that.parent('.media');
-						$imgParent.find('img.media-preview').each(function() {
-							$imgSrc = $(this).attr('src',pagebuilder_base+$attr_value);
-						});
+						$that.prev('.sppb-media-preview').removeClass('no-image')
+							.attr('src',pagebuilder_base+$attr_value);
 					}
 					$that.val( $attr_value );
 				}else{
@@ -472,13 +490,10 @@ jQuery(function($) {
 		});
 
 		// Remove Media
-		$(document).on('click','.row-settings .remove-media',function(){
-			$that = $(this);
-			var $imgParent = $that.parent('.media');
-			$imgParent.find('img.media-preview').each(function() {
-				$(this).attr('src','');
-				$(this).closest('.image-preview').css('display', 'none');
-			});
+		$(document).on('click', 'a.remove-media', function(event){
+			event.preventDefault();
+			$(this).closest('.media').find('.input-media').val('');
+			$(this).closest('.media').find('.media-preview img').removeAttr('src');
 		});
 
 		//save
@@ -678,6 +693,7 @@ jQuery(function($) {
 	}
 
 	document.adminForm.onsubmit = function(event){
+		event.stopImmediatePropagation();
 		$('#jform_sptext').val( JSON.stringify(genJsonAddons()) );
 	}
 

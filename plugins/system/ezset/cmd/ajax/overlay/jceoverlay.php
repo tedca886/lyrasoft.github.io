@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 defined('_JEXEC') or die;
 JFactory::getSession()->getFormToken() or die;

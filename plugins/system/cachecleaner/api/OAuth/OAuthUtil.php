@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class OAuthUtil
 {
@@ -70,7 +70,7 @@ class OAuthUtil
 			$out = array();
 			foreach ($headers AS $key => $value)
 			{
-				$key = str_replace(
+				$key       = str_replace(
 					" ",
 					"-",
 					ucwords(strtolower(str_replace("-", " ", $key)))
@@ -99,7 +99,7 @@ class OAuthUtil
 					// this is chaos, basically it is just there to capitalize the first
 					// letter of every word that is not an initial HTTP and strip HTTP
 					// code from przemek
-					$key = str_replace(
+					$key       = str_replace(
 						" ",
 						"-",
 						ucwords(strtolower(str_replace("_", " ", substr($key, 5))))
@@ -127,9 +127,9 @@ class OAuthUtil
 		$parsed_parameters = array();
 		foreach ($pairs as $pair)
 		{
-			$split = explode('=', $pair, 2);
+			$split     = explode('=', $pair, 2);
 			$parameter = OAuthUtil::urldecode_rfc3986($split[0]);
-			$value = isset($split[1]) ? OAuthUtil::urldecode_rfc3986($split[1]) : '';
+			$value     = isset($split[1]) ? OAuthUtil::urldecode_rfc3986($split[1]) : '';
 
 			if (isset($parsed_parameters[$parameter]))
 			{
@@ -162,7 +162,7 @@ class OAuthUtil
 		}
 
 		// Urlencode both keys and values
-		$keys = OAuthUtil::urlencode_rfc3986(array_keys($params));
+		$keys   = OAuthUtil::urlencode_rfc3986(array_keys($params));
 		$values = OAuthUtil::urlencode_rfc3986(array_values($params));
 		$params = array_combine($keys, $values);
 

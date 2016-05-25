@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (!class_exists('OAuthException'))
 {
 	require_once __DIR__ . '/OAuthException.php';
@@ -7,8 +7,8 @@ if (!class_exists('OAuthException'))
 class OAuthServer
 {
 	protected $timestamp_threshold = 300; // in seconds, five minutes
-	protected $version = '1.0';             // hi blaine
-	protected $signature_methods = array();
+	protected $version             = '1.0';             // hi blaine
+	protected $signature_methods   = array();
 
 	protected $data_store;
 
@@ -41,7 +41,7 @@ class OAuthServer
 		$this->check_signature($request, $consumer, $token);
 
 		// Rev A change
-		$callback = $request->get_parameter('oauth_callback');
+		$callback  = $request->get_parameter('oauth_callback');
 		$new_token = $this->data_store->new_request_token($consumer, $callback);
 
 		return $new_token;
@@ -63,7 +63,7 @@ class OAuthServer
 		$this->check_signature($request, $consumer, $token);
 
 		// Rev A change
-		$verifier = $request->get_parameter('oauth_verifier');
+		$verifier  = $request->get_parameter('oauth_verifier');
 		$new_token = $this->data_store->new_access_token($token, $consumer, $verifier);
 
 		return $new_token;
@@ -76,7 +76,7 @@ class OAuthServer
 	{
 		$this->get_version($request);
 		$consumer = $this->get_consumer($request);
-		$token = $this->get_token($request, $consumer, "access");
+		$token    = $this->get_token($request, $consumer, "access");
 		$this->check_signature($request, $consumer, $token);
 
 		return array($consumer, $token);
@@ -188,7 +188,7 @@ class OAuthServer
 		$timestamp = $request instanceof OAuthRequest
 			? $request->get_parameter('oauth_timestamp')
 			: null;
-		$nonce = $request instanceof OAuthRequest
+		$nonce     = $request instanceof OAuthRequest
 			? $request->get_parameter('oauth_nonce')
 			: null;
 

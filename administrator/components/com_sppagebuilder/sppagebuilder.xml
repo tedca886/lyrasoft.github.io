@@ -5,21 +5,32 @@
 	<creationDate>Sep 2014</creationDate>
 	<authorEmail>support@joomshaper.com</authorEmail>
 	<authorUrl>http://www.joomshaper.com</authorUrl>
-	<copyright>Copyright @ 2010 - 2015 JoomShaper. All rights reserved.</copyright>
+	<copyright>Copyright @ 2010 - 2016 JoomShaper. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later</license>
-	<version>1.0.6</version>
+	<version>1.0.9</version>
 	<description>Most powerful drag and drop page builder for Joomla 3.4 or later.</description>
 	<scriptfile>installer.script.php</scriptfile>
 
 	<updateservers> 
         <server type="extension" priority="1" name="SP Page Builder">http://www.joomshaper.com/updates/com-sp-page-builder-free.xml</server>
     </updateservers>
-	
+
 	<install>
 		<sql>
-			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			<file driver="mysql" charset="utf8">sql/install/mysql/install.mysql.utf8.sql</file>
+			<file driver="mysql">sql/install/mysql/install.mysql.utf8.sql</file>
+			
+			<file driver="mysqli" charset="utf8">sql/install/mysql/install.mysql.utf8.sql</file>
+			<file driver="mysqli">sql/install/mysql/install.mysql.utf8.sql</file>
 		</sql>
 	</install>
+
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+			<schemapath type="mysqli">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
 
 	<files folder="site">
 		<filename>index.html</filename>
@@ -51,6 +62,7 @@
 			<folder>builder</folder>
 			<folder>controllers</folder>
 			<folder>models</folder>
+			<folder>helpers</folder>
 			<folder>sql</folder>
 			<folder>tables</folder>
 			<folder>views</folder>

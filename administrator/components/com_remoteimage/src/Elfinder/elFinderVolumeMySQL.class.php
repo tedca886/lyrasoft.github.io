@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Simple elFinder driver for MySQL.

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * The RSA-SHA1 signature method uses the RSASSA-PKCS1-v1_5 signature algorithm as defined in
  * [RFC3447] section 8.2 (more simply known as PKCS#1), using SHA-1 as the hash function for
@@ -36,7 +36,7 @@ abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod
 
 	public function build_signature($request, $consumer, $token)
 	{
-		$base_string = $request->get_signature_base_string();
+		$base_string          = $request->get_signature_base_string();
 		$request->base_string = $base_string;
 
 		// Fetch the private key cert based on the request

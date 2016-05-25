@@ -1,13 +1,11 @@
-<?php 
+<?php
 /**
- * Plugin Helper File: KeyCDN
- *
  * @package         Cache Cleaner
- * @version         4.2.3
- *
- * @author          Peter van Westen <peter@nonumber.nl>
- * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @version         5.0.0
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 

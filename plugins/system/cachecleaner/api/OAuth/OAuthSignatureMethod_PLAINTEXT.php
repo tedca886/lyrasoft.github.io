@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * The PLAINTEXT method does not provide any security protection and SHOULD only be used
  * over a secure channel such as HTTPS. It does not use the Signature Base String.
@@ -33,8 +33,8 @@ class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod
 			($token) ? $token->secret : "",
 		);
 
-		$key_parts = OAuthUtil::urlencode_rfc3986($key_parts);
-		$key = implode('&', $key_parts);
+		$key_parts            = OAuthUtil::urlencode_rfc3986($key_parts);
+		$key                  = implode('&', $key_parts);
 		$request->base_string = $key;
 
 		return $key;

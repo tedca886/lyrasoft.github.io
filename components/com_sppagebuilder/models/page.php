@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2015 JoomShaper
+ * @copyright Copyright (c) 2010 - 2016 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -111,5 +111,22 @@ class SppagebuilderModelPage extends JModelItem
 		}
 
 		return $this->_item[$pageId];
+	}
+
+	/**
+	 * Increment the hit counter for the page.
+	 *
+	 * @param   integer  $pk  Optional primary key of the page to increment.
+	 *
+	 * @return  boolean  True if successful; false otherwise and internal error set.
+	 */
+	public function hit($pk = 0)
+	{
+		$pk = (!empty($pk)) ? $pk : (int) $this->getState('page.id');
+		$table = JTable::getInstance('Page', 'SppagebuilderTable');
+		$table->load($pk);
+		$table->hit($pk);
+
+		return true;
 	}
 }

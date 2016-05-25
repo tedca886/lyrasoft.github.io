@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * OAuth Consumer representation.
@@ -10,8 +10,8 @@ class OAuthConsumer
 
 	function __construct($key, $secret, $callback_url = null)
 	{
-		$this->key = $key;
-		$this->secret = $secret;
+		$this->key          = $key;
+		$this->secret       = $secret;
 		$this->callback_url = $callback_url;
 	}
 

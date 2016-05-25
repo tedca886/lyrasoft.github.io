@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2015 JoomShaper
+ * @copyright Copyright (c) 2010 - 2016 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -15,6 +15,13 @@ SpAddonsConfig::addonConfig(
 		'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_ICON'),
 		'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_ICON_DESC'),
 		'attr'=>array(
+
+			'admin_label'=>array(
+				'type'=>'text', 
+				'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_ADMIN_LABEL'),
+				'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_ADMIN_LABEL_DESC'),
+				'std'=> ''
+				),
 
 			'name'=>array(
 				'type'=>'icon', 

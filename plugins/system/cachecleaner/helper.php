@@ -1,26 +1,24 @@
-<?php 
+<?php
 /**
- * Plugin Helper File
- *
  * @package         Cache Cleaner
- * @version         4.2.3
- *
- * @author          Peter van Westen <peter@nonumber.nl>
- * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @version         5.0.0
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
 defined('_JEXEC') or die;
 
-require_once JPATH_PLUGINS . '/system/nnframework/helpers/functions.php';
+require_once JPATH_LIBRARIES . '/regularlabs/helpers/functions.php';
 
-NNFrameworkFunctions::loadLanguage('plg_system_cachecleaner');
+RLFunctions::loadLanguage('plg_system_cachecleaner');
 
 class PlgSystemCacheCleanerHelper
 {
-	var $helpers = array();
-	var $type = '';
+	var $helpers      = array();
+	var $type         = '';
 	var $show_message = false;
 
 	public function __construct(&$params)
@@ -46,7 +44,7 @@ class PlgSystemCacheCleanerHelper
 		}
 
 		// Load language for messaging
-		NNFrameworkFunctions::loadLanguage('mod_cachecleaner');
+		RLFunctions::loadLanguage('mod_cachecleaner');
 
 		$this->purgeCache();
 
@@ -60,7 +58,7 @@ class PlgSystemCacheCleanerHelper
 		if ($error)
 		{
 			$message = JText::_('CC_NOT_ALL_CACHE_COULD_BE_REMOVED');
-			$message .= $this->helpers->getParams()->error !== true ? '<br />' . $this->helpers->getParams()->error : '';
+			$message .= $this->helpers->getParams()->error !== true ? '<br>' . $this->helpers->getParams()->error : '';
 		}
 		else
 		{
@@ -74,7 +72,7 @@ class PlgSystemCacheCleanerHelper
 
 		if (JFactory::getApplication()->input->getInt('break'))
 		{
-			echo (!$error ? '+' : '') . str_replace('<br />', ' - ', $message);
+			echo (!$error ? '+' : '') . str_replace('<br>', ' - ', $message);
 			die;
 		}
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use Windwalker\Helper\UriHelper;
 

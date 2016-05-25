@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @package JCE
  * @copyright Copyright (c)2009-2013 Nicholas K. Dionysopoulos

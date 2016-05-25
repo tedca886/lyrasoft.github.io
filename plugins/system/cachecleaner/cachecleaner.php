@@ -1,13 +1,11 @@
-<?php 
+<?php
 /**
- * Main Plugin File
- *
  * @package         Cache Cleaner
- * @version         4.2.3
- *
- * @author          Peter van Westen <peter@nonumber.nl>
- * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @version         5.0.0
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -18,11 +16,11 @@ defined('_JEXEC') or die;
  */
 class PlgSystemCacheCleaner extends JPlugin
 {
-	private $_alias = 'cachecleaner';
-	private $_title = 'CACHE_CLEANER';
+	private $_alias       = 'cachecleaner';
+	private $_title       = 'CACHE_CLEANER';
 	private $_lang_prefix = 'CC';
 
-	private $_init = false;
+	private $_init   = false;
 	private $_helper = null;
 
 	public function onAfterRoute()
@@ -36,9 +34,9 @@ class PlgSystemCacheCleaner extends JPlugin
 	}
 
 	/*
-	 * Below methods are general functions used in most of the NoNumber extensions
-	 * The reason these are not placed in the NoNumber Framework files is that they also
-	 * need to be used when the NoNumber Framework is not installed
+	 * Below methods are general functions used in most of the Regular Labs extensions
+	 * The reason these are not placed in the Regular Labs Library files is that they also
+	 * need to be used when the Regular Labs Library is not installed
 	 */
 
 	/**
@@ -67,36 +65,36 @@ class PlgSystemCacheCleaner extends JPlugin
 			return false;
 		}
 
-		require_once JPATH_PLUGINS . '/system/nnframework/helpers/protect.php';
+		require_once JPATH_LIBRARIES . '/regularlabs/helpers/protect.php';
 
-		if (NNProtect::isProtectedPage($this->_alias))
+		if (RLProtect::isProtectedPage($this->_alias))
 		{
 			return false;
 		}
 
-		require_once JPATH_PLUGINS . '/system/nnframework/helpers/helper.php';
-		$this->_helper = NNFrameworkHelper::getPluginHelper($this);
+		require_once JPATH_LIBRARIES . '/regularlabs/helpers/helper.php';
+		$this->_helper = RLHelper::getPluginHelper($this);
 
 		return $this->_helper;
 	}
 
 	/**
-	 * Check if the NoNumber Framework is enabled
+	 * Check if the Regular Labs Library is enabled
 	 *
 	 * @return bool
 	 */
 	private function isFrameworkEnabled()
 	{
-		// Return false if NoNumber Framework is not installed
+		// Return false if Regular Labs Library is not installed
 		if (!$this->isFrameworkInstalled())
 		{
 			return false;
 		}
 
-		$nnframework = JPluginHelper::getPlugin('system', 'nnframework');
-		if (!isset($nnframework->name))
+		$regularlabs = JPluginHelper::getPlugin('system', 'regularlabs');
+		if (!isset($regularlabs->name))
 		{
-			$this->throwError($this->_lang_prefix . '_NONUMBER_FRAMEWORK_NOT_ENABLED');
+			$this->throwError($this->_lang_prefix . '_REGULAR_LABS_LIBRARY_NOT_ENABLED');
 
 			return false;
 		}
@@ -105,7 +103,7 @@ class PlgSystemCacheCleaner extends JPlugin
 	}
 
 	/**
-	 * Check if the NoNumber Framework is installed
+	 * Check if the Regular Labs Library is installed
 	 *
 	 * @return bool
 	 */
@@ -113,9 +111,9 @@ class PlgSystemCacheCleaner extends JPlugin
 	{
 		jimport('joomla.filesystem.file');
 
-		if (!JFile::exists(JPATH_PLUGINS . '/system/nnframework/nnframework.php'))
+		if (!JFile::exists(JPATH_PLUGINS . '/system/regularlabs/regularlabs.php'))
 		{
-			$this->throwError($this->_lang_prefix . '_NONUMBER_FRAMEWORK_NOT_INSTALLED');
+			$this->throwError($this->_lang_prefix . '_REGULAR_LABS_LIBRARY_NOT_INSTALLED');
 
 			return false;
 		}

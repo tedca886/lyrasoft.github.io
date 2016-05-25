@@ -1,17 +1,18 @@
 /**
- * Main JavaScript file
- *
  * @package         Cache Cleaner
- * @version         4.2.3
- *
- * @author          Peter van Westen <peter@nonumber.nl>
- * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @version         5.0.0
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
 var cachecleaner_delay = false;
+
 (function($) {
+	"use strict";
+
 	$(document).ready(function() {
 		$('a.cachecleaner_link').each(function(i, el) {
 			$(el).click(function() {
@@ -20,28 +21,30 @@ var cachecleaner_delay = false;
 			});
 		});
 
-		jQuery('<span/>', {
+		$('<span/>', {
 			id   : 'cachecleaner_msg',
 			css  : {'opacity': 0},
-			click: function() { cachecleaner_show_end() }
+			click: function() {
+				cachecleaner_show_end()
+			}
 		}).appendTo('body');
 
 		cachecleaner_delay = false;
 	});
 
 	var cachecleaner_load = function() {
-		var d = new Date();
-		var url = cachecleaner_base + '/index.php?cleancache=1&break=1&src=button&time=' + d.toISOString();
+		var d       = new Date();
+		var url     = cachecleaner_base + '/index.php?cleancache=1&break=1&src=button&time=' + d.toISOString();
 		var timeout = 10;
 
 		cachecleaner_show_start();
-		jQuery.ajax({
+		$.ajax({
 			type   : 'get',
 			url    : url,
 			success: function(data) {
 				if (data.charAt(0) == '+') {
 					timeout = 2;
-					data = data.substring(1, data.length);
+					data    = data.substring(1, data.length);
 					$('#cachecleaner_msg').addClass('btn-success');
 				} else {
 					if (data.indexOf('<html') != -1) {

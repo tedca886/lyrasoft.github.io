@@ -2,7 +2,7 @@
 /**
  * Akeeba Engine
  * The modular PHP5 site backup engine
- * @copyright Copyright (c)2006-2015 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2006-2016 Nicholas K. Dionysopoulos
  * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
  */
@@ -493,7 +493,10 @@ class Mysql extends Base
 				$this->errorMsg = (string)mysql_error($this->connection) . ' SQL=' . $query;
 
 				// Throw the normal query exception.
-				throw new \RuntimeException($this->errorMsg, $this->errorNum);
+				if ($this->errorNum != 0)
+				{
+					throw new \RuntimeException($this->errorMsg, $this->errorNum);
+				}
 			}
 		}
 

@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
  * Part of Component {{extension.name.cap}} files.
  *
- * @copyright   Copyright (C) 2014 Asikart. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) 2016 {ORGANIZATION}. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
  */
 
 use Windwalker\Controller\Resolver\ControllerDelegator;

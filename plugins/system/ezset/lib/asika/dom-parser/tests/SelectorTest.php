@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use PHPHtmlParser\Selector;
 use PHPHtmlParser\Dom\HtmlNode;

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Part of Akquickicons Component project.
  *

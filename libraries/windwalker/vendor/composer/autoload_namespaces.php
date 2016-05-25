@@ -6,9 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Whoops' => array($vendorDir . '/filp/whoops/src'),
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
-    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
-    'Joomla\\Console' => array($vendorDir . '/asika/joomla-console'),
-    '' => array($vendorDir . '/asika/php-code-generator/src'),
+    '' => array($vendorDir . '/asika/muse/src'),
 );

@@ -1,10 +1,11 @@
-<?php 
+<?php
 /**
- * Install script helper
- *
- * @author          Peter van Westen <peter@nonumber.nl>
- * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @package         Cache Cleaner
+ * @version         5.0.0
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -12,21 +13,21 @@ defined('_JEXEC') or die;
 
 class PlgSystemCacheCleanerInstallerScriptHelper
 {
-	public $name = '';
-	public $alias = '';
-	public $extname = '';
-	public $extension_type = '';
-	public $plugin_folder = 'system';
+	public $name            = '';
+	public $alias           = '';
+	public $extname         = '';
+	public $extension_type  = '';
+	public $plugin_folder   = 'system';
 	public $module_position = 'status';
-	public $client_id = 1;
-	public $install_type = 'install';
-	public $show_message = true;
-	public $db = null;
+	public $client_id       = 1;
+	public $install_type    = 'install';
+	public $show_message    = true;
+	public $db              = null;
 
 	public function __construct(&$params)
 	{
 		$this->extname = $this->extname ?: $this->alias;
-		$this->db = JFactory::getDbo();
+		$this->db      = JFactory::getDbo();
 	}
 
 	public function preflight($route, JAdapterInstance $adapter)
@@ -36,7 +37,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 			return;
 		}
 
-		JFactory::getLanguage()->load('plg_system_nonumberinstaller', JPATH_PLUGINS . '/system/nonumberinstaller');
+		JFactory::getLanguage()->load('plg_system_regularlabsinstaller', JPATH_PLUGINS . '/system/regularlabsinstaller');
 
 		if ($this->show_message && $this->isInstalled())
 		{
@@ -62,7 +63,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 		}
 
 		$this->updateUpdateSites();
-		$this->removeNoNumberCache();
+		$this->removeAdminCache();
 
 		if ($this->onAfterInstall() === false)
 		{
@@ -78,6 +79,9 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 		{
 			$this->addInstalledMessage();
 		}
+
+		JFactory::getCache()->clean('com_plugins');
+		JFactory::getCache()->clean('_system');
 	}
 
 	public function isInstalled()
@@ -193,7 +197,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 			return;
 		}
 
-		$ignore_ids = JFactory::getApplication()->getUserState('nn_ignore_uninstall_ids', array());
+		$ignore_ids = JFactory::getApplication()->getUserState('rl_ignore_uninstall_ids', array());
 
 		if (JFactory::getApplication()->input->get('option') == 'com_installer' && JFactory::getApplication()->input->get('task') == 'remove')
 		{
@@ -210,7 +214,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 		}
 
 		$ignore_ids = array_merge($ignore_ids, $ids);
-		JFactory::getApplication()->setUserState('nn_ignore_uninstall_ids', $ignore_ids);
+		JFactory::getApplication()->setUserState('rl_ignore_uninstall_ids', $ignore_ids);
 
 		foreach ($ids as $id)
 		{
@@ -344,7 +348,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 	{
 		JFactory::getApplication()->enqueueMessage(
 			JText::sprintf(
-				JText::_($this->install_type == 'update' ? 'NNI_THE_EXTENSION_HAS_BEEN_UPDATED_SUCCESSFULLY' : 'NNI_THE_EXTENSION_HAS_BEEN_INSTALLED_SUCCESSFULLY'),
+				JText::_($this->install_type == 'update' ? 'RLI_THE_EXTENSION_HAS_BEEN_UPDATED_SUCCESSFULLY' : 'RLI_THE_EXTENSION_HAS_BEEN_INSTALLED_SUCCESSFULLY'),
 				'<strong>' . JText::_($this->name) . '</strong>',
 				'<strong>' . $this->getVersion() . '</strong>',
 				$this->getFullType()
@@ -375,7 +379,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 
 	public function getElementName($type = null, $extname = null)
 	{
-		$type = is_null($type) ? $this->extension_type : $type;
+		$type    = is_null($type) ? $this->extension_type : $type;
 		$extname = is_null($extname) ? $this->extname : $extname;
 
 		switch ($type)
@@ -394,7 +398,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 
 	public function getFullType()
 	{
-		return JText::_('NNI_' . strtoupper($this->getPrefix()));
+		return JText::_('RLI_' . strtoupper($this->getPrefix()));
 	}
 
 	public function getVersion($file = '')
@@ -450,14 +454,13 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 
 		JFactory::getLanguage()->load($this->getPrefix() . '_' . $this->extname, __DIR__);
 
-		JFactory::getApplication()->enqueueMessage(
-			JText::_('NNI_ERROR_PRO_TO_FREE'), 'error'
-		);
+		JFactory::getApplication()->enqueueMessage(JText::_('RLI_ERROR_PRO_TO_FREE'), 'error');
+
 		JFactory::getApplication()->enqueueMessage(
 			html_entity_decode(
 				JText::sprintf(
-					'NNI_ERROR_UNINSTALL_FIRST',
-					'<a href="https://www.nonumber.nl/extensions/' . $this->alias . '" target="_blank">',
+					'RLI_ERROR_UNINSTALL_FIRST',
+					'<a href="https://www.regularlabs.com/extensions/' . $this->alias . '" target="_blank">',
 					'</a>',
 					JText::_($this->name)
 				)
@@ -536,6 +539,7 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 	private function updateUpdateSites()
 	{
 		$this->removeOldUpdateSites();
+		$this->updateNamesInUpdateSites();
 		$this->updateDownloadKey();
 	}
 
@@ -544,9 +548,8 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 		$query = $this->db->getQuery(true)
 			->select('update_site_id')
 			->from('#__update_sites')
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://cdn.download.nonumber.nl%'))
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('%e=' . $this->alias . '%'))
-			->where($this->db->qn('name') . ' NOT LIKE ' . $this->db->q('NoNumber%'));
+			->where($this->db->quoteName('location') . ' LIKE ' . $this->db->quote('nonumber.nl%'))
+			->where($this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%e=' . $this->alias . '%'));
 		$this->db->setQuery($query, 0, 1);
 		$id = $this->db->loadResult();
 
@@ -557,24 +560,44 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 
 		$query->clear()
 			->delete('#__update_sites')
-			->where($this->db->qn('update_site_id') . ' = ' . (int) $id);
+			->where($this->db->quoteName('update_site_id') . ' = ' . (int) $id);
 		$this->db->setQuery($query);
 		$this->db->execute();
 
 		$query->clear()
 			->delete('#__update_sites_extensions')
-			->where($this->db->qn('update_site_id') . ' = ' . (int) $id);
+			->where($this->db->quoteName('update_site_id') . ' = ' . (int) $id);
 		$this->db->setQuery($query);
 		$this->db->execute();
 	}
 
-	// Save the download key from the NoNumber Extension Manager config to the update sites
+	private function updateNamesInUpdateSites()
+	{
+		$name = JText::_($this->name);
+		if ($this->alias != 'extensionmanager')
+		{
+			$name = 'Regular Labs - ' . $name;
+		}
+
+		$query = $this->db->getQuery(true)
+			->update('#__update_sites')
+			->set($this->db->quoteName('name') . ' = ' . $this->db->quote($name))
+			->where($this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%download.regularlabs.com%'))
+			->where($this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%e=' . $this->alias . '%'));
+		$this->db->setQuery($query);
+		$this->db->execute();
+	}
+
+	// Save the download key from the Regular Labs Extension Manager config to the update sites
 	private function updateDownloadKey()
 	{
 		$query = $this->db->getQuery(true)
 			->select('e.params')
 			->from('#__extensions as e')
-			->where('e.element = ' . $this->db->quote('com_nonumbermanager'));
+			->where(array(
+				'e.element = ' . $this->db->quote('com_regularlabsmanager'),
+				'e.element = ' . $this->db->quote('com_nonumbermanager'),
+			), 'OR');
 		$this->db->setQuery($query);
 		$params = $this->db->loadResult();
 
@@ -592,22 +615,29 @@ class PlgSystemCacheCleanerInstallerScriptHelper
 
 		$query->clear()
 			->update('#__update_sites')
-			->set($this->db->qn('extra_query') . ' = ' . $this->db->q(''))
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://cdn.download.nonumber.nl%'));
+			->set($this->db->quoteName('extra_query') . ' = ' . $this->db->quote(''))
+			->where(array(
+				$this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%download.nonumber.nl%'),
+				$this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%download.regularlabs.com%'),
+			), 'OR');
 		$this->db->setQuery($query);
 		$this->db->execute();
 
 		$query->clear()
 			->update('#__update_sites')
-			->set($this->db->qn('extra_query') . ' = ' . $this->db->q('k=' . $params->key))
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://cdn.download.nonumber.nl%'))
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('%&pro=1%'));
+			->set($this->db->quoteName('extra_query') . ' = ' . $this->db->quote('k=' . $params->key))
+			->where($this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%&pro=1%'))
+			->where(array(
+				$this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%download.nonumber.nl%'),
+				$this->db->quoteName('location') . ' LIKE ' . $this->db->quote('%download.regularlabs.com%'),
+			), 'OR');
 		$this->db->setQuery($query);
 		$this->db->execute();
 	}
 
-	private function removeNoNumberCache()
+	private function removeAdminCache()
 	{
+		$this->deleteFolders(array(JPATH_ADMINISTRATOR . '/cache/regularlabs'));
 		$this->deleteFolders(array(JPATH_ADMINISTRATOR . '/cache/nonumber'));
 	}
 

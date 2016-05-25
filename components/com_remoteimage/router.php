@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Part of Component Remoteimage files.
  *

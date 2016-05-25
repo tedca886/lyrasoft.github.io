@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Represents an OAuth Token.
@@ -15,7 +15,7 @@ class OAuthToken
 	 */
 	function __construct($key, $secret)
 	{
-		$this->key = $key;
+		$this->key    = $key;
 		$this->secret = $secret;
 	}
 

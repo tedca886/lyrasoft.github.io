@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * NetDNA REST Client Library
@@ -21,8 +21,8 @@ class NetDNA
 
 	public function __construct($alias, $key, $secret, $options = null)
 	{
-		$this->alias = $alias;
-		$this->key = $key;
+		$this->alias  = $alias;
+		$this->key    = $key;
 		$this->secret = $secret;
 
 		if (!class_exists('OAuthConsumer'))
@@ -99,8 +99,8 @@ class NetDNA
 		curl_setopt($ch, CURLOPT_USERAGENT, 'PHP NetDNA API Client');
 
 		// make call
-		$result = curl_exec($ch);
-		$headers = curl_getinfo($ch);
+		$result     = curl_exec($ch);
+		$headers    = curl_getinfo($ch);
 		$curl_error = curl_error($ch);
 
 		// close curl resource to free up system resources

@@ -1,3 +1,10 @@
+/**
+ * @package SP Page Builder
+ * @author JoomShaper http://www.joomshaper.com
+ * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
+*/
+
 (function ($) {
 
 	//Remove Chosen
@@ -69,8 +76,6 @@
 			});
 		});
 
-		//End Goggle Map		
-
 		$clone.randomIds();
 
 		//Modal Title
@@ -90,26 +95,6 @@
 			var $id = $(this).attr('id');
 			tinymce.execCommand('mceAddEditor', false, $id);
 		});
-
-		//Google Map
-		$clone.find('.form-group-gmap').append($('<div class="addon-gmap-canvas"></div>'));
-		$clone.find('.form-group-gmap').each(function(){
-			var $self = $(this);
-
-			$self.find('.addon-gmap-canvas').locationpicker({
-				location: {latitude: $self.find('.addon-gmap-address').data('latitude'), longitude: $self.find('.addon-gmap-address').data('longitude')},
-				radius: 300,
-				inputBinding: {
-					locationNameInput: $self.find('.addon-gmap-address')
-				},
-				enableAutocomplete: true,
-				onchanged: function(currentLocation, radius, isMarkerDropped) {
-					$self.find('.gmap-latlng').val( currentLocation.latitude + ", " + currentLocation.longitude );
-				}			
-			});
-
-		});
-
 	}
 
 	$.fn.cloneRepeatable = function()
@@ -204,26 +189,9 @@
 		});
 
 		//Media
-		$(this).find('.media').each(function(){
+		$(this).find('.sppb-media-input').each(function(){
 			var $id = random_number();
-
-			$(this).find('.input-media').attr('id', 'media-' + $id);
-			
-			//Preview
-			$(this).find('.image-preview').attr('id', 'media-' + $id + '_preview_img');
-			$(this).find('.image-preview').find('img').attr('id', 'media-' + $id + '_preview');
-
-			$(this).find('a.modal').attr('href', 'index.php?option=com_media&view=images&tmpl=component&fieldid=' + 'media-' + $id);
-			$(this).find('a.remove-media').attr('onClick', "jInsertFieldValue('', 'media-" + $id + "');return false;");
-
-			$(this).find('a.remove-media').on('click', function(){
-				$(this).closest('.media').find('.input-media').val('');
-			});
-		});
-
-		//Re-initialize modal
-		SqueezeBox.assign( $(this).find('a.modal') , {
-			parse: 'rel'
+			$(this).attr('id', 'media-' + $id);
 		});
 
 		//Editor
@@ -259,11 +227,6 @@
 		//Media
 		$(this).find('.media').each(function(){
 			$(this).find('.input-media').removeAttr('id');
-			//Preview
-			$(this).find('.image-preview').removeAttr('id');
-			$(this).find('.image-preview').find('img').removeAttr('id');
-			$(this).find('a.modal').removeAttr('href');
-			$(this).find('a.remove-media').removeAttr('onClick');
 		});
 
 		//Editor
@@ -287,8 +250,52 @@
 			force_p_newlines : false,
 			forced_root_block : '',
 			file_browser_callback: function(field_name, url, type, win) {
-				SqueezeBox.fromElement('index.php?option=com_media&view=images&tmpl=component&asset=com_sppagebuilder&fieldid=' + field_name, {size:{x:800,y:600}, handler:'iframe'});
-				return false;
+				var media_modal = '<div class="sppb-media-modal-overlay" tabindex="-1">'
+			    media_modal += '<div id="sppb-media-modal">'
+			    media_modal += '<div class="sppb-media-modal-inner">'
+			    media_modal += '<div class="sppb-media-modal-header clearfix">'
+			    media_modal += '<h3 class="pull-left"><i class="fa fa-toggle-right"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER') + '</h3>'
+			    media_modal += '<div class="pull-right"><input type="file" accept="image/*" style="display:none"><a href="#" class="btn btn-success btn-large btn-upload-media"><i class="fa fa-upload"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_UPLOAD_FILE') + '</a><a href="#" class="btn btn-danger btn-large btn-close-modal"><i class="fa fa-times"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_CLOSE') + '</a></div>'
+			    media_modal += '</div>'
+
+			    media_modal += '<div class="sppb-media-modal-subheader clearfix">'
+
+			    media_modal += '<ul class="sppb-media-modal-tab">'
+			    media_modal += '<li class="active"><a class="tab-browse-media" href="#"><i class="fa fa-image"></i> <span class="hidden-phone">Browse Media</span></a></li>'
+			    media_modal += '<li><a class="tab-browse-folder" href="#"><i class="fa fa-folder-open-o"></i> <span class="hidden-phone">Browse Folder</span></a></li>'
+			    media_modal += '</ul>'
+
+			    media_modal += '<div class="sppb-media-modal-filter-tools">'
+			    media_modal += '<div class="sppb-media-search"><i class="fa fa-search"></i><input type="text" class="input-search-media" placeholder="' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_SEARCH') + '"><a href="#" class="sppb-clear-search" style="display: none;"><i class="fa fa-times-circle"></i></a></div>'
+			    media_modal += '<div class="sppb-media-modal-filter"></div>'
+			    media_modal += '</div>'
+
+			    media_modal += '</div>'
+
+			    media_modal += '<div class="sppb-media-modal-btn-tools clearfix" style="display:none;">'
+			    media_modal += '<a href="#" class="btn btn-primary btn-insert-media" data-target="'+ field_name +'"><i class="fa fa-check"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_INSERT') + '</a> <a href="#" class="btn btn-warning btn-cancel-media"><i class="fa fa-times"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_CANCEL') + '</a> <a href="#" class="btn btn-danger btn-delete-media"><i class="fa fa-minus-circle"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_DELETE') + '</a>'
+			    media_modal += '</div>'
+
+			    media_modal += '<div class="sppb-media-modal-body">'
+			    media_modal += '<div class="sppb-media-modal-body-inner">'
+
+			    media_modal += '<div class="spinner">'
+			    media_modal += '<div class="bounce1"></div>'
+			    media_modal += '<div class="bounce2"></div>'
+			    media_modal += '<div class="bounce3"></div>'
+			    media_modal += '</div>'
+
+			    media_modal += '<a class="btn btn-default btn-large btn-loadmore" href="#" style="display: none;"><i class="fa fa-refresh"></i> ' + Joomla.JText._('COM_SPPAGEBUILDER_MEDIA_MANAGER_LOAD_MORE') + '</a>';
+
+			    media_modal += '</div>'
+			    media_modal += '</div>'
+
+			    media_modal += '</div>'
+			    media_modal += '</div>'
+
+			    $(media_modal).hide().appendTo($('body').addClass('sppb-media-modal-open')).fadeIn(300, function() {
+			      $(this).browseMedia()
+			    })
 			},
 
 			toolbar_items_size: "small",

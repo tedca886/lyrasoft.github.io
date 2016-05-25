@@ -2,7 +2,7 @@
 /**
  * Akeeba Engine
  * The modular PHP5 site backup engine
- * @copyright Copyright (c)2006-2015 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2006-2016 Nicholas K. Dionysopoulos
  * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
  */
@@ -17,7 +17,7 @@ defined('AKEEBAENGINE') or die();
  * The following is the license file accompanying the original file.
  *
  * ********************************************************************************
- * Copyright (c) 2011-2013, Aura for PHP
+ * Copyright (c) 2011-2016, Aura for PHP
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -105,10 +105,10 @@ class RandomValue
 
 		for ($i = 0; $i < $bytes; $i += 3)
 		{
-			$subBytes = substr($bytes, $i, 3);
-			$subBytes = str_split($bytes, 1);
-			$subBytes = ord($bytes[0]) * 65536 + ord($bytes[1]) * 256 + ord($bytes[2]);
-			$subBytes = $bytes & bindec('00000000111111111111111111111111');
+			$subBytes = substr($randBytes, $i, 3);
+			$subBytes = str_split($subBytes, 1);
+			$subBytes = ord($subBytes[0]) * 65536 + ord($subBytes[1]) * 256 + ord($subBytes[2]);
+			$subBytes = $subBytes & bindec('00000000111111111111111111111111');
 
 			$b = array();
 			$b[0] = $subBytes >> 18;

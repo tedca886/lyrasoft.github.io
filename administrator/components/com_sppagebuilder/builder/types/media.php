@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2015 JoomShaper
+ * @copyright Copyright (c) 2010 - 2016 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -13,6 +13,19 @@ class SpTypeMedia
 
 	static function getInput($key, $attr)
 	{
+
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_UPLOAD_FILE');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_CLOSE');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_INSERT');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_SEARCH');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_CANCEL');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_DELETE');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_CONFIRM_DELETE');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_LOAD_MORE');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_UNSUPPORTED_FORMAT');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_BROWSE_MEDIA');
+		JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER_BROWSE_FOLDERS');
 
 		if(!isset($attr['std'])){
 			$attr['std'] = '';
@@ -33,23 +46,23 @@ class SpTypeMedia
 			}
 		}
 
-		JHtml::_('behavior.modal');
 		JHtml::_('jquery.framework');
+
+		$doc = JFactory::getDocument();
+		$doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/media.js' );
 		
 		$output  = '<div class="form-group"' . $depend_data . '>';
 		$output .= '<label>' . $attr['title'] . '</label>';
-		$output .= '<div class="media">';
+		
+		if($attr['std']) {
+			$output .= '<img class="sppb-media-preview" src="' . JURI::root(true) . '/' . $attr['std'] . '" alt="" />';
+		} else {
+			$output .= '<img class="sppb-media-preview no-image" alt="" />';
+		}
 
-		$output .= '<div class="media-preview add-on">';
-		$output .= '<div class="image-preview">';
-		$output .= '<img class="media-preview" ' . $src . ' alt="" height="100px">';
-		$output .= '</div>';
-		$output .= '</div>';
-
-		$output .= '<input type="hidden" data-attrname="'.$key.'" class="input-media addon-input" value="'.$attr['std'].'">';
-		$output .= '<a class="modal sppb-btn sppb-btn-primary" title="Select" rel="{handler: \'iframe\', size: {x: 800, y: 500}}">Select</a>';
-		$output .= ' <a class="sppb-btn sppb-btn-danger remove-media" href="#"><i class="icon-remove"></i></a>';
-		$output .= '</div>';
+		$output .= '<input type="hidden" data-attrname="'.$key.'" class="input-media sppb-media-input addon-input" value="'.$attr['std'].'">';
+		$output .= '<a href="#" class="sppb-btn sppb-btn-primary sppb-btn-media-manager">'. JText::_('COM_SPPAGEBUILDER_MEDIA_MANAGER_SELECT') .'</a>';
+		$output .= ' <a class="sppb-btn sppb-btn-danger btn-clear-image" href="#"><i class="icon-remove"></i></a>';
 
 		if( ( isset($attr['desc']) ) && ( isset($attr['desc']) != '' ) )
 		{

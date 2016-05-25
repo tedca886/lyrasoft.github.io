@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * elFinder driver for local filesystem.

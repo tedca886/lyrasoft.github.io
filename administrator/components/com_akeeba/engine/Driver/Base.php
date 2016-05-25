@@ -3,7 +3,7 @@
  * Akeeba Engine
  * The modular PHP5 site backup engine
  *
- * @copyright Copyright (c)2006-2015 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2006-2016 Nicholas K. Dionysopoulos
  * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
  */
@@ -564,6 +564,20 @@ abstract class Base extends Object
 	 * @return  array  An array of all the tables in the database.
 	 */
 	abstract public function getTableList();
+
+	/**
+	 * Returns an array with the names of tables, views, procedures, functions and triggers
+	 * in the database. The table names are the keys of the tables, whereas the value is
+	 * the type of each element: table, view, merge, temp, procedure, function or trigger.
+	 * Note that merge are MRG_MYISAM tables and temp is non-permanent data table, usually
+	 * set up as temporary, black hole or federated tables. These two types should never,
+	 * ever, have their data dumped in the SQL dump file.
+	 *
+	 * @param   bool  $abstract  Return abstract or normal names? Defaults to true (abstract names)
+	 *
+	 * @return  array
+	 */
+	abstract public function getTables($abstract = true);
 
 	/**
 	 * Determine whether or not the database engine supports UTF-8 character encoding.

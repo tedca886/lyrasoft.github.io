@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
  * Library for the KeyCDN API
@@ -52,8 +52,8 @@ class CloudFlare
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 
 		// make the request
-		$result = curl_exec($ch);
-		$headers = curl_getinfo($ch);
+		$result     = curl_exec($ch);
+		$headers    = curl_getinfo($ch);
 		$curl_error = curl_error($ch);
 
 		curl_close($ch);

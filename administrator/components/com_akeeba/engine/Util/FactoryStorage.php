@@ -2,7 +2,7 @@
 /**
  * Akeeba Engine
  * The modular PHP5 site backup engine
- * @copyright Copyright (c)2006-2015 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2006-2016 Nicholas K. Dionysopoulos
  * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
  *
@@ -27,6 +27,11 @@ class FactoryStorage
 		$this->setStorageEngine($storageEngine);
 	}
 
+	/**
+	 * Sets the storage engine which will be used
+	 *
+	 * @param   string  $engine  The storage engine (currently only db or file can be specified)
+	 */
 	public function setStorageEngine($engine = null)
 	{
 		if (empty($engine))
@@ -39,12 +44,22 @@ class FactoryStorage
 		$this->storageEngine = $engine;
 	}
 
+	/**
+	 * Returns the name of the storage engine
+	 *
+	 * @return  string
+	 */
+	public function getStorageEngine()
+	{
+		return $this->storageEngine;
+	}
+
     /**
      * Returns the fully qualified path to the storage file
 	 *
      * @param   string  $tag
      *
-     * @return string
+     * @return  string
      */
 	public function get_storage_filename($tag = null)
 	{

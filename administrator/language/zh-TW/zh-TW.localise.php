@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @package    Joomla.Language
  *
@@ -9,10 +9,9 @@
 defined('_JEXEC') or die;
 
 /**
- * en-GB localise class
+ * en-GB localise class.
  *
- * @package  Joomla.Language
- * @since    1.6
+ * @since  1.6
  */
 abstract class Zh_TWLocalise
 {
@@ -62,7 +61,7 @@ abstract class Zh_TWLocalise
 	 */
 	public static function getLowerLimitSearchWord()
 	{
-		return 3;
+		return 2;
 	}
 
 	/**

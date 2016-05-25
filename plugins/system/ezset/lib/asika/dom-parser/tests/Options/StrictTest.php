@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use PHPHtmlParser\Dom;
 use PHPHtmlParser\Exceptions\StrictException;

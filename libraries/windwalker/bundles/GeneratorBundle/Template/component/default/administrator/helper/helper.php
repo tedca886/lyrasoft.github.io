@@ -1,13 +1,17 @@
-<?php 
+<?php
 /**
  * Part of Component {{extension.name.cap}} files.
  *
- * @copyright   Copyright (C) 2014 Asikart. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) 2016 {ORGANIZATION}. All rights reserved.
+ * @license     GNU General Public License version 2 or later.
  */
+
+use Windwalker\String\StringInflector;
 
 // No direct access
 defined('_JEXEC') or die;
+
+include_once JPATH_LIBRARIES . '/windwalker/src/init.php';
 
 /**
  * {{extension.name.cap}} helper.
@@ -26,7 +30,7 @@ abstract class {{extension.name.cap}}Helper
 	public static function addSubmenu($vName)
 	{
 		$app       = \JFactory::getApplication();
-		$inflector = \JStringInflector::getInstance(true);
+		$inflector = StringInflector::getInstance(true);
 
 		// Add Category Menu Item
 		if ($app->isAdmin())

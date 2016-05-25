@@ -3,7 +3,7 @@
  * Akeeba Engine
  * The modular PHP5 site backup engine
  *
- * @copyright Copyright (c)2006-2015 Nicholas K. Dionysopoulos
+ * @copyright Copyright (c)2006-2016 Nicholas K. Dionysopoulos
  * @license   GNU GPL version 3 or, at your option, any later version
  * @package   akeebaengine
  */
@@ -351,11 +351,29 @@ class Pdomysql extends Mysql
 			return false;
 		}
 
-		$status = true;
-
 		try
 		{
-			$this->connection->exec('SELECT 1');
+			/** @var \PDOStatement $statement */
+			$statement = $this->connection->prepare('SELECT 1');
+			$executed  = $statement->execute();
+			$ret       = 0;
+
+			if ($executed)
+			{
+				$row = array(0);
+
+				if (!empty($statement) && $statement instanceof \PDOStatement)
+				{
+					$row = $statement->fetch(\PDO::FETCH_NUM);
+				}
+
+				$ret = $row[0];
+			}
+
+			$status = $ret == 1;
+
+			$statement->closeCursor();
+			$statement = null;
 		}
 			// If we catch an exception here, we must not be connected.
 		catch (\Exception $e)

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if (!class_exists('OAuthException'))
 {
@@ -15,17 +15,17 @@ class OAuthRequest
 	protected $http_method;
 	protected $http_url;
 	// for debug purposes
-	public $base_string;
-	public static $version = '1.0';
+	public        $base_string;
+	public static $version    = '1.0';
 	public static $POST_INPUT = 'php://input';
 
 	function __construct($http_method, $http_url, $parameters = null)
 	{
-		$parameters = ($parameters) ? $parameters : array();
-		$parameters = array_merge(OAuthUtil::parse_parameters(parse_url($http_url, PHP_URL_QUERY)), $parameters);
-		$this->parameters = $parameters;
+		$parameters        = ($parameters) ? $parameters : array();
+		$parameters        = array_merge(OAuthUtil::parse_parameters(parse_url($http_url, PHP_URL_QUERY)), $parameters);
+		$this->parameters  = $parameters;
 		$this->http_method = $http_method;
-		$this->http_url = $http_url;
+		$this->http_url    = $http_url;
 	}
 
 	/**
@@ -33,10 +33,10 @@ class OAuthRequest
 	 */
 	public static function from_request($http_method = null, $http_url = null, $parameters = null)
 	{
-		$scheme = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on")
+		$scheme      = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on")
 			? 'http'
 			: 'https';
-		$http_url = ($http_url) ? $http_url : $scheme .
+		$http_url    = ($http_url) ? $http_url : $scheme .
 			'://' . $_SERVER['SERVER_NAME'] .
 			':' .
 			$_SERVER['SERVER_PORT'] .
@@ -65,7 +65,7 @@ class OAuthRequest
 				)
 			)
 			{
-				$post_data = OAuthUtil::parse_parameters(
+				$post_data  = OAuthUtil::parse_parameters(
 					file_get_contents(self::$POST_INPUT)
 				);
 				$parameters = array_merge($parameters, $post_data);
@@ -78,7 +78,7 @@ class OAuthRequest
 				$header_parameters = OAuthUtil::split_header(
 					$request_headers['Authorization']
 				);
-				$parameters = array_merge($parameters, $header_parameters);
+				$parameters        = array_merge($parameters, $header_parameters);
 			}
 		}
 
@@ -91,7 +91,7 @@ class OAuthRequest
 	public static function from_consumer_and_token($consumer, $token, $http_method, $http_url, $parameters = null)
 	{
 		$parameters = ($parameters) ? $parameters : array();
-		$defaults = array(
+		$defaults   = array(
 			"oauth_version"      => OAuthRequest::$version,
 			"oauth_nonce"        => OAuthRequest::generate_nonce(),
 			"oauth_timestamp"    => OAuthRequest::generate_timestamp(),
@@ -199,9 +199,9 @@ class OAuthRequest
 		$parts = parse_url($this->http_url);
 
 		$scheme = (isset($parts['scheme'])) ? $parts['scheme'] : 'http';
-		$port = (isset($parts['port'])) ? $parts['port'] : (($scheme == 'https') ? '443' : '80');
-		$host = (isset($parts['host'])) ? strtolower($parts['host']) : '';
-		$path = (isset($parts['path'])) ? $parts['path'] : '';
+		$port   = (isset($parts['port'])) ? $parts['port'] : (($scheme == 'https') ? '443' : '80');
+		$host   = (isset($parts['host'])) ? strtolower($parts['host']) : '';
+		$path   = (isset($parts['path'])) ? $parts['path'] : '';
 
 		if (($scheme == 'https' && $port != '443')
 			|| ($scheme == 'http' && $port != '80')
@@ -219,7 +219,7 @@ class OAuthRequest
 	public function to_url()
 	{
 		$post_data = $this->to_postdata();
-		$out = $this->get_normalized_http_url();
+		$out       = $this->get_normalized_http_url();
 		if ($post_data)
 		{
 			$out .= '?' . $post_data;
@@ -244,7 +244,7 @@ class OAuthRequest
 		$first = true;
 		if ($realm)
 		{
-			$out = 'Authorization: OAuth realm="' . OAuthUtil::urlencode_rfc3986($realm) . '"';
+			$out   = 'Authorization: OAuth realm="' . OAuthUtil::urlencode_rfc3986($realm) . '"';
 			$first = false;
 		}
 		else
@@ -310,7 +310,7 @@ class OAuthRequest
 	 */
 	private static function generate_nonce()
 	{
-		$mt = microtime();
+		$mt   = microtime();
 		$rand = mt_rand();
 
 		return md5($mt . $rand); // md5s look nicer than numbers

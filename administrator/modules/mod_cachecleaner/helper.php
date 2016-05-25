@@ -1,13 +1,11 @@
-<?php 
+<?php
 /**
- * Module Helper File
- *
  * @package         Cache Cleaner
- * @version         4.2.3
- *
- * @author          Peter van Westen <peter@nonumber.nl>
- * @link            http://www.nonumber.nl
- * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @version         5.0.0
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            http://www.regularlabs.com
+ * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -15,11 +13,11 @@ defined('_JEXEC') or die;
 
 class ModCacheCleaner
 {
-	function modCacheCleaner()
+	function __construct()
 	{
 		// Load plugin parameters
-		require_once JPATH_PLUGINS . '/system/nnframework/helpers/parameters.php';
-		$parameters   = NNParameters::getInstance();
+		require_once JPATH_LIBRARIES . '/regularlabs/helpers/parameters.php';
+		$parameters   = RLParameters::getInstance();
 		$this->params = $parameters->getPluginParams('cachecleaner');
 	}
 
@@ -30,12 +28,11 @@ class ModCacheCleaner
 			return;
 		}
 
-		// load the admin language file
-		require_once JPATH_PLUGINS . '/system/nnframework/helpers/functions.php';
-		NNFrameworkFunctions::loadLanguage('mod_cachecleaner');
+		require_once JPATH_LIBRARIES . '/regularlabs/helpers/functions.php';
 
-		JHtml::stylesheet('nnframework/style.min.css', false, true);
-		NNFrameworkFunctions::addScriptVersion(JUri::root(true) . '/media/nnframework/js/script.min.js');
+		// load the admin language file
+		require_once JPATH_LIBRARIES . '/regularlabs/helpers/functions.php';
+		RLFunctions::loadLanguage('mod_cachecleaner');
 
 		$script = "
 			var cachecleaner_base = '" . JUri::base(true) . "';
@@ -44,8 +41,11 @@ class ModCacheCleaner
 			var cachecleaner_msg_inactive = '" . addslashes(html_entity_decode(JText::sprintf('CC_SYSTEM_PLUGIN_NOT_ENABLED', '<a href=&quot;index.php?option=com_plugins&filter_type=system&filter_folder=system&search=cache cleaner&filter_search=cache cleaner&quot;>', '</a>'))) . "';
 			var cachecleaner_msg_failure = '" . addslashes(html_entity_decode(JText::_('CC_CACHE_COULD_NOT_BE_CLEANED'))) . "';";
 		JFactory::getDocument()->addScriptDeclaration($script);
-		JHtml::stylesheet('cachecleaner/style.min.css', false, true);
-		JHtml::script('cachecleaner/script.min.js', false, true);
+
+		RLFunctions::script('regularlabs/script.min.js', '16.4.23089');
+		RLFunctions::script('cachecleaner/script.min.js', '5.0.0');
+		RLFunctions::stylesheet('regularlabs/style.min.css', '16.4.23089');
+		RLFunctions::stylesheet('cachecleaner/style.min.css', '5.0.0');
 
 		$text_ini = strtoupper(str_replace(' ', '_', $this->params->icon_text));
 		$text     = JText::_($text_ini);
@@ -59,7 +59,7 @@ class ModCacheCleaner
 			// Generate html for toolbar button
 			$html    = array();
 			$html[]  = '<a href="javascript:;" onclick="return false;"  class="btn btn-small cachecleaner_link">';
-			$html[]  = '<span class="icon-nonumber icon-cachecleaner"></span> ';
+			$html[]  = '<span class="icon-reglab icon-cachecleaner"></span> ';
 			$html[]  = $text;
 			$html[]  = '</a>';
 			$toolbar = JToolBar::getInstance('toolbar');
@@ -73,7 +73,7 @@ class ModCacheCleaner
 
 		if ($this->params->display_link != 'text')
 		{
-			$html[] = '<span class="icon-nonumber icon-cachecleaner"></span> ';
+			$html[] = '<span class="icon-reglab icon-cachecleaner"></span> ';
 		}
 
 		if ($this->params->display_link != 'icon')

@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2015 JoomShaper
+ * @copyright Copyright (c) 2010 - 2016 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
@@ -60,7 +60,7 @@ $addons_category = array_unique($addons_category);
 </div>
 
 <!-- Row Options Modal -->
-<div class="sp-modal fade" id="modal-row" tabindex="-1" role="dialog" aria-labelledby="modal-row-label" aria-hidden="true">
+<div class="sp-modal fade" id="modal-row" role="dialog" aria-labelledby="modal-row-label" aria-hidden="true">
 	<div class="sp-modal-dialog">
 		<div class="sp-modal-content">
 			<div class="sp-modal-header">
@@ -79,7 +79,7 @@ $addons_category = array_unique($addons_category);
 </div>
 
 <!-- Column Options Modal -->
-<div class="sp-modal fade" id="modal-column" tabindex="-1" role="dialog" aria-labelledby="modal-column-label" aria-hidden="true">
+<div class="sp-modal fade" id="modal-column" role="dialog" aria-labelledby="modal-column-label" aria-hidden="true">
 	<div class="sp-modal-dialog">
 		<div class="sp-modal-content">
 			<div class="sp-modal-header">
@@ -98,7 +98,7 @@ $addons_category = array_unique($addons_category);
 </div>
 
 <!-- Modal -->
-<div class="sp-modal fade" id="modal-addons" tabindex="-1" role="dialog" aria-labelledby="modal-addons-label" aria-hidden="true">
+<div class="sp-modal fade" id="modal-addons" role="dialog" aria-labelledby="modal-addons-label" aria-hidden="true">
 	<div class="sp-modal-dialog sp-modal-xlg">
 		<div class="sp-modal-content">
 			<div class="sp-modal-header">
@@ -124,7 +124,7 @@ $addons_category = array_unique($addons_category);
 
 
 <!-- Modal -->
-<div class="sp-modal fade" id="modal-addon" tabindex="-1" role="dialog" aria-labelledby="modal-addon-label" aria-hidden="true">
+<div class="sp-modal fade" id="modal-addon" role="dialog" aria-labelledby="modal-addon-label" aria-hidden="true">
 	<div class="sp-modal-dialog sp-modal-lg">
 		<div class="sp-modal-content">
 			<div class="sp-modal-header">
@@ -165,6 +165,13 @@ $addons_category = array_unique($addons_category);
 				$addon['category'] = 'General';
 			}
 
+			$admin_label = '';
+			if ( isset($addon['attr']['admin_label']['std']) && $addon['attr']['admin_label']['std'] ) {
+				$admin_label = $addon['attr']['admin_label']['std'];
+			} else if( isset($addon['attr']['title']['std']) && $addon['attr']['title']['std'] ) {
+				$admin_label = $addon['attr']['title']['std'];
+			}
+
 			$output .= '<li class="addon-cat-'.strtolower($addon['category']).'">';
 			$output .= '<a id="addon_' . $key . '" data-tag="' . $key . '" class="addon-title" href="javascript:void(0)"><img class="image-left" src="' . $builder->getIcon(  str_replace('sp_', '', $key) ) . '" alt="' . $title . '" width="32" /> <span class="element-title">' . $title . '</span><span class="element-description">'.$addon['desc'].'</span></a>';
 			$output .= '<div class="generated" data-addon="'.$addon['type'].'">';
@@ -179,7 +186,7 @@ $addons_category = array_unique($addons_category);
 			$output .= '<a class="remove-addon" href="javascript:void(0)"><i class="fa fa-times"></i></a>';
 			$output .= '</div>';
 
-			$output .= '<p class="addon-input-title">' . ((isset($addon['attr']['title']['std']))? $addon['attr']['title']['std'] :'') . '</p>';
+			$output .= '<p class="addon-input-title">' . $admin_label . '</p>';
 
 			$output .= '<div class="item-inner">';
 

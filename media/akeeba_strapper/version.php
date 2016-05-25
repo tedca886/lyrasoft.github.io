@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  *  @package     AkeebaStrapper
  *  @copyright   Copyright (c) 2010 - 2015 Nicholas K. Dionysopoulos / Akeeba Ltd. All rights reserved.
@@ -8,6 +8,6 @@
 // Protect from unauthorized access
 defined('_JEXEC') or die;
 
-define('AKEEBASTRAPPER_VERSION', 'revFE521CF-1445103773');
-define('AKEEBASTRAPPER_DATE', '2015-10-17 19:42:53');
+define('AKEEBASTRAPPER_VERSION', 'revAA17947');
+define('AKEEBASTRAPPER_DATE', '2016-05-12');
 define('AKEEBASTRAPPER_MEDIATAG', md5(AKEEBASTRAPPER_VERSION . AKEEBASTRAPPER_DATE));

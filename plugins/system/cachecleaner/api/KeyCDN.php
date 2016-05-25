@@ -1,61 +1,146 @@
-<?php 
+<?php
 
-/*
+/**
  * Library for the KeyCDN API
  *
- * @author Tobias Moser
- * @version 0.1
- *
+ * @author  Sven Baumgartner
+ * @version 0.3
  */
-
 class KeyCDN
 {
-	public $username;
-	public $password;
-	public $KeyCDN_api = 'https://api.keycdn.com';
+	/**
+	 * @var string
+	 */
+	private $apiKey;
 
-	public function __construct($username, $password)
+	/**
+	 * @var string
+	 */
+	private $endpoint;
+
+	/**
+	 * @param string      $apiKey
+	 * @param string|null $endpoint
+	 */
+	public function __construct($apiKey, $endpoint = null)
 	{
-		$this->username = $username;
-		$this->password = $password;
+		if ($endpoint === null)
+		{
+			$endpoint = 'https://api.keycdn.com';
+		}
+
+		$this->setApiKey($apiKey);
+		$this->setEndpoint($endpoint);
 	}
 
-	public function get($selected_call, $params = array())
+	/**
+	 * @return string
+	 */
+	public function getApiKey()
 	{
-		return $this->execute($selected_call, 'GET', $params);
+		return $this->apiKey;
 	}
 
-	public function post($selected_call, $params = array())
+	/**
+	 * @param string $apiKey
+	 *
+	 * @return $this
+	 */
+	public function setApiKey($apiKey)
 	{
-		return $this->execute($selected_call, 'POST', $params);
+		$this->apiKey = (string) $apiKey;
+
+		return $this;
 	}
 
-	public function put($selected_call, $params = array())
+	/**
+	 * @return string
+	 */
+	public function getEndpoint()
 	{
-		return $this->execute($selected_call, 'PUT', $params);
+		return $this->endpoint;
 	}
 
-	public function delete($selected_call, $params = array())
+	/**
+	 * @param string $endpoint
+	 *
+	 * @return $this
+	 */
+	public function setEndpoint($endpoint)
 	{
-		return $this->execute($selected_call, 'DELETE', $params);
+		$this->endpoint = (string) $endpoint;
+
+		return $this;
 	}
 
-	private function execute($selected_call, $method_type, $params)
+	/**
+	 * @param string $selectedCall
+	 * @param array  $params
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
+	public function get($selectedCall, array $params = array())
 	{
+		return $this->execute($selectedCall, 'GET', $params);
+	}
 
-		$endpoint = $this->KeyCDN_api . '/' . $selected_call;
+	/**
+	 * @param string $selectedCall
+	 * @param array  $params
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
+	public function post($selectedCall, array $params = array())
+	{
+		return $this->execute($selectedCall, 'POST', $params);
+	}
+
+	/**
+	 * @param string $selectedCall
+	 * @param array  $params
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
+	public function put($selectedCall, array $params = array())
+	{
+		return $this->execute($selectedCall, 'PUT', $params);
+	}
+
+	/**
+	 * @param string $selectedCall
+	 * @param array  $params
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
+	public function delete($selectedCall, array $params = array())
+	{
+		return $this->execute($selectedCall, 'DELETE', $params);
+	}
+
+	/**
+	 * @param string $selectedCall
+	 * @param        $methodType
+	 * @param array  $params
+	 *
+	 * @return string
+	 * @throws Exception
+	 */
+	private function execute($selectedCall, $methodType, array $params)
+	{
+		$endpoint = rtrim($this->endpoint, '/') . '/' . ltrim($selectedCall, '/');
 
 		// start with curl and prepare accordingly
 		$ch = curl_init();
 
 		// create basic auth information
-		curl_setopt($ch, CURLOPT_USERPWD, $this->username . ':' . $this->password);
+		curl_setopt($ch, CURLOPT_USERPWD, $this->apiKey . ':');
 
 		// return transfer as string
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-		// Set SSL Verifyer off
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 		// set curl timeout
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
@@ -65,44 +150,42 @@ class KeyCDN
 		curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
 
 		// set request type
-		if ($method_type != 'POST' && $method_type != 'GET')
+		if (!in_array($methodType, array('POST', 'GET')))
 		{
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method_type);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $methodType);
 		}
 
-		$query_str = http_build_query($params);
+		$queryStr = http_build_query($params);
 		// send query-str within url or in post-fields
-		if ($method_type == 'POST' || $method_type == 'PUT' || $method_type == 'DELETE')
+		if (in_array($methodType, array('POST', 'PUT', 'DELETE')))
 		{
-			$req_uri = $endpoint;
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $query_str);
+			$reqUri = $endpoint;
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $queryStr);
 		}
 		else
 		{
-			$req_uri = $endpoint . '?' . $query_str;
+			$reqUri = $endpoint . '?' . $queryStr;
 		}
 
 		// url
-		curl_setopt($ch, CURLOPT_URL, $req_uri);
+		curl_setopt($ch, CURLOPT_URL, $reqUri);
 
 		// make the request
-		$result = curl_exec($ch);
-		$headers = curl_getinfo($ch);
-		$curl_error = curl_error($ch);
+		$result    = curl_exec($ch);
+		$headers   = curl_getinfo($ch);
+		$curlError = curl_error($ch);
 
 		curl_close($ch);
 
 		// get json_output out of result (remove headers)
-		$json_output = substr($result, $headers['header_size']);
+		$jsonOutput = substr($result, $headers['header_size']);
 
 		// error catching
-		if (!empty($curl_error) || empty($json_output))
+		if (!empty($curlError) || empty($jsonOutput))
 		{
-			//throw new Exception('KeyCDN-Error: '.$curl_error.', Output: '.$json_output);
-			return 'KeyCDN-Error: ' . $curl_error . ', Output: ' . $json_output;
+			throw new Exception("KeyCDN-Error: {$curlError}, Output: {$jsonOutput}");
 		}
 
-		return $json_output;
+		return $jsonOutput;
 	}
-
 }

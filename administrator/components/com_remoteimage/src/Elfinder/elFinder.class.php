@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * elFinder - file manager for web.
