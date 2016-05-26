@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:400,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+.block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
 body {
   font-size: 16px;
   margin-top: 55px;
@@ -26,7 +30,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Open Sans', 'PingFang TC', 'LantingHei TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+  font-family: Roboto, 'PingFang TC', 'LantingHei TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 h1,
 h2,
@@ -314,6 +318,9 @@ header > .navbar .mod-languages .lang-active a {
 #what-we-made {
   background-color: #EE6C64;
   color: white;
+}
+#what-we-made p {
+  opacity: .8;
 }
 #our-works {
   background-color: #333;
@@ -661,7 +668,9 @@ body.contact-page #body .contact-submit {
 }
 /* Style For Different Languages */
 body.lang-en-gb #banner .banner-text p {
-  letter-spacing: 1px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 /* Debug */
 #backtrace {

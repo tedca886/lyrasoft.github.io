@@ -55,7 +55,7 @@ $asset->addJS('jquery/jquery.smooth-scroll.min.js');
 
         <div class="banner-inner text-center">
             <div class="banner-text row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="text-center" style="position: relative;">
                     <h1>
                         LYRASOFT
                     </h1>
