@@ -8,10 +8,12 @@
 
 use Astra\Menu\Menu;
 
+/** @var \Windwalker\Asset\AssetManager $asset */
 $asset = \Windwalker\DI\Container::getInstance()->get('helper.asset');
 
-$asset->addJS('jquery/jquery.smooth-scroll.min.js');
+$asset->resetPaths();
 
+$asset->addJS('jquery/jquery.smooth-scroll.min.js');
 ?>
 <script>
     jQuery(document).ready(function ($) {
