@@ -20,7 +20,8 @@
 @purple2: #697FBA;
 
 .text-font() {
-    font-family: Roboto, 'PingFang TC', 'LantingHei TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+    font-family: 'Open Sans', 'PingFang TC', 'LantingHei TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+    //font-weight: 600;
 }
 .title-font() {
     font-family: Montserrat,
@@ -34,6 +35,7 @@
 // Global
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:400,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 //.jf-loading .chfont { /*載入中不顯示*/
 //    opacity: 0;
@@ -161,6 +163,18 @@ header > .navbar {
 
         .navbar-brand {
             padding-left: 0;
+        }
+    }
+
+    .mod-languages {
+        margin-top: 10px;
+
+        a {
+            color: #999;
+        }
+
+        .lang-active a {
+            color: white;
         }
     }
 
@@ -418,7 +432,8 @@ header > .navbar {
     }
 
     p {
-        line-height: 2.5em;
+        line-height: 2.2em;
+        font-size: 18px;
     }
 
     > *:last-child {
@@ -484,12 +499,12 @@ header > .navbar {
 }
 
 // About
-body.path-about #page-heading {
+body.about #page-heading {
     background-color: @blue1;
 }
 
 // Service
-body.path-service #page-heading {
+body.service #page-heading {
     background-color: @orange;
 }
 
@@ -576,7 +591,7 @@ body.view-category.layout-blog .col-right-inner {
 }
 
 // Opensource
-body.itemid-122 {
+body.opensource {
     #page-heading {
         background-color: @purple1;
     }
@@ -790,7 +805,7 @@ body.mobile .work-item-cover {
 }
 
 // Contact
-body.itemid-116 {
+body.contact-page {
     #page-heading {
         background-color: @blue2;
     }
@@ -870,4 +885,33 @@ body.itemid-116 {
             color: white;
         }
     }
+}
+
+/* Languages */
+.mod-languages {
+    display: inline-block;
+
+    .lang-active a {
+        color: white !important;
+    }
+}
+
+/* Style For Different Languages */
+body.lang-en-gb {
+    #banner .banner-text p {
+        letter-spacing: 1px;
+    }
+
+    //.landing-block {
+    //    p {
+    //        text-align: justify;
+    //        text-align-last: center;
+    //    }
+    //}
+}
+
+/* Debug */
+#backtrace {
+    background-color: white;
+    color: #666;
 }

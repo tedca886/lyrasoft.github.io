@@ -36,6 +36,7 @@ $tpl = \TplLyrasoft\LyrasoftTemplate::getInstance();
 <div class="navbar-collapse collapse" role="navigation">
 	<!-- Everything you want hidden at 940px or less, place within here -->
 	<div class="navbar-nav navbar-right">
-		<?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
+		<?php echo Menu::render(strtolower(JFactory::getLanguage()->getTag())); ?>
+        <jdoc:include type="modules" name="lang-switcher" />
 	</div>
 </div>

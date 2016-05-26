@@ -8,7 +8,9 @@
 
 namespace Astra\Application;
 
+use Joomla\String\StringHelper;
 use Windwalker\DI\Container;
+use Windwalker\System\ExtensionHelper;
 
 /**
  * Class Template
@@ -268,18 +270,47 @@ class Template
 	 */
 	public static function isHome()
 	{
+		$langPath = null;
+		$lang = \JFactory::getLanguage();
+
+		// For multi language
+		if (\JPluginHelper::isEnabled('system', 'languagefilter'))
+		{
+			$tag = $lang->getTag();
+			$langCodes = \JLanguageHelper::getLanguages('lang_code');
+
+			$langPath = $langCodes[$tag]->sef;
+		}
+
 		$uri  = \JUri::getInstance();
 		$root = $uri::root(true);
 
 		// Get site route
-		$route = \JString::substr($uri->getPath(), \JString::strlen($root));
+		$route = StringHelper::substr($uri->getPath(), StringHelper::strlen($root));
 
 		// Remove index.php
 		$route = str_replace('index.php', '', $route);
 
-		if (! trim($route, '/') && ! $uri->getVar('option'))
+		if ($langPath)
 		{
-			return true;
+			$params = ExtensionHelper::getParams('plg_system_languagefilter');
+
+			if ($tag == $lang->getDefault() && $params->get('remove_default_prefix', 0))
+			{
+				$langPath = '';
+			}
+			
+			if (trim($route, '/') == $langPath && ! $uri->getVar('option'))
+			{
+				return true;
+			}
+		}
+		else
+		{
+			if (! trim($route, '/') && ! $uri->getVar('option'))
+			{
+				return true;
+			}
 		}
 
 		return false;

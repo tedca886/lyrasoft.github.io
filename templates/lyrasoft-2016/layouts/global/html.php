@@ -24,7 +24,7 @@ $menuParams = \Astra\Helper\DocumentHelper::getMenuParams();
 <jdoc:include type="head" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body class="<?php echo $tpl::getOs(); ?> tmpl-layout-<?php echo str_replace('.', '-', $layout); ?> <?php echo \Astra\Helper\StyleHelper::getBodyClass(); ?> path-<?php echo \Astra\Helper\StyleHelper::getPathClass(); ?> <?php echo $menuParams->get('pageclass_sfx') ?>">
+<body class="<?php echo $tpl::getOs(); ?> tmpl-layout-<?php echo str_replace('.', '-', $layout); ?> <?php echo \Astra\Helper\StyleHelper::getBodyClass(); ?> path-<?php echo \Astra\Helper\StyleHelper::getPathClass(); ?> <?php echo $menuParams->get('pageclass_sfx') ?> lang-<?php echo strtolower(JFactory::getLanguage()->getTag()); ?>">
 <?php echo (new \Astra\Layout\FileLayout('tmpl.' . $tmpl))->render(array('layout' => $layout)); ?>
 </body>
 </html>

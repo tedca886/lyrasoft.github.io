@@ -54,7 +54,7 @@ table:
     '#__overrider': all
     '#__postinstall_messages': all
     '#__quickcontent_lists': all
-    '#__redirect_links': all
+    '#__redirect_links': cols
     '#__schemas': all
     '#__session': cols
     '#__spmedia': all
@@ -63,12 +63,12 @@ table:
     '#__template_styles': all
     '#__ucm_base': all
     '#__ucm_content': all
-    '#__ucm_history': all
+    '#__ucm_history': cols
     '#__update_sites': all
     '#__update_sites_extensions': all
     '#__updates': cols
     '#__user_keys': all
-    '#__user_notes': all
+    '#__user_notes': cols
     '#__user_profiles': cols
     '#__user_usergroup_map': cols
     '#__usergroups': all

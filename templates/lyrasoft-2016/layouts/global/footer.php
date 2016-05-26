@@ -25,6 +25,11 @@ use Astra\Module\Position;
 
 <aside id="copyright">
 	<div class="container inner-sm text-center">
-        © <?php echo gmdate('Y'); ?> LYRASOFT - <a target="_blank" href="http://megamount.tw">MegaMount, inc.</a>
+        <p>
+            <jdoc:include type="modules" name="copyright-menu" />
+        </p>
+        <p>
+            © <?php echo gmdate('Y'); ?> LYRASOFT - <a target="_blank" href="http://megamount.tw">MegaMount, inc.</a>
+        </p>
 	</div>
 </aside>

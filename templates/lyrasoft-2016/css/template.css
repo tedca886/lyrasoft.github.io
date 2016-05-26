@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700|Roboto+Condensed:400,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 body {
   font-size: 16px;
   margin-top: 55px;
@@ -25,7 +26,7 @@ button,
 input,
 select,
 textarea {
-  font-family: Roboto, 'PingFang TC', 'LantingHei TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+  font-family: 'Open Sans', 'PingFang TC', 'LantingHei TC', 'Heiti TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 h1,
 h2,
@@ -38,7 +39,7 @@ h6 {
   line-height: 150%;
 }
 a {
-  color: #3671b2;
+  color: #3671B2;
 }
 a:hover {
   color: #2a588b;
@@ -60,7 +61,7 @@ p {
   color: white;
 }
 #footer {
-  background-color: #3f8dca;
+  background-color: #3F8DCA;
   color: white;
 }
 #copyright {
@@ -96,6 +97,15 @@ header > .navbar .navbar-brand {
   header > .navbar .navbar-brand {
     padding-left: 0;
   }
+}
+header > .navbar .mod-languages {
+  margin-top: 10px;
+}
+header > .navbar .mod-languages a {
+  color: #999;
+}
+header > .navbar .mod-languages .lang-active a {
+  color: white;
 }
 #banner {
   background: transparent no-repeat center top;
@@ -289,7 +299,8 @@ header > .navbar .navbar-brand {
   margin-bottom: 50px;
 }
 .landing-block p {
-  line-height: 2.5em;
+  line-height: 2.2em;
+  font-size: 18px;
 }
 .landing-block > *:last-child {
   margin-bottom: 0;
@@ -301,7 +312,7 @@ header > .navbar .navbar-brand {
   color: #384761;
 }
 #what-we-made {
-  background-color: #ee6c64;
+  background-color: #EE6C64;
   color: white;
 }
 #our-works {
@@ -332,11 +343,11 @@ header > .navbar .navbar-brand {
 .item-pagework img {
   max-width: 100%;
 }
-body.path-about #page-heading {
+body.about #page-heading {
   background-color: #384761;
 }
-body.path-service #page-heading {
-  background-color: #eea939;
+body.service #page-heading {
+  background-color: #EEA939;
 }
 .page-header {
   border: none;
@@ -398,13 +409,13 @@ body.itemid-127 #page-heading,
 body.itemid-128 #page-heading,
 body.itemid-130 #page-heading,
 body.itemid-132 #page-heading {
-  background-color: #b9db7a;
+  background-color: #B9DB7A;
 }
 body.view-category.layout-blog .col-right-inner {
   margin-top: 70px;
 }
-body.itemid-122 #page-heading {
-  background-color: #c1a5cd;
+body.opensource #page-heading {
+  background-color: #C1A5CD;
 }
 body.work.view-article #body > .container {
   width: 100%;
@@ -478,7 +489,7 @@ body.work.view-article .item-pagework .full-block {
   font-size: 60px;
 }
 .work-item .work-item-cover .work-label {
-  background: #eb4d46;
+  background: #EB4D46;
   text-transform: uppercase;
   padding: 0 11px;
   border-radius: 3px;
@@ -540,7 +551,7 @@ body.mobile .work-item-cover {
   opacity: 1 !important;
 }
 #page-heading {
-  background-color: #eb4d46;
+  background-color: #EB4D46;
   color: white;
 }
 #page-heading a {
@@ -577,24 +588,24 @@ body.mobile .work-item-cover {
   opacity: 1;
   color: white;
 }
-body.itemid-116 #page-heading {
-  background-color: #3f8dca;
+body.contact-page #page-heading {
+  background-color: #3F8DCA;
 }
-body.itemid-116 #body {
-  background-color: #3f8dca;
+body.contact-page #body {
+  background-color: #3F8DCA;
   color: white;
   margin: 0;
   padding-top: 0;
 }
-body.itemid-116 #body .article-content {
+body.contact-page #body .article-content {
   color: white;
 }
-body.itemid-116 #body a {
+body.contact-page #body a {
   color: #ffffff;
 }
-body.itemid-116 #body input,
-body.itemid-116 #body select,
-body.itemid-116 #body textarea {
+body.contact-page #body input,
+body.contact-page #body select,
+body.contact-page #body textarea {
   border: none;
   font-size: 18px;
   padding: 22px 19px;
@@ -602,14 +613,14 @@ body.itemid-116 #body textarea {
   background-color: #384761;
   color: white;
 }
-body.itemid-116 #body select {
+body.contact-page #body select {
   height: auto;
   padding: 10px 19px;
 }
-body.itemid-116 #body .form-group {
+body.contact-page #body .form-group {
   margin-bottom: 40px;
 }
-body.itemid-116 #body .contact-submit {
+body.contact-page #body .contact-submit {
   margin-top: 50px;
   background-color: #384761;
   border: none;
@@ -640,4 +651,20 @@ body.itemid-116 #body .contact-submit {
 }
 #copyright a:hover {
   color: white;
+}
+/* Languages */
+.mod-languages {
+  display: inline-block;
+}
+.mod-languages .lang-active a {
+  color: white !important;
+}
+/* Style For Different Languages */
+body.lang-en-gb #banner .banner-text p {
+  letter-spacing: 1px;
+}
+/* Debug */
+#backtrace {
+  background-color: white;
+  color: #666;
 }

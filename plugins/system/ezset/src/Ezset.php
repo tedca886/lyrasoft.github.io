@@ -6,6 +6,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 use Joomla\String\StringHelper;
+use Windwalker\System\ExtensionHelper;
 
 /**
  * Class Ezset
@@ -32,14 +33,15 @@ class Ezset
 	public static function isHome()
 	{
 		$langPath = null;
+		$lang = \JFactory::getLanguage();
 
 		// For multi language
-		if (JPluginHelper::isEnabled('system', 'languagefilter'))
+		if (\JPluginHelper::isEnabled('system', 'languagefilter'))
 		{
-			$lang = JLanguageHelper::detectLanguage();
+			$tag = $lang->getTag();
 			$langCodes = \JLanguageHelper::getLanguages('lang_code');
 
-			$langPath = $langCodes[$lang]->sef;
+			$langPath = $langCodes[$tag]->sef;
 		}
 
 		$uri  = \JUri::getInstance();
@@ -53,6 +55,13 @@ class Ezset
 
 		if ($langPath)
 		{
+			$params = ExtensionHelper::getParams('plg_system_languagefilter');
+
+			if ($tag == $lang->getDefault() && $params->get('remove_default_prefix', 0))
+			{
+				$langPath = '';
+			}
+
 			if (trim($route, '/') == $langPath && ! $uri->getVar('option'))
 			{
 				return true;

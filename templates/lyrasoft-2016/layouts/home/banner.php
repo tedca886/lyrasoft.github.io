@@ -44,7 +44,7 @@ $asset->addJS('jquery/jquery.smooth-scroll.min.js');
 
                     <div class="container">
                         <div class="navbar-nav navbar-center text-center banner-navbar-collapse navbar-collapse collapse in">
-                            <?php echo Menu::render($this->tpl->params->get('menutype', 'mainmenu')); ?>
+                            <?php echo Menu::render(strtolower(JFactory::getLanguage()->getTag())); ?>
                         </div>
                     </div>
                 </div>
@@ -57,8 +57,8 @@ $asset->addJS('jquery/jquery.smooth-scroll.min.js');
                     <h1>
                         LYRASOFT
                     </h1>
-                    <p>
-                        帶領企業遨遊雲端
+                    <p class="slogen">
+                        <?php echo JText::_('PLG_TPL_LYRASOFT_2016_BANNER_SLOGEN'); ?>
                     </p>
 
                     <div class="angle-down" style="position:relative; top: 30vh;">

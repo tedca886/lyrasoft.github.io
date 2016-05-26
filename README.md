@@ -36,7 +36,7 @@ $ cp htaccess.txt .htaccess
 匯入新專案預設的資訊
 
 ```bash
-$ php cli/console sql import default -y
+$ php bin/windwalker sql import default -y
 ```
 
 ## 後台
@@ -44,5 +44,5 @@ $ php cli/console sql import default -y
 建立 User 來登入
 
 ```
-$ cli/console user create
+$ php bin/windwalker user create
 ```

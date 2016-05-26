@@ -1,0 +1,7 @@
+table:
+    '#__assets': all
+    '#__extensions': all
+    '#__menu': all
+    '#__ucm_base': all
+    '#__ucm_content': all
+    '#__ucm_history': cols
