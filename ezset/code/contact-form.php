@@ -43,10 +43,10 @@ $tag = JFactory::getLanguage()->getTag();
 						<select class="form-control" id="InputBudget" name="Budget" required style="height: 44px">
 							<option value="">-- 您的預算 (Budget) * --</option>
 <!--							<option value="我要諮詢">不確定，我想先諮詢</option>-->
-							<option value="小於 TWD 300,000">小於 TWD 700,000 (< USD 21,000)</option>
-							<option value="TWD 300,000 ~ 800,000">TWD 700,000 ~ 1,400,000 (USD 21,000 ~ 42,000)</option>
-							<option value="TWD 800,000 ~ 150,0000">TWD 1,400,000 ~ 2,100,000 (USD 42,000 ~ 63,000)</option>
-							<option value="大於 TWD 150,000">大於 TWD 2,100,000 (> USD 63,000)</option>
+							<option value="小於 TWD 700,000">小於 TWD 700,000 (< USD 21,000)</option>
+							<option value="TWD 700,000 ~ 1,400,000">TWD 700,000 ~ 1,400,000 (USD 21,000 ~ 42,000)</option>
+							<option value="TWD 1,400,000 ~ 2,100,000">TWD 1,400,000 ~ 2,100,000 (USD 42,000 ~ 63,000)</option>
+							<option value="大於 TWD 2,100,000">大於 TWD 2,100,000 (> USD 63,000)</option>
 						</select>
 					</div>
 				</div>
