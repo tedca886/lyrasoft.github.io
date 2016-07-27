@@ -11,10 +11,10 @@
 	<div class="container inner-md">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 text-center">
-				<h2>What We Made</h2>
+				<h2>What We Make</h2>
 
 				<p>
-					<?php echo JText::_('PLG_TPL_LYRASOFT_2016_WHAT_WE_MADE'); ?>
+					<?php echo JText::_('PLG_TPL_LYRASOFT_2016_WHAT_WE_MAKE'); ?>
 				</p>
 
                 <h4 class="outer-top-sm">
